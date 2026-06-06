@@ -470,20 +470,45 @@
     <!-- ESSENTIAL -->
     <div class="sc-panel active" data-panel="essential">
         <div class="sc-grid">
-            <div class="sc-visuals">
-                <div class="sc-media span2">
-                    <span class="sc-media-tag">HDR Photo</span>
-                    <img src="images/dining.webp" alt="HDR living room photo" style="width:100%;height:100%;object-fit:cover;">
+            <div class="sc-rows">
+                <!-- HDR Photography -->
+                <div class="sc-row">
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag">HDR Photo</span>
+                        <img src="images/dining.webp" alt="HDR living room" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">HDR Photography</span>
+                        <h4 class="sc-row-heading">Up to 10 professional photos</h4>
+                        <p class="sc-row-body">HDR-processed interior and exterior shots optimised for Rightmove, Zoopla, and your own channels.</p>
+                    </div>
                 </div>
-                <div class="sc-media"><span class="sc-media-tag">HDR Photo</span><img src="images/kitchen.webp" alt="HDR kitchen photo" style="width:100%;height:100%;object-fit:cover;"></div>
-                <div class="sc-media"><span class="sc-media-tag">HDR Photo</span><img src="images/bedroom.webp" alt="HDR bedroom photo" style="width:100%;height:100%;object-fit:cover;"></div>
-                <div class="sc-media"><span class="sc-media-tag">Floor Plan</span><img src="images/floor-plan.webp" alt="Floor plan" style="width:100%;height:100%;object-fit:cover;"></div>
-                <div class="sc-media sc-media-tour" onclick="openTour()">
-                    <span class="sc-media-tag">Virtual Tour</span>
-                    <img src="images/home-office.webp" alt="360 virtual tour preview" style="width:100%;height:100%;object-fit:cover;">
-                    <div class="sc-tour-overlay">
-                        <div class="sc-tour-ring">◉</div>
-                        <span class="sc-tour-sub">CLICK TO EXPLORE 360°</span>
+                <!-- Floor Plan -->
+                <div class="sc-row rev">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">2D Floor Plan</span>
+                        <h4 class="sc-row-heading">Accurate to the room</h4>
+                        <p class="sc-row-body">Detailed 2D floor plans included with every booking. Delivered with all assets within 24 hours.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag">Floor Plan</span>
+                        <img src="images/floor-plan.webp" alt="2D floor plan" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+                <!-- Virtual Tour -->
+                <div class="sc-row">
+                    <div class="sc-row-media sc-media-tour" onclick="openTour()">
+                        <span class="sc-media-tag">Virtual Tour</span>
+                        <img src="images/home-office.webp" alt="360 virtual tour" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="sc-tour-overlay">
+                            <div class="sc-tour-ring">&#9711;</div>
+                            <span class="sc-tour-sub">CLICK TO EXPLORE 360&deg;</span>
+                        </div>
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">360&deg; Virtual Tour</span>
+                        <h4 class="sc-row-heading">Let buyers explore from anywhere</h4>
+                        <p class="sc-row-body">Interactive 360° walkthroughs let prospective buyers explore every room before they visit in person.</p>
                     </div>
                 </div>
             </div>
@@ -507,29 +532,76 @@
     <!-- SIGNATURE -->
     <div class="sc-panel" data-panel="signature">
         <div class="sc-grid">
-            <div class="sc-visuals">
-                <div class="sc-media"><span class="sc-media-tag accent">Aerial Drone</span><img src="images/aerial-drone-photo.webp" alt="Aerial drone photo" style="width:100%;height:100%;object-fit:cover;"></div>
-                <div class="sc-media"><span class="sc-media-tag">HDR Photo</span><img src="images/home-office.webp" alt="HDR room photo" style="width:100%;height:100%;object-fit:cover;"></div>
-                <div class="sc-media">
-                    <span class="sc-media-tag accent">AI Staged</span>
-                    <div class="ba-slider sc-ba-slider" id="scBa1">
-                        <img src="images/dining.webp" alt="After AI staging" class="ba-img-after">
-                        <div class="ba-before-clip">
-                            <img src="images/dining-empty.webp" alt="Before AI staging" class="ba-img-before">
-                            <span class="ba-label ba-label-before">Before</span>
-                        </div>
-                        <div class="ba-after-clip"><span class="ba-label ba-label-after">After</span></div>
-                        <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>‹</span><span>›</span></div></div>
+            <div class="sc-rows">
+                <!-- Aerial Drone -->
+                <div class="sc-row">
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag accent">Aerial Drone</span>
+                        <img src="images/aerial-drone-photo.webp" alt="Aerial drone photo" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">Aerial Drone</span>
+                        <h4 class="sc-row-heading">Cinematic aerial footage</h4>
+                        <p class="sc-row-body">Sub-250g drone — flies legally in residential areas where heavier rigs can't. CAA-licensed pilot on every shoot.</p>
                     </div>
                 </div>
-                <div class="sc-media"><span class="sc-media-tag">HDR Photo</span><img src="images/bedroom.webp" alt="HDR bedroom photo" style="width:100%;height:100%;object-fit:cover;"></div>
-                <div class="sc-media"><span class="sc-media-tag">3D Floor Plan</span><img src="images/3D-floor-plan.webp" alt="3D floor plan" style="width:100%;height:100%;object-fit:cover;"></div>
-                <div class="sc-media sc-media-tour" onclick="openTour()">
-                    <span class="sc-media-tag">Virtual Tour</span>
-                    <img src="images/home-office.webp" alt="360 virtual tour preview" style="width:100%;height:100%;object-fit:cover;">
-                    <div class="sc-tour-overlay">
-                        <div class="sc-tour-ring">◉</div>
-                        <span class="sc-tour-sub">CLICK TO EXPLORE 360°</span>
+                <!-- HDR Photos -->
+                <div class="sc-row rev">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">HDR Photography</span>
+                        <h4 class="sc-row-heading">Up to 20 professional photos</h4>
+                        <p class="sc-row-body">Interior and exterior shots, HDR-processed and ready to upload directly to property portals.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag">HDR Photo</span>
+                        <img src="images/home-office.webp" alt="HDR room photo" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+                <!-- AI Staged -->
+                <div class="sc-row">
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag accent">AI Staged</span>
+                        <div class="ba-slider sc-ba-slider" id="scBa1">
+                            <img src="images/dining.webp" alt="After AI staging" class="ba-img-after">
+                            <div class="ba-before-clip">
+                                <img src="images/dining-empty.webp" alt="Before AI staging" class="ba-img-before">
+                            </div>
+                            <div class="ba-after-clip"></div>
+                            <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>&#8249;</span><span>&#8250;</span></div></div>
+                        </div>
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">AI Virtual Staging</span>
+                        <h4 class="sc-row-heading">Empty to furnished — drag to compare</h4>
+                        <p class="sc-row-body">We digitally furnish empty rooms or remove clutter. Drag the slider to see the before and after.</p>
+                    </div>
+                </div>
+                <!-- 3D Floor Plan -->
+                <div class="sc-row rev">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">3D Floor Plan</span>
+                        <h4 class="sc-row-heading">Room-by-room layout</h4>
+                        <p class="sc-row-body">Detailed 3D floor plans help buyers understand the space before stepping inside.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag">3D Floor Plan</span>
+                        <img src="images/3D-floor-plan.webp" alt="3D floor plan" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+                <!-- Virtual Tour -->
+                <div class="sc-row">
+                    <div class="sc-row-media sc-media-tour" onclick="openTour()">
+                        <span class="sc-media-tag">Virtual Tour</span>
+                        <img src="images/home-office.webp" alt="360 virtual tour" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="sc-tour-overlay">
+                            <div class="sc-tour-ring">&#9711;</div>
+                            <span class="sc-tour-sub">CLICK TO EXPLORE 360&deg;</span>
+                        </div>
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">360&deg; Virtual Tour</span>
+                        <h4 class="sc-row-heading">Explore every room remotely</h4>
+                        <p class="sc-row-body">Interactive 360° walkthrough — buyers explore at their own pace from anywhere in the world.</p>
                     </div>
                 </div>
             </div>
@@ -553,50 +625,107 @@
     <!-- PREMIUM -->
     <div class="sc-panel" data-panel="premium">
         <div class="sc-grid">
-            <div class="sc-visuals">
-                <!-- Cinematic Video — full width top -->
-                <div class="sc-media-video sc-span2">
-                    <span class="sc-media-tag accent">Cinematic Video</span>
-                    <video src="images/cinematic-video.mp4" muted loop playsinline preload="metadata"
-                           onclick="this.paused?this.play():this.pause();"
-                           style="width:100%;height:100%;object-fit:cover;cursor:pointer;"></video>
-                </div>
-                <!-- Reel vertical left (spans 2 rows) — HDR + AI Staged right -->
-                <div class="sc-media sc-media-vertical">
-                    <span class="sc-media-tag accent">IG / TikTok Reel</span>
-                    <video src="images/IG-reels.mp4" muted loop playsinline preload="metadata"
-                           onclick="this.paused?this.play():this.pause();"
-                           style="width:100%;height:100%;object-fit:cover;cursor:pointer;"></video>
-                </div>
-                <div class="sc-media"><span class="sc-media-tag">HDR Photo</span><img src="images/kids-room.webp" alt="HDR children's room photo" style="width:100%;height:100%;object-fit:cover;"></div>
-                <div class="sc-media">
-                    <span class="sc-media-tag accent">AI Staged</span>
-                    <div class="ba-slider sc-ba-slider" id="scBa2">
-                        <img src="images/kitchen.webp" alt="After AI staging" class="ba-img-after">
-                        <div class="ba-before-clip">
-                            <img src="images/kitchen-empty.webp" alt="Before AI staging" class="ba-img-before">
-                        </div>
-                        <div class="ba-after-clip"></div>
-                        <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>‹</span><span>›</span></div></div>
+            <div class="sc-rows">
+                <!-- Cinematic Video -->
+                <div class="sc-row">
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag accent">Cinematic Video</span>
+                        <video src="images/cinematic-video.mp4" muted loop playsinline preload="metadata"
+                               onclick="this.paused?this.play():this.pause();"
+                               style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">Cinematic Video</span>
+                        <h4 class="sc-row-heading">Full property tour film</h4>
+                        <p class="sc-row-body">Cinematic 4K walkthrough of the entire property — professionally edited, ready for portals and social media.</p>
                     </div>
                 </div>
-                <!-- Aerial Drone — full width -->
-                <div class="sc-media-video sc-span2">
-                    <span class="sc-media-tag accent">Aerial Drone</span>
-                    <video src="images/areal-photo.mp4" muted loop playsinline preload="metadata"
-                           onclick="this.paused?this.play():this.pause();"
-                           style="width:100%;height:100%;object-fit:cover;cursor:pointer;"></video>
+                <!-- Aerial Drone -->
+                <div class="sc-row rev">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">Aerial Drone</span>
+                        <h4 class="sc-row-heading">Stunning 4K aerial footage</h4>
+                        <p class="sc-row-body">Sub-250g drone, CAA-licensed. Flies in residential areas where heavier rigs can't. Slow motion included.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag accent">Aerial Drone</span>
+                        <video src="images/areal-photo.mp4" muted loop playsinline preload="metadata"
+                               onclick="this.paused?this.play():this.pause();"
+                               style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
+                    </div>
+                </div>
+                <!-- IG Reel -->
+                <div class="sc-row">
+                    <div class="sc-row-media vert">
+                        <span class="sc-media-tag accent">IG / TikTok Reel</span>
+                        <video src="images/IG-reels.mp4" muted loop playsinline preload="metadata"
+                               onclick="this.paused?this.play():this.pause();"
+                               style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">IG / TikTok Reel</span>
+                        <h4 class="sc-row-heading">Social media ready</h4>
+                        <p class="sc-row-body">Vertical 9:16 reel — branded, ready to post. Instagram and TikTok optimised.</p>
+                    </div>
+                </div>
+                <!-- AI Staged -->
+                <div class="sc-row rev">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">AI Virtual Staging</span>
+                        <h4 class="sc-row-heading">Empty to furnished — drag to compare</h4>
+                        <p class="sc-row-body">Digitally furnished or decluttered. Drag the slider to see the transformation.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag accent">AI Staged</span>
+                        <div class="ba-slider sc-ba-slider" id="scBa2">
+                            <img src="images/kitchen.webp" alt="After AI staging" class="ba-img-after">
+                            <div class="ba-before-clip">
+                                <img src="images/kitchen-empty.webp" alt="Before AI staging" class="ba-img-before">
+                            </div>
+                            <div class="ba-after-clip"></div>
+                            <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>&#8249;</span><span>&#8250;</span></div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- HDR Photos -->
+                <div class="sc-row">
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag">HDR Photo</span>
+                        <img src="images/kids-room.webp" alt="HDR children's room" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">HDR Photography</span>
+                        <h4 class="sc-row-heading">Up to 30 professional photos</h4>
+                        <p class="sc-row-body">Full property coverage — every room, exterior, and detail. HDR-processed and upload-ready.</p>
+                    </div>
+                </div>
+                <!-- 3D Floor Plan -->
+                <div class="sc-row rev">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">3D Floor Plan</span>
+                        <h4 class="sc-row-heading">Detailed room-by-room layout</h4>
+                        <p class="sc-row-body">3D floor plans help buyers understand the full layout before stepping inside.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag">3D Floor Plan</span>
+                        <img src="images/3D-floor-plan.webp" alt="3D floor plan" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
                 </div>
                 <!-- Virtual Tour -->
-                <div class="sc-media sc-media-tour" onclick="openTour()">
-                    <span class="sc-media-tag">Virtual Tour</span>
-                    <img src="images/home-office.webp" alt="360 virtual tour preview" style="width:100%;height:100%;object-fit:cover;">
-                    <div class="sc-tour-overlay">
-                        <div class="sc-tour-ring">◉</div>
-                        <span class="sc-tour-sub">CLICK TO EXPLORE 360°</span>
+                <div class="sc-row">
+                    <div class="sc-row-media sc-media-tour" onclick="openTour()">
+                        <span class="sc-media-tag">Virtual Tour</span>
+                        <img src="images/home-office.webp" alt="360 virtual tour" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="sc-tour-overlay">
+                            <div class="sc-tour-ring">&#9711;</div>
+                            <span class="sc-tour-sub">CLICK TO EXPLORE 360&deg;</span>
+                        </div>
                     </div>
-
-                <div class="sc-media"><span class="sc-media-tag">3D Floor Plan</span><img src="images/3D-floor-plan.webp" alt="3D floor plan" style="width:100%;height:100%;object-fit:cover;"></div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">360&deg; Virtual Tour</span>
+                        <h4 class="sc-row-heading">Explore every room remotely</h4>
+                        <p class="sc-row-body">Interactive 360° walkthrough. Let buyers explore at their own pace from anywhere in the world.</p>
+                    </div>
                 </div>
             </div>
             <div class="sc-info">

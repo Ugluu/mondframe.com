@@ -1796,3 +1796,18 @@ img {
 .sc-visuals{gap:16px;}                   /* жигд зай */
 .sc-media,.sc-media-tour{border-radius:12px;}
 .sc-media-video{border-radius:12px;}
+
+/* ============================================
+   22. FEATURE ROW LAYOUT (HomeJab-style)
+   ============================================ */
+.sc-rows{display:flex;flex-direction:column;gap:20px;}
+.sc-row{display:grid;grid-template-columns:5fr 3fr;gap:20px;align-items:center;}
+.sc-row.rev .sc-row-media{order:2;}
+.sc-row.rev .sc-row-info{order:1;}
+.sc-row-media{position:relative;border-radius:12px;overflow:hidden;background:#1c1c1e;aspect-ratio:16/9;}
+.sc-row-media.vert{aspect-ratio:unset;height:260px;}
+.sc-row-media>img,.sc-row-media>video{width:100%;height:100%;object-fit:cover;display:block;}
+.sc-row-info{padding:4px 0;}
+.sc-row-label{display:block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.sc-row-heading{font-size:18px;font-weight:700;color:var(--primary);margin-bottom:10px;line-height:1.25;}
+.sc-row-body{font-size:13px;line-height:1.65;color:var(--muted);}
