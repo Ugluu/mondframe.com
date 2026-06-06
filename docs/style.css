@@ -1788,3 +1788,11 @@ img {
 .sc-media-tour:hover .sc-tour-overlay{background:rgba(10,10,10,.42);}
 .sc-tour-ring{width:48px;height:48px;border-radius:50%;background:rgba(0,224,168,.85);color:#0A0A0A;font-size:26px;display:flex;align-items:center;justify-content:center;}
 .sc-tour-sub{font-size:11px;font-weight:700;letter-spacing:1px;text-shadow:0 1px 3px rgba(0,0,0,.5);}
+
+/* ============================================
+   21. SHOWCASE FIXES (shimmer off, grid cleanup)
+   ============================================ */
+.sc-media::after{display:none;}          /* shimmer хасах */
+.sc-visuals{gap:16px;}                   /* жигд зай */
+.sc-media,.sc-media-tour{border-radius:12px;}
+.sc-media-video{border-radius:12px;}
