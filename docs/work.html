@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work — Mondframe</title>
+    <meta name="description" content="See Mondframe's property photography, drone footage, AI virtual staging, and cinematic video — all delivered within 24 hours across London.">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ---- Work page ---- */
+        .work-hero{background:var(--primary);color:var(--white);padding:72px 0 56px;}
+        .work-hero h1{font-size:44px;font-weight:700;line-height:1.1;margin-bottom:14px;}
+        .work-hero p{font-size:16px;color:rgba(255,255,255,.7);max-width:560px;}
+        .back-link{display:inline-block;margin-bottom:28px;font-size:14px;font-weight:500;color:var(--white);}
+        .back-link:hover{color:var(--accent);}
+
+        .work-body{background:var(--background);padding-bottom:0;}
+
+        .work-section{padding:72px 0;border-bottom:1px solid var(--border);}
+        .work-section:last-child{border-bottom:none;}
+
+        .ws-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+        .ws-title{font-size:34px;font-weight:700;color:var(--primary);margin-bottom:10px;}
+        .ws-sub{font-size:15px;color:var(--muted);max-width:600px;margin-bottom:40px;}
+
+        /* Video */
+        .video-wrap{position:relative;border-radius:12px;overflow:hidden;background:#000;}
+        .video-wrap.landscape{aspect-ratio:16/9;}
+        .video-wrap.portrait{aspect-ratio:9/16;width:240px;flex-shrink:0;}
+        .video-wrap video{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;}
+        .video-hint{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.55);color:#fff;font-size:10px;font-weight:600;letter-spacing:.5px;padding:4px 10px;border-radius:4px;pointer-events:none;text-transform:uppercase;}
+        .video-caption{font-size:13px;color:var(--muted);margin-top:10px;}
+
+        /* Aerial: photo + video side by side */
+        .aerial-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+        .media-label{font-size:13px;font-weight:700;color:var(--primary);margin-bottom:8px;}
+
+        /* Photo grid */
+        .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+        .photo-item{border-radius:10px;overflow:hidden;aspect-ratio:4/3;background:var(--surface);}
+        .photo-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease;}
+        .photo-item:hover img{transform:scale(1.03);}
+        .photo-stat{display:flex;align-items:center;justify-content:center;flex-direction:column;background:var(--primary);border-radius:10px;aspect-ratio:4/3;padding:24px;}
+        .photo-stat-num{font-size:36px;font-weight:700;color:var(--white);}
+        .photo-stat-label{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px;}
+
+        /* Staging grid */
+        .staging-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+        .staging-item .media-label{margin-bottom:8px;}
+        .work-ba{max-width:100%;border-radius:10px;}
+        .work-ba .ba-before-clip .ba-img-before{width:100%;}
+
+        /* Reel layout */
+        .reel-layout{display:flex;gap:40px;align-items:flex-start;}
+        .reel-info{flex:1;padding-top:8px;}
+        .reel-info h3{font-size:22px;font-weight:700;margin-bottom:16px;color:var(--primary);}
+        .reel-info ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;}
+        .reel-info li{font-size:14px;color:var(--muted);}
+        .reel-info li::before{content:"✓ ";color:var(--accent);font-weight:700;}
+
+        /* Floor plans */
+        .floor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+        .floor-item{border-radius:10px;overflow:hidden;border:1px solid var(--border);}
+        .floor-item img{width:100%;display:block;}
+        .floor-caption{padding:12px 16px;font-size:13px;font-weight:700;color:var(--primary);border-top:1px solid var(--border);}
+
+        /* CTA */
+        .work-cta{background:var(--primary);padding:80px 0;text-align:center;}
+        .work-cta h2{color:var(--white);font-size:36px;font-weight:700;margin-bottom:14px;}
+        .work-cta p{color:rgba(255,255,255,.7);font-size:16px;margin-bottom:32px;}
+
+        @media(max-width:768px){
+            .work-hero h1{font-size:30px;}
+            .aerial-grid{grid-template-columns:1fr;}
+            .photo-grid{grid-template-columns:repeat(2,1fr);}
+            .staging-grid{grid-template-columns:1fr;}
+            .floor-grid{grid-template-columns:1fr;}
+            .reel-layout{flex-direction:column;}
+            .video-wrap.portrait{width:100%;max-width:300px;}
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.svg" alt="Mondframe" class="logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#ai-demo">AI-Staging</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="index.html#showcase">Samples</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-accent nav-cta">Get a quote</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<header class="work-hero">
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Mondframe</a>
+        <h1>Our Work</h1>
+        <p>Property photography, drone footage, AI virtual staging, and cinematic video — all delivered within 24 hours.</p>
+    </div>
+</header>
+
+<main class="work-body">
+<div class="container">
+
+    <!-- 1. Aerial & Drone -->
+    <section class="work-section">
+        <span class="ws-eyebrow">Aerial Drone</span>
+        <h2 class="ws-title">From above</h2>
+        <p class="ws-sub">Sub-250g drone — flies legally in residential areas where heavier rigs can't. CAA-licensed pilot on every shoot.</p>
+        <div class="aerial-grid">
+            <div>
+                <p class="media-label">Aerial footage</p>
+                <div class="video-wrap landscape">
+                    <video src="images/areal-photo.mp4" muted loop playsinline preload="metadata"
+                           onclick="this.paused?this.play():this.pause();"></video>
+                    <span class="video-hint">tap to play</span>
+                </div>
+                <p class="video-caption">4K aerial exterior · slow motion included</p>
+            </div>
+            <div>
+                <p class="media-label">Aerial photography</p>
+                <div class="photo-item" style="aspect-ratio:16/9;">
+                    <img src="images/aerial-drone-photo.webp" alt="Aerial drone photo of property">
+                </div>
+                <p class="video-caption">High-res stills from every angle</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Cinematic Video -->
+    <section class="work-section">
+        <span class="ws-eyebrow">Cinematic Video</span>
+        <h2 class="ws-title">Full property film</h2>
+        <p class="ws-sub">Cinematic 4K walkthrough — professionally edited and ready for property portals and social media.</p>
+        <div class="video-wrap landscape">
+            <video src="images/cinematic-video.mp4" muted loop playsinline preload="metadata"
+                   onclick="this.paused?this.play():this.pause();"></video>
+            <span class="video-hint">tap to play</span>
+        </div>
+        <p class="video-caption">Delivered within 24 hours · full edit included</p>
+    </section>
+
+    <!-- 3. IG / TikTok Reel -->
+    <section class="work-section">
+        <span class="ws-eyebrow">IG / TikTok Reel</span>
+        <h2 class="ws-title">Social media ready</h2>
+        <p class="ws-sub">Vertical 9:16 reel — branded, licensed, ready to post on Instagram and TikTok.</p>
+        <div class="reel-layout">
+            <div class="video-wrap portrait">
+                <video src="images/IG-reels.mp4" muted loop playsinline preload="metadata"
+                       onclick="this.paused?this.play():this.pause();"></video>
+                <span class="video-hint">tap to play</span>
+            </div>
+            <div class="reel-info">
+                <h3>Built for Instagram &amp; TikTok</h3>
+                <ul>
+                    <li>9:16 vertical format</li>
+                    <li>60-second edit</li>
+                    <li>Music licensed</li>
+                    <li>Branded for your agency</li>
+                    <li>Ready to post — no editing required</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. HDR Photography -->
+    <section class="work-section">
+        <span class="ws-eyebrow">HDR Photography</span>
+        <h2 class="ws-title">Every room, perfected</h2>
+        <p class="ws-sub">Professional interior and exterior shots, HDR-processed and upload-ready for Rightmove, Zoopla, and your own channels.</p>
+        <div class="photo-grid">
+            <div class="photo-item"><img src="images/dining.webp" alt="Living and dining room"></div>
+            <div class="photo-item"><img src="images/kitchen.webp" alt="Kitchen"></div>
+            <div class="photo-item"><img src="images/bedroom.webp" alt="Bedroom"></div>
+            <div class="photo-item"><img src="images/home-office.webp" alt="Home office"></div>
+            <div class="photo-item"><img src="images/kids-room.webp" alt="Children's room"></div>
+            <div class="photo-stat">
+                <span class="photo-stat-num">Up to 30</span>
+                <span class="photo-stat-label">photos per property</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. AI Virtual Staging -->
+    <section class="work-section">
+        <span class="ws-eyebrow">AI Virtual Staging</span>
+        <h2 class="ws-title">Empty to furnished</h2>
+        <p class="ws-sub">We digitally furnish empty rooms or remove clutter. Drag each slider to compare before and after.</p>
+        <div class="staging-grid">
+            <div class="staging-item">
+                <p class="media-label">Living &amp; dining</p>
+                <div class="ba-slider work-ba" id="wBa1">
+                    <img src="images/dining.webp" alt="After staging" class="ba-img-after">
+                    <div class="ba-before-clip"><img src="images/dining-empty.webp" alt="Before staging" class="ba-img-before"></div>
+                    <div class="ba-after-clip"></div>
+                    <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>‹</span><span>›</span></div></div>
+                </div>
+            </div>
+            <div class="staging-item">
+                <p class="media-label">Kitchen</p>
+                <div class="ba-slider work-ba" id="wBa2">
+                    <img src="images/kitchen.webp" alt="After staging" class="ba-img-after">
+                    <div class="ba-before-clip"><img src="images/kitchen-empty.webp" alt="Before staging" class="ba-img-before"></div>
+                    <div class="ba-after-clip"></div>
+                    <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>‹</span><span>›</span></div></div>
+                </div>
+            </div>
+            <div class="staging-item">
+                <p class="media-label">Bedroom</p>
+                <div class="ba-slider work-ba" id="wBa3">
+                    <img src="images/bedroom.webp" alt="After staging" class="ba-img-after">
+                    <div class="ba-before-clip"><img src="images/bedroom-empty.webp" alt="Before staging" class="ba-img-before"></div>
+                    <div class="ba-after-clip"></div>
+                    <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>‹</span><span>›</span></div></div>
+                </div>
+            </div>
+            <div class="staging-item">
+                <p class="media-label">Home office</p>
+                <div class="ba-slider work-ba" id="wBa4">
+                    <img src="images/home-office.webp" alt="After staging" class="ba-img-after">
+                    <div class="ba-before-clip"><img src="images/home-office-empty.webp" alt="Before staging" class="ba-img-before"></div>
+                    <div class="ba-after-clip"></div>
+                    <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>‹</span><span>›</span></div></div>
+                </div>
+            </div>
+            <div class="staging-item">
+                <p class="media-label">Children's room</p>
+                <div class="ba-slider work-ba" id="wBa5">
+                    <img src="images/kids-room.webp" alt="After staging" class="ba-img-after">
+                    <div class="ba-before-clip"><img src="images/kids-room-empty.webp" alt="Before staging" class="ba-img-before"></div>
+                    <div class="ba-after-clip"></div>
+                    <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>‹</span><span>›</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Floor Plans -->
+    <section class="work-section">
+        <span class="ws-eyebrow">Floor Plans</span>
+        <h2 class="ws-title">Accurate layouts</h2>
+        <p class="ws-sub">2D and 3D floor plans delivered with every booking. Room dimensions included.</p>
+        <div class="floor-grid">
+            <div class="floor-item">
+                <img src="images/floor-plan.webp" alt="2D floor plan">
+                <div class="floor-caption">2D Floor Plan — Essential</div>
+            </div>
+            <div class="floor-item">
+                <img src="images/3D-floor-plan.webp" alt="3D floor plan">
+                <div class="floor-caption">3D Floor Plan — Signature &amp; Premium</div>
+            </div>
+        </div>
+    </section>
+
+</div>
+</main>
+
+<section class="work-cta">
+    <div class="container">
+        <h2>Ready to list faster?</h2>
+        <p>One booking. Everything delivered in 24 hours.</p>
+        <a href="index.html#contact" class="btn btn-accent">Get a free quote →</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <p class="footer-logo">Mondframe</p>
+                <p>Drone, photo, virtual staging.</p>
+                <p>London + 30 mile radius.</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-title">Quick Links</p>
+                <ul>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <p class="footer-title">Contact</p>
+                <ul>
+                    <li><a href="mailto:hello@mondframe.co.uk">hello@mondframe.co.uk</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="https://instagram.com/ugluunice" aria-label="Instagram" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ugluusaikhan" aria-label="LinkedIn" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://youtube.com/@mondframe" aria-label="YouTube" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Mondframe Ltd</p>
+            <p><a href="legal.html#privacy">Privacy</a> · <a href="legal.html#terms">Terms</a> · <a href="legal.html#cookies">Cookies</a> · <a href="legal.html#refund">Refund</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function(){
+    // Mobile nav
+    var t=document.querySelector('.nav-toggle');
+    var n=document.querySelector('.nav-links');
+    if(t){
+        t.addEventListener('click',function(){t.classList.toggle('active');n.classList.toggle('active');});
+        document.querySelectorAll('.nav-links a').forEach(function(l){
+            l.addEventListener('click',function(){t.classList.remove('active');n.classList.remove('active');});
+        });
+    }
+
+    // BA sliders
+    function initBa(el){
+        var clip=el.querySelector('.ba-before-clip');
+        var handle=el.querySelector('.ba-handle');
+        if(!clip||!handle)return;
+        var drag=false;
+        function setPos(x){
+            var r=el.getBoundingClientRect();
+            var p=Math.max(0,Math.min(100,((x-r.left)/r.width)*100));
+            clip.style.width=p+'%';
+            handle.style.left=p+'%';
+            var img=clip.querySelector('.ba-img-before');
+            if(img)img.style.width=r.width+'px';
+            var ac=el.querySelector('.ba-after-clip');
+            if(ac)ac.style.width=(100-p)+'%';
+        }
+        el.addEventListener('mousedown',function(e){drag=true;setPos(e.clientX);});
+        window.addEventListener('mousemove',function(e){if(drag)setPos(e.clientX);});
+        window.addEventListener('mouseup',function(){drag=false;});
+        el.addEventListener('touchstart',function(e){drag=true;setPos(e.touches[0].clientX);},{passive:true});
+        window.addEventListener('touchmove',function(e){if(drag)setPos(e.touches[0].clientX);},{passive:true});
+        window.addEventListener('touchend',function(){drag=false;});
+        window.addEventListener('resize',function(){
+            var r=el.getBoundingClientRect();
+            var img=clip.querySelector('.ba-img-before');
+            if(img)img.style.width=r.width+'px';
+        });
+        requestAnimationFrame(function(){
+            var r=el.getBoundingClientRect();
+            var img=clip.querySelector('.ba-img-before');
+            if(img)img.style.width=r.width+'px';
+        });
+    }
+    document.querySelectorAll('.work-ba').forEach(initBa);
+})();
+</script>
+</body>
+</html>
