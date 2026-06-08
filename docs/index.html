@@ -141,9 +141,9 @@
         <p class="section-sub">Drag the slider to compare before and after virtual staging.</p>
         
 <div class="ba-slider">
-    <img src="images/before.webp" alt="After virtual staging" class="ba-img-after">
+    <img src="images/before.webp" alt="Before virtual staging" class="ba-img-after">
     <div class="ba-before-clip">
-        <img src="images/after.webp" alt="Before virtual staging" class="ba-img-before">
+        <img src="images/after.webp" alt="After virtual staging" class="ba-img-before">
         <span class="ba-label ba-label-before">Before</span>
     </div>
     <div class="ba-after-clip">
@@ -180,37 +180,36 @@
     const baSlider = document.querySelector('.ba-slider');
     const baClip = document.querySelector('.ba-before-clip');
     const baHandle = document.querySelector('.ba-handle');
-    let baDragging = false;
-
-    function setBaPosition(x) {
-        const rect = baSlider.getBoundingClientRect();
-        let pct = ((x - rect.left) / rect.width) * 100;
-        pct = Math.max(0, Math.min(100, pct));
-        baClip.style.width = pct + '%';
-        baHandle.style.left = pct + '%';
-        baClip.querySelector('.ba-img-before').style.width = rect.width + 'px';
-        const afterClip = document.querySelector('.ba-after-clip');
-        if (afterClip) afterClip.style.width = (100 - pct) + '%';
+    if (baSlider && baClip && baHandle) {
+        let baDragging = false;
+        function setBaPosition(x) {
+            const rect = baSlider.getBoundingClientRect();
+            let pct = ((x - rect.left) / rect.width) * 100;
+            pct = Math.max(0, Math.min(100, pct));
+            baClip.style.width = pct + '%';
+            baHandle.style.left = pct + '%';
+            const imgBefore = baClip.querySelector('.ba-img-before');
+            if (imgBefore) imgBefore.style.width = rect.width + 'px';
+            const afterClip = baSlider.querySelector('.ba-after-clip');
+            if (afterClip) afterClip.style.width = (100 - pct) + '%';
+        }
+        baSlider.addEventListener('mousedown', (e) => { baDragging = true; setBaPosition(e.clientX); });
+        window.addEventListener('mousemove', (e) => { if (baDragging) setBaPosition(e.clientX); });
+        window.addEventListener('mouseup', () => { baDragging = false; });
+        baSlider.addEventListener('touchstart', (e) => { baDragging = true; setBaPosition(e.touches[0].clientX); }, {passive: true});
+        window.addEventListener('touchmove', (e) => { if (baDragging) setBaPosition(e.touches[0].clientX); }, {passive: true});
+        window.addEventListener('touchend', () => { baDragging = false; });
+        window.addEventListener('resize', () => {
+            const rect = baSlider.getBoundingClientRect();
+            const imgBefore = baClip.querySelector('.ba-img-before');
+            if (imgBefore) imgBefore.style.width = rect.width + 'px';
+        });
+        window.addEventListener('load', () => {
+            const rect = baSlider.getBoundingClientRect();
+            const imgBefore = baClip.querySelector('.ba-img-before');
+            if (imgBefore) imgBefore.style.width = rect.width + 'px';
+        });
     }
-    
-
-    baSlider.addEventListener('mousedown', (e) => { baDragging = true; setBaPosition(e.clientX); });
-    window.addEventListener('mousemove', (e) => { if (baDragging) setBaPosition(e.clientX); });
-    window.addEventListener('mouseup', () => { baDragging = false; });
-
-    baSlider.addEventListener('touchstart', (e) => { baDragging = true; setBaPosition(e.touches[0].clientX); });
-    window.addEventListener('touchmove', (e) => { if (baDragging) setBaPosition(e.touches[0].clientX); });
-    window.addEventListener('touchend', () => { baDragging = false; });
-
-    window.addEventListener('resize', () => {
-        const rect = baSlider.getBoundingClientRect();
-        baClip.querySelector('.ba-img-before').style.width = rect.width + 'px';
-    });
-    
-    window.addEventListener('load', () => {
-        const rect = baSlider.getBoundingClientRect();
-        baClip.querySelector('.ba-img-before').style.width = rect.width + 'px';
-    });
 </script>
 
 <section class="demo" id="ai-demo">
@@ -238,8 +237,8 @@
                 <!-- ROOM 1 -->
                 <div class="demo-slide r1">
                     <div class="demo-stage">
-                        <img class="demo-img empty" src="images/dining.webp" alt="Empty room before staging">
-                        <img class="demo-img staged" src="images/dining-empty.webp" alt="Room after AI virtual staging">
+                        <img class="demo-img empty" src="images/dining-empty.webp" alt="Empty room before staging">
+                        <img class="demo-img staged" src="images/dining.webp" alt="Room after AI virtual staging">
                         <div class="demo-box b1"></div><div class="demo-box b2"></div><div class="demo-box b3"></div>
                         <div class="demo-scan"><div class="demo-spinner"></div><div class="demo-scan-text">Analysing the space…</div></div>
                         <span class="demo-state">Before</span>
@@ -248,8 +247,8 @@
                 <!-- ROOM 2 -->
                 <div class="demo-slide r2">
                     <div class="demo-stage">
-                        <img class="demo-img empty" src="images/bedroom.webp" alt="Empty room before staging">
-                        <img class="demo-img staged" src="images/bedroom-empty.webp" alt="Room after AI virtual staging">
+                        <img class="demo-img empty" src="images/bedroom-empty.webp" alt="Empty room before staging">
+                        <img class="demo-img staged" src="images/bedroom.webp" alt="Room after AI virtual staging">
                         <div class="demo-box b1"></div><div class="demo-box b2"></div><div class="demo-box b3"></div>
                         <div class="demo-scan"><div class="demo-spinner"></div><div class="demo-scan-text">Analysing the space…</div></div>
                         <span class="demo-state">Before</span>
@@ -258,8 +257,8 @@
                 <!-- ROOM 3 -->
                 <div class="demo-slide r3">
                     <div class="demo-stage">
-                        <img class="demo-img empty" src="images/kitchen.webp" alt="Empty room before staging">
-                        <img class="demo-img staged" src="images/kitchen-empty.webp" alt="Room after AI virtual staging">
+                        <img class="demo-img empty" src="images/kitchen-empty.webp" alt="Empty room before staging">
+                        <img class="demo-img staged" src="images/kitchen.webp" alt="Room after AI virtual staging">
                         <div class="demo-box b1"></div><div class="demo-box b2"></div><div class="demo-box b3"></div>
                         <div class="demo-scan"><div class="demo-spinner"></div><div class="demo-scan-text">Analysing the space…</div></div>
                         <span class="demo-state">Before</span>
@@ -268,8 +267,8 @@
                 <!-- ROOM 4 -->
                 <div class="demo-slide r4">
                     <div class="demo-stage">
-                        <img class="demo-img empty" src="images/kids-room.webp" alt="Empty room before staging">
-                        <img class="demo-img staged" src="images/kids-room-empty.webp" alt="Room after AI virtual staging">
+                        <img class="demo-img empty" src="images/kids-room-empty.webp" alt="Empty room before staging">
+                        <img class="demo-img staged" src="images/kids-room.webp" alt="Room after AI virtual staging">
                         <div class="demo-box b1"></div><div class="demo-box b2"></div><div class="demo-box b3"></div>
                         <div class="demo-scan"><div class="demo-spinner"></div><div class="demo-scan-text">Analysing the space…</div></div>
                         <span class="demo-state">Before</span>
@@ -278,8 +277,8 @@
                 <!-- ROOM 5 -->
                 <div class="demo-slide r5">
                     <div class="demo-stage">
-                        <img class="demo-img empty" src="images/home-office.webp" alt="Empty room before staging">
-                        <img class="demo-img staged" src="images/home-office-empty.webp" alt="Room after AI virtual staging">
+                        <img class="demo-img empty" src="images/home-office-empty.webp" alt="Empty room before staging">
+                        <img class="demo-img staged" src="images/home-office.webp" alt="Room after AI virtual staging">
                         <div class="demo-box b1"></div><div class="demo-box b2"></div><div class="demo-box b3"></div>
                         <div class="demo-scan"><div class="demo-spinner"></div><div class="demo-scan-text">Analysing the space…</div></div>
                         <span class="demo-state">Before</span>
@@ -989,13 +988,13 @@
                     <li><a href="mailto:hello@mondframe.co.uk">hello@mondframe.co.uk</a></li>
                 </ul>
                 <div class="footer-social">
-    <a href="https://instagram.com/ugluunice" aria-label="Instagram" target="_blank">
+    <a href="https://instagram.com/ugluunice" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
     </a>
-    <a href="https://www.linkedin.com/in/ugluusaikhan" aria-label="LinkedIn" target="_blank">
+    <a href="https://www.linkedin.com/in/ugluusaikhan" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </a>
-    <a href="https://youtube.com/@mondframe" aria-label="YouTube" target="_blank">
+    <a href="https://youtube.com/@mondframe" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
     </a>
                 </div>
@@ -1089,7 +1088,7 @@ document.querySelectorAll('#showcase .sc-media > img').forEach(function(img){
 });
 
 /* ===== VIRTUAL TOUR ===== */
-var TOUR_EMBED_URL='https://HomeJab.vr-360-tour.com/e/CQIBgI7rlGE/e';
+const TOUR_EMBED_URL='https://HomeJab.vr-360-tour.com/e/CQIBgI7rlGE/e';
 function openTour(){
     var m=document.getElementById('tourModal');
     var f=document.getElementById('tourFrame');
