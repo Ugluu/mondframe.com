@@ -476,7 +476,7 @@ img {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 3px;
+    width: 1px;
     height: 100%;
     background: var(--white);
     transform: translateX(-50%);
