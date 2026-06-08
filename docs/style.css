@@ -1814,3 +1814,22 @@ img {
 
 /* Reel: яг 9:16 харьцаа */
 .sc-row-media.vert{aspect-ratio:9/16;height:380px;width:auto;max-width:100%;justify-self:center;}
+
+/* ============================================
+   23. LOGO SIZE & FAQ ANIMATION
+   ============================================ */
+
+/* About logo жижигсгэх */
+.about-logo svg{width:56px;height:56px;}
+@media(max-width:768px){.about-logo svg{width:48px;height:48px;}}
+
+/* FAQ smooth open/close */
+.faq-item>p{
+    overflow:hidden;
+    max-height:0;
+    opacity:0;
+    margin-top:0;
+    transition:max-height .38s cubic-bezier(.4,0,.2,1),
+               opacity .28s ease,
+               margin-top .3s ease;
+}
