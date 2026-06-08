@@ -321,8 +321,8 @@
 <script>
 (function(){
     // Mobile nav
-    var t=document.querySelector('.nav-toggle');
-    var n=document.querySelector('.nav-links');
+    const t=document.querySelector('.nav-toggle');
+    const n=document.querySelector('.nav-links');
     if(t){
         t.addEventListener('click',function(){t.classList.toggle('active');n.classList.toggle('active');});
         document.querySelectorAll('.nav-links a').forEach(function(l){
@@ -332,18 +332,18 @@
 
     // BA sliders
     function initBa(el){
-        var clip=el.querySelector('.ba-before-clip');
-        var handle=el.querySelector('.ba-handle');
+        const clip=el.querySelector('.ba-before-clip');
+        const handle=el.querySelector('.ba-handle');
         if(!clip||!handle)return;
-        var drag=false;
+        let drag=false;
         function setPos(x){
-            var r=el.getBoundingClientRect();
-            var p=Math.max(0,Math.min(100,((x-r.left)/r.width)*100));
+            const r=el.getBoundingClientRect();
+            let p=Math.max(0,Math.min(100,((x-r.left)/r.width)*100));
             clip.style.width=p+'%';
             handle.style.left=p+'%';
-            var img=clip.querySelector('.ba-img-before');
+            const img=clip.querySelector('.ba-img-before');
             if(img)img.style.width=r.width+'px';
-            var ac=el.querySelector('.ba-after-clip');
+            const ac=el.querySelector('.ba-after-clip');
             if(ac)ac.style.width=(100-p)+'%';
         }
         el.addEventListener('mousedown',function(e){drag=true;setPos(e.clientX);});

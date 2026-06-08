@@ -1855,3 +1855,51 @@ img {
     .sc-grid{grid-template-columns:1fr;gap:24px;}
     .sc-row-heading{font-size:15px;}
 }
+
+/* ============================================
+   24. 480px BREAKPOINT (жижиг утас)
+   ============================================ */
+@media(max-width:480px){
+    /* Hero */
+    .hero-content h1{font-size:28px;}
+    .hero-sub{font-size:14px;}
+    .hero-buttons{flex-direction:column;gap:10px;}
+    .hero-buttons .btn{width:100%;text-align:center;}
+
+    /* Section titles */
+    .section-title{font-size:24px;}
+    .section-sub{font-size:14px;}
+
+    /* Trust badges */
+    .trust-badges ul{flex-direction:column;gap:8px;align-items:flex-start;}
+
+    /* Services */
+    .service-grid{grid-template-columns:1fr;}
+
+    /* Pricing */
+    .pricing-grid{grid-template-columns:1fr;}
+    .price-card{padding:24px 20px;}
+
+    /* Showcase sc-info */
+    .sc-info h3{font-size:18px;}
+    .sc-info-price{font-size:14px;}
+
+    /* About */
+    .about-grid{grid-template-columns:1fr;}
+    .about-heading{font-size:24px;}
+    .about-stats{grid-template-columns:1fr 1fr;}
+
+    /* Contact */
+    .contact-split{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+
+    /* Footer */
+    .footer-grid{grid-template-columns:1fr;}
+    .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
+
+    /* Comparison cards */
+    .comparison{grid-template-columns:1fr;}
+
+    /* Process steps */
+    .process-grid{grid-template-columns:1fr 1fr;}
+}

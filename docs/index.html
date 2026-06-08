@@ -311,23 +311,23 @@
 
 <script>
 (function(){
-    var track=document.getElementById('track');
-    var slides=Array.prototype.slice.call(track.children);
-    var prevBtn=document.getElementById('prevBtn');
-    var nextBtn=document.getElementById('nextBtn');
-    var stageBtn=document.getElementById('stageBtn');
-    var resetBtn=document.getElementById('resetBtn');
-    var dotsWrap=document.getElementById('dots');
-    var current=2;
-    var messages=['Analysing the space…','Detecting room layout…','Placing furniture…','Adding finishing touches…'];
+    const track=document.getElementById('track');
+    const slides=Array.prototype.slice.call(track.children);
+    const prevBtn=document.getElementById('prevBtn');
+    const nextBtn=document.getElementById('nextBtn');
+    const stageBtn=document.getElementById('stageBtn');
+    const resetBtn=document.getElementById('resetBtn');
+    const dotsWrap=document.getElementById('dots');
+    let current=2;
+    const messages=['Analysing the space…','Detecting room layout…','Placing furniture…','Adding finishing touches…'];
 
     slides.forEach(function(_,i){
-        var d=document.createElement('button');
+        const d=document.createElement('button');
         d.className='demo-dot';
         d.addEventListener('click',function(){goTo(i);});
         dotsWrap.appendChild(d);
     });
-    var dots=Array.prototype.slice.call(dotsWrap.children);
+    const dots=Array.prototype.slice.call(dotsWrap.children);
 
     function update(){
         track.style.transform='translateX('+(-current*100)+'%)';
@@ -336,9 +336,9 @@
         prevBtn.disabled=(current===0);
         nextBtn.disabled=(current===slides.length-1);
         slides.forEach(function(s){
-            var stage=s.querySelector('.demo-stage');
+            const stage=s.querySelector('.demo-stage');
             stage.classList.remove('is-staged','is-processing');
-            var lbl=s.querySelector('.demo-state');if(lbl)lbl.textContent='Before';
+            const lbl=s.querySelector('.demo-state');if(lbl)lbl.textContent='Before';
         });
         stageBtn.disabled=false;
         resetBtn.disabled=true;
@@ -347,15 +347,15 @@
     function goTo(i){current=Math.max(0,Math.min(slides.length-1,i));update();}
 
     function stageRoom(){
-        var stage=slides[current].querySelector('.demo-stage');
-        var lbl=slides[current].querySelector('.demo-state');
-        var scanText=slides[current].querySelector('.demo-scan-text');
+        const stage=slides[current].querySelector('.demo-stage');
+        const lbl=slides[current].querySelector('.demo-state');
+        const scanText=slides[current].querySelector('.demo-scan-text');
         if(stage.classList.contains('is-staged'))return;
         stageBtn.disabled=true;resetBtn.disabled=true;prevBtn.disabled=true;nextBtn.disabled=true;
         stage.classList.add('is-processing');
         if(lbl)lbl.textContent='Processing';
-        var i=0;
-        var t=setInterval(function(){i=(i+1)%messages.length;if(scanText)scanText.textContent=messages[i];},650);
+        let i=0;
+        const t=setInterval(function(){i=(i+1)%messages.length;if(scanText)scanText.textContent=messages[i];},650);
         setTimeout(function(){
             clearInterval(t);
             stage.classList.remove('is-processing');
@@ -368,8 +368,8 @@
     }
 
     function reset(){
-        var stage=slides[current].querySelector('.demo-stage');
-        var lbl=slides[current].querySelector('.demo-state');
+        const stage=slides[current].querySelector('.demo-stage');
+        const lbl=slides[current].querySelector('.demo-state');
         stage.classList.remove('is-staged');
         if(lbl)lbl.textContent='Before';
         stageBtn.disabled=false;resetBtn.disabled=true;
@@ -749,7 +749,7 @@
     // Deliverables showcase tabs
     document.querySelectorAll('.sc-tab').forEach(function (tab) {
         tab.addEventListener('click', function () {
-            var name = tab.getAttribute('data-tab');
+            const name = tab.getAttribute('data-tab');
             document.querySelectorAll('.sc-tab').forEach(function (t) { t.classList.remove('active'); });
             document.querySelectorAll('.sc-panel').forEach(function (p) { p.classList.remove('active'); });
             tab.classList.add('active');
@@ -1009,7 +1009,7 @@
     // Pricing buttons pre-fill the Message field before submit
     document.querySelectorAll('[data-package]').forEach(function (btn) {
         btn.addEventListener('click', function () {
-            var msg = document.getElementById('message');
+            const msg = document.getElementById('message');
             if (msg) {
                 msg.value = btn.getAttribute('data-package') + '\n';
             }
@@ -1020,11 +1020,11 @@
     // setTimeout ensures the browser captures form data before we wipe the fields,
     // and also leaves a clean snapshot in the bfcache so Back shows an empty form.
     (function () {
-        var form = document.querySelector('.contact-form');
+        const form = document.querySelector('.contact-form');
         if (!form) return;
 
         form.addEventListener('submit', function () {
-            var f = this;
+            const f = this;
             setTimeout(function () { f.reset(); }, 0);
         });
 
@@ -1070,8 +1070,8 @@ Cal.ns["book-premium"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"
 <script>
 /* ===== LIGHTBOX ===== */
 function openLightbox(src,alt){
-    var lb=document.getElementById('scLightbox');
-    var im=document.getElementById('scLightboxImg');
+    const lb=document.getElementById('scLightbox');
+    const im=document.getElementById('scLightboxImg');
     im.src=src;im.alt=alt||'';
     lb.classList.add('open');
     document.body.style.overflow='hidden';
@@ -1087,8 +1087,8 @@ document.querySelectorAll('#showcase .sc-media > img').forEach(function(img){
 /* ===== VIRTUAL TOUR ===== */
 const TOUR_EMBED_URL='https://HomeJab.vr-360-tour.com/e/CQIBgI7rlGE/e';
 function openTour(){
-    var m=document.getElementById('tourModal');
-    var f=document.getElementById('tourFrame');
+    const m=document.getElementById('tourModal');
+    const f=document.getElementById('tourFrame');
     if(!f.querySelector('iframe')){
         f.innerHTML='<iframe src="'+TOUR_EMBED_URL+'" allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen" allowfullscreen scrolling="no"></iframe>';
     }
@@ -1107,18 +1107,18 @@ document.addEventListener('keydown',function(e){
 
 /* ===== SHOWCASE BA SLIDERS ===== */
 function initBaSlider(sliderEl){
-    var clip=sliderEl.querySelector('.ba-before-clip');
-    var handle=sliderEl.querySelector('.ba-handle');
+    const clip=sliderEl.querySelector('.ba-before-clip');
+    const handle=sliderEl.querySelector('.ba-handle');
     if(!clip||!handle)return;
-    var dragging=false;
+    let dragging=false;
     function setPos(x){
-        var rect=sliderEl.getBoundingClientRect();
-        var pct=Math.max(0,Math.min(100,((x-rect.left)/rect.width)*100));
+        const rect=sliderEl.getBoundingClientRect();
+        let pct=Math.max(0,Math.min(100,((x-rect.left)/rect.width)*100));
         clip.style.width=pct+'%';
         handle.style.left=pct+'%';
-        var imgB=clip.querySelector('.ba-img-before');
+        const imgB=clip.querySelector('.ba-img-before');
         if(imgB)imgB.style.width=rect.width+'px';
-        var ac=sliderEl.querySelector('.ba-after-clip');
+        const ac=sliderEl.querySelector('.ba-after-clip');
         if(ac)ac.style.width=(100-pct)+'%';
     }
     sliderEl.addEventListener('mousedown',function(e){dragging=true;setPos(e.clientX);});
@@ -1128,18 +1128,18 @@ function initBaSlider(sliderEl){
     window.addEventListener('touchmove',function(e){if(dragging)setPos(e.touches[0].clientX);},{passive:true});
     window.addEventListener('touchend',function(){dragging=false;});
     window.addEventListener('resize',function(){
-        var rect=sliderEl.getBoundingClientRect();
-        var imgB=clip.querySelector('.ba-img-before');
+        const rect=sliderEl.getBoundingClientRect();
+        const imgB=clip.querySelector('.ba-img-before');
         if(imgB)imgB.style.width=rect.width+'px';
     });
     requestAnimationFrame(function(){
-        var rect=sliderEl.getBoundingClientRect();
-        var imgB=clip.querySelector('.ba-img-before');
+        const rect=sliderEl.getBoundingClientRect();
+        const imgB=clip.querySelector('.ba-img-before');
         if(imgB)imgB.style.width=rect.width+'px';
     });
 }
 ['scBa1','scBa2'].forEach(function(id){
-    var el=document.getElementById(id);
+    const el=document.getElementById(id);
     if(el)initBaSlider(el);
 });
 </script>
@@ -1148,8 +1148,8 @@ function initBaSlider(sliderEl){
 /* FAQ smooth animation */
 (function(){
     document.querySelectorAll('.faq-item').forEach(function(det){
-        var summary=det.querySelector('summary');
-        var content=det.querySelector('p');
+        const summary=det.querySelector('summary');
+        const content=det.querySelector('p');
         if(!summary||!content)return;
         summary.addEventListener('click',function(e){
             e.preventDefault();
@@ -1182,10 +1182,10 @@ function initBaSlider(sliderEl){
 
 <script>
 (function(){
-    var el=document.getElementById('aboutLogo');
+    const el=document.getElementById('aboutLogo');
     if(!el)return;
     if(!('IntersectionObserver' in window)){ el.classList.add('play'); return; }
-    var obs=new IntersectionObserver(function(entries){
+    const obs=new IntersectionObserver(function(entries){
         entries.forEach(function(e){
             if(e.isIntersecting){
                 el.classList.add('play');
