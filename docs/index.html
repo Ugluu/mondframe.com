@@ -10,6 +10,55 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mondframe.co.uk/">
+    <meta property="og:title" content="Mondframe — Property Media for London Estate Agents">
+    <meta property="og:description" content="One booking. Photos, drone footage, AI virtual staging and floor plans — delivered in 24 hours.">
+    <meta property="og:image" content="https://www.mondframe.co.uk/images/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mondframe — Property Media for London Estate Agents">
+    <meta name="twitter:description" content="One booking. Photos, drone footage, AI virtual staging and floor plans — delivered in 24 hours.">
+    <meta name="twitter:image" content="https://www.mondframe.co.uk/images/og-cover.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Mondframe",
+      "description": "Property photography, aerial drone videography and AI virtual staging for London estate agents. One booking, 24-hour delivery.",
+      "url": "https://www.mondframe.co.uk",
+      "logo": "https://www.mondframe.co.uk/images/logo.svg",
+      "image": "https://www.mondframe.co.uk/images/og-cover.jpg",
+      "email": "hello@mondframe.co.uk",
+      "telephone": "+447788189957",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 51.5074, "longitude": -0.1278},
+        "geoRadius": "48000"
+      },
+      "priceRange": "£150-£450",
+      "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"},
+      "sameAs": ["https://www.linkedin.com/company/mondframe"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Are you CAA-licensed?","acceptedAnswer":{"@type":"Answer","text":"Yes — Class A2 + GVC certified. All flights are pre-notified and fully insured."}},
+        {"@type":"Question","name":"What is your turnaround time?","acceptedAnswer":{"@type":"Answer","text":"Most edits are delivered within 24 hours of the shoot."}},
+        {"@type":"Question","name":"Do you serve outside London?","acceptedAnswer":{"@type":"Answer","text":"Yes — within 30 miles of central London. Expanding across the South East in 2026."}},
+        {"@type":"Question","name":"Can you handle furnished properties?","acceptedAnswer":{"@type":"Answer","text":"Yes — AI virtual staging makes furnished or occupied homes look picture-perfect."}},
+        {"@type":"Question","name":"What about EPC and floor plans?","acceptedAnswer":{"@type":"Answer","text":"A floor plan is included in all packages. EPC is available as an add-on for £80."}}
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -99,7 +148,7 @@
         <h2 class="section-title">Three services. One team.</h2>
         
         <div class="service-grid">
-            <div class="service-card">
+            <div class="service-card reveal">
                 <img src="images/drone.svg" alt="Drone icon" class="service-icon">
                 <h3>Aerial Videography</h3>
                 <p class="service-desc">Cinematic drone footage that elevates every listing from Mews flats to country estates.</p>
@@ -110,7 +159,7 @@
                 </ul>
             </div>
             
-            <div class="service-card service-card-featured">
+            <div class="service-card service-card-featured reveal">
                 <img src="images/virtual-staging.svg" alt="Virtual staging icon" class="service-icon">
                 <h3>AI Virtual Staging</h3>
                 <p class="service-desc">Furnished property? Tenant in residence? We digitally remove clutter or restage rooms.</p>
@@ -121,7 +170,7 @@
                 </ul>
             </div>
             
-            <div class="service-card">
+            <div class="service-card reveal">
                 <img src="images/photo.svg" alt="Camera icon" class="service-icon">
                 <h3>Property Photography</h3>
                 <p class="service-desc">Professional interior and exterior shots optimised for Rightmove, Zoopla, and beyond.</p>
@@ -395,7 +444,7 @@
         <p class="section-sub">One booking. Three options. All-inclusive.</p>
         
         <div class="pricing-grid">
-            <div class="price-card">
+            <div class="price-card reveal">
                 <p class="price-tier">Essential</p>
                 <p class="price-amount">£150</p>
                 <p class="price-unit">per property</p>
@@ -411,7 +460,7 @@
                 <button class="btn btn-outline" data-cal-link="mondframe/book-essential" data-cal-namespace="book-essential" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Essential</button>
             </div>
             
-            <div class="price-card price-card-featured">
+            <div class="price-card price-card-featured reveal">
                 <span class="price-badge">Most Popular</span>
                 <p class="price-tier">Signature</p>
                 <p class="price-amount">£250</p>
@@ -427,7 +476,7 @@
                 </ul>
                 <button class="btn btn-accent" data-cal-link="mondframe/book-signature" data-cal-namespace="book-signature" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Signature</button>            </div>
             
-            <div class="price-card">
+            <div class="price-card reveal">
                 <p class="price-tier">Premium</p>
                 <p class="price-amount">£450</p>
                 <p class="price-unit">per property</p>
@@ -441,6 +490,22 @@
                     <li>Instagram & TikTok Reels</li>
                 </ul>
                 <button class="btn btn-outline" data-cal-link="mondframe/book-premium" data-cal-namespace="book-premium" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Premium</button>            </div>
+        </div>
+    </div>
+</section>
+
+<section class="founding" id="founding">
+    <div class="container">
+        <div class="founding-box reveal">
+            <p class="eyebrow">Founding clients</p>
+            <h2>Be one of our first five agencies.</h2>
+            <p class="founding-sub">We're launching across London right now. The first five agencies get 30% off their first three bookings, priority scheduling, and a direct line to the founder.</p>
+            <div class="founding-points">
+                <div class="fp"><span class="fp-num">30%</span><span class="fp-label">off first 3 bookings</span></div>
+                <div class="fp"><span class="fp-num">24h</span><span class="fp-label">delivery, guaranteed</span></div>
+                <div class="fp"><span class="fp-num">1:1</span><span class="fp-label">direct founder support</span></div>
+            </div>
+            <a href="#contact" class="btn btn-accent">Claim a founding spot →</a>
         </div>
     </div>
 </section>
@@ -764,28 +829,28 @@
         <p class="section-sub">From booking to listing-ready — in 4 simple steps.</p>
         
         <div class="process-grid">
-            <div class="process-step">
+            <div class="process-step reveal">
                 <div class="process-number">1</div>
                 <h3>Book online</h3>
                 <p>2-minute form</p>
                 <p>Pick package + date</p>
             </div>
             
-            <div class="process-step">
+            <div class="process-step reveal">
                 <div class="process-number">2</div>
                 <h3>We shoot</h3>
                 <p>Same week visit</p>
                 <p>90 minutes on-site</p>
             </div>
             
-            <div class="process-step">
+            <div class="process-step reveal">
                 <div class="process-number">3</div>
                 <h3>We edit</h3>
                 <p>AI staging + edits</p>
                 <p>Overnight</p>
             </div>
             
-            <div class="process-step">
+            <div class="process-step reveal">
                 <div class="process-number">4</div>
                 <h3>You list</h3>
                 <p>Portal-ready files</p>
@@ -816,23 +881,49 @@
 
             <div class="about-stats">
                 <div class="about-stat">
-                    <span class="about-stat-value">24 hrs</span>
+                    <span class="about-stat-value"><span class="stat-num" data-count="24">0</span> hrs</span>
                     <span class="about-stat-label">Delivery guarantee</span>
                 </div>
                 <div class="about-stat">
-                    <span class="about-stat-value">30 mi</span>
+                    <span class="about-stat-value"><span class="stat-num" data-count="30">0</span> mi</span>
                     <span class="about-stat-label">London coverage radius</span>
                 </div>
                 <div class="about-stat">
-                    <span class="about-stat-value">&lt;250g</span>
+                    <span class="about-stat-value">&lt;<span class="stat-num" data-count="250">0</span>g</span>
                     <span class="about-stat-label">Residential friendly drone</span>
                 </div>
                 <div class="about-stat">
-                    <span class="about-stat-value">£5M</span>
+                    <span class="about-stat-value">£<span class="stat-num" data-count="5" data-suffix="M">0</span></span>
                     <span class="about-stat-label">Public liability cover</span>
                 </div>
             </div>
 
+        </div>
+
+        <!-- Coverage map -->
+        <div class="coverage reveal">
+            <div class="coverage-map" aria-hidden="true">
+                <svg viewBox="0 0 400 400">
+                    <circle cx="200" cy="200" r="170" fill="rgba(0,224,168,.06)"
+                            stroke="#00E0A8" stroke-width="1.5" stroke-dasharray="6 6"/>
+                    <circle cx="200" cy="200" r="100" fill="rgba(0,224,168,.08)"
+                            stroke="rgba(0,224,168,.4)" stroke-width="1"/>
+                    <circle cx="200" cy="200" r="7" fill="#00E0A8"/>
+                    <circle cx="200" cy="200" r="14" fill="none" stroke="#00E0A8"
+                            stroke-width="1.5" opacity=".5">
+                        <animate attributeName="r" from="10" to="26" dur="2.2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" from=".6" to="0" dur="2.2s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="200" y="186" text-anchor="middle" fill="currentColor"
+                          font-size="13" font-weight="700">London</text>
+                    <text x="200" y="48" text-anchor="middle" fill="currentColor"
+                          font-size="11" opacity=".55">30 mile radius</text>
+                </svg>
+            </div>
+            <div class="coverage-copy">
+                <h3>Where we shoot</h3>
+                <p>Central London and everywhere within a 30 mile radius — Richmond to Romford, Watford to Croydon. If you're not sure, send us the postcode and we'll confirm within the hour.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -1181,6 +1272,77 @@ function initBaSlider(sliderEl){
 </script>
 
 <script>
+/* ===== SCROLL REVEAL ===== */
+(function(){
+    const els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+        els.forEach(function(e){e.classList.add('in');});return;
+    }
+    const obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+            if(en.isIntersecting){en.target.classList.add('in');obs.unobserve(en.target);}
+        });
+    },{threshold:0.15});
+    els.forEach(function(e){obs.observe(e);});
+})();
+
+/* ===== COUNT UP STATS ===== */
+(function(){
+    const nums=Array.prototype.slice.call(document.querySelectorAll('.stat-num[data-count]'));
+    if(!nums.length)return;
+    const reduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+    function setFinal(el){
+        el.textContent=(el.dataset.prefix||'')+el.dataset.count+(el.dataset.suffix||'');
+        el._counted=true;
+    }
+
+    function countUp(el){
+        if(el._counted)return;
+        el._counted=true;
+        if(reduced){setFinal(el);return;}
+        const target=parseInt(el.dataset.count,10);
+        const dur=1200;
+        let start=null;
+        function step(ts){
+            if(!start)start=ts;
+            const p=Math.min((ts-start)/dur,1);
+            const eased=1-Math.pow(1-p,3);
+            el.textContent=(el.dataset.prefix||'')+Math.round(target*eased)+(el.dataset.suffix||'');
+            if(p<1)requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+
+    /* Observe the PARENT .about-stats container (block element) — more reliable than spans */
+    const statsSection=document.querySelector('.about-stats');
+    if(!statsSection){nums.forEach(setFinal);return;}
+
+    function triggerAll(){nums.forEach(countUp);}
+
+    /* 1. Intersection: fires when the stats block scrolls into view */
+    if('IntersectionObserver' in window){
+        const obs=new IntersectionObserver(function(entries){
+            entries.forEach(function(en){if(en.isIntersecting){triggerAll();obs.disconnect();}});
+        },{threshold:0.2});
+        obs.observe(statsSection);
+    } else {
+        triggerAll();
+    }
+
+    /* 2. Hover / touch fallback — works on desktop cursor AND mobile tap */
+    statsSection.addEventListener('mouseenter',triggerAll);
+    statsSection.addEventListener('touchstart',triggerAll,{passive:true});
+
+    /* 3. Page-load fallback: if section already visible when page loads */
+    window.addEventListener('load',function(){
+        const r=statsSection.getBoundingClientRect();
+        if(r.top<window.innerHeight&&r.bottom>0)triggerAll();
+    });
+})();
+</script>
+
+<script>
 (function(){
     const el=document.getElementById('aboutLogo');
     if(!el)return;
@@ -1194,6 +1356,37 @@ function initBaSlider(sliderEl){
         });
     }, {threshold:0.5});
     obs.observe(el);
+})();
+</script>
+<!-- Mobile sticky CTA bar -->
+<div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta-text">
+        <strong>From £150</strong>
+        <span>24h delivery · London</span>
+    </div>
+    <a href="#pricing" class="btn btn-accent sticky-cta-btn">Book your shoot →</a>
+</div>
+
+<script>
+/* ===== MOBILE STICKY CTA ===== */
+(function(){
+    const bar=document.getElementById('stickyCta');
+    if(!bar)return;
+    const pricing=document.getElementById('pricing');
+    const contact=document.getElementById('contact');
+    function onScroll(){
+        const y=window.scrollY||window.pageYOffset;
+        let hide=false;
+        [pricing,contact].forEach(function(sec){
+            if(!sec)return;
+            const r=sec.getBoundingClientRect();
+            if(r.top<window.innerHeight&&r.bottom>0)hide=true;
+        });
+        if(y>600&&!hide)bar.classList.add('show');
+        else bar.classList.remove('show');
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});
+    onScroll();
 })();
 </script>
 </body>
