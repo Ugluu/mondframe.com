@@ -181,8 +181,6 @@ img {
     min-height: 600px;
     background: var(--primary);
     color: var(--white);
-    display: flex;
-    align-items: center;
     overflow: hidden;
 }
 
@@ -212,11 +210,15 @@ img {
 }
 
 .hero-content {
-    position: relative;
-    max-width: var(--container-max);
+    position: absolute;
+    bottom: 64px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
-    margin: 0 auto;
+    max-width: var(--container-max);
     padding: 0 24px;
+    text-align: center;
+    z-index: 3;
 }
 
 .hero .eyebrow {
