@@ -85,21 +85,61 @@
     </div>
 </nav>
 
-<section class="hero">
-    <video class="hero-video" autoplay loop muted playsinline>
-        <source src="images/hero.mp4" type="video/mp4">
-    </video>
+<section class="hero" id="hero">
+    <!-- 3 drone video backgrounds — swap src files for your actual drone clips -->
+    <div class="hero-vids">
+        <video class="hero-vid active" autoplay loop muted playsinline preload="auto">
+            <source src="images/areal-photo.mp4" type="video/mp4">
+        </video>
+        <video class="hero-vid" loop muted playsinline preload="none">
+            <source src="images/cinematic-video.mp4" type="video/mp4">
+        </video>
+        <video class="hero-vid" loop muted playsinline preload="none">
+            <source src="images/hero.mp4" type="video/mp4">
+        </video>
+    </div>
     <div class="hero-overlay"></div>
+
     <div class="hero-content">
-            <p class="eyebrow">London · CAA licensed · 24 hour delivery</p>
-            <h1>Stop juggling photographers, drone pilots, and staging tools.</h1>
-            <p class="hero-sub">Drone footage, professional photography, and AI virtual staging, all from a single team in London.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-accent">Get a free quote</a>
-                <a href="work.html" class="btn btn-outline-light">See our work →</a>
-            </div>
-        </div>
-    </section>
+        <a href="#contact" class="btn btn-accent">Book a Drone Shoot</a>
+    </div>
+
+    <!-- Slide dots -->
+    <div class="hero-slide-nav" aria-label="Switch drone clip">
+        <button class="hero-dot active" data-vid="0" aria-label="Clip 1"></button>
+        <button class="hero-dot" data-vid="1" aria-label="Clip 2"></button>
+        <button class="hero-dot" data-vid="2" aria-label="Clip 3"></button>
+    </div>
+</section>
+
+<script>
+(function () {
+    var vids = document.querySelectorAll('.hero-vid');
+    var dots = document.querySelectorAll('.hero-dot');
+    var current = 0;
+    var timer;
+
+    function goTo(idx) {
+        vids[current].classList.remove('active');
+        vids[current].pause();
+        dots[current].classList.remove('active');
+        current = (idx + vids.length) % vids.length;
+        vids[current].classList.add('active');
+        vids[current].play();
+        dots[current].classList.add('active');
+        clearInterval(timer);
+        timer = setInterval(function () { goTo(current + 1); }, 7000);
+    }
+
+    dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+            goTo(parseInt(this.dataset.vid, 10));
+        });
+    });
+
+    timer = setInterval(function () { goTo(current + 1); }, 7000);
+})();
+</script>
 
     <section class="trust-badges">
         <div class="container">
