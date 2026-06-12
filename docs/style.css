@@ -1903,3 +1903,84 @@ img {
     /* Process steps */
     .process-grid{grid-template-columns:1fr 1fr;}
 }
+
+/* ============================================
+   25. SCROLL REVEAL
+   ============================================ */
+.reveal{opacity:0;transform:translateY(24px);
+  transition:opacity .55s ease,transform .55s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+}
+
+/* ============================================
+   26. FOUNDING CLIENTS SECTION
+   ============================================ */
+.founding{padding:80px 0;background:var(--surface);}
+.founding-box{max-width:720px;margin:0 auto;text-align:center;
+  background:var(--primary);color:#fff;border-radius:20px;padding:56px 40px;}
+.founding-box .eyebrow{color:var(--accent);font-size:12px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
+.founding-box h2{font-size:32px;font-weight:700;margin-bottom:14px;}
+.founding-sub{color:rgba(255,255,255,.75);font-size:16px;line-height:1.7;
+  max-width:520px;margin:0 auto 32px;}
+.founding-points{display:flex;justify-content:center;gap:40px;margin-bottom:36px;flex-wrap:wrap;}
+.fp{display:flex;flex-direction:column;gap:4px;}
+.fp-num{font-size:30px;font-weight:700;color:var(--accent);}
+.fp-label{font-size:12px;color:rgba(255,255,255,.65);}
+@media(max-width:600px){
+  .founding-box{padding:40px 24px;border-radius:16px;}
+  .founding-box h2{font-size:24px;}
+  .founding-points{gap:24px;}
+}
+
+/* ============================================
+   27. PRICE DEVICE BADGE + PRICING EXTRAS
+   ============================================ */
+.price-device{display:inline-block;background:var(--surface);border-radius:20px;
+  padding:6px 14px;font-size:12px;font-weight:600;margin:8px 0 16px;}
+.price-card-featured .price-device{background:rgba(255,255,255,.12);color:#fff;}
+.price-device-dark{background:rgba(255,255,255,.12)!important;color:#fff!important;}
+.price-subtitle{font-size:13px;color:var(--muted);margin:0 0 16px;line-height:1.5;}
+.price-card-featured .price-subtitle{color:rgba(255,255,255,.65);}
+
+/* Service from-price hint */
+.service-from{font-size:13px;color:var(--muted);margin-top:10px;}
+.service-card-featured .service-from{color:rgba(255,255,255,.65);}
+
+/* À la carte */
+.alacarte{max-width:980px;margin:56px auto 0;text-align:center;}
+.alacarte h3{font-size:22px;font-weight:700;margin-bottom:6px;}
+.alacarte-sub{color:var(--muted);font-size:14px;margin-bottom:28px;}
+.alacarte-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.ac-item{background:#fff;border:1px solid var(--border);border-radius:12px;
+  padding:18px 12px;display:flex;flex-direction:column;gap:6px;align-items:center;}
+.ac-name{font-size:13px;font-weight:600;color:var(--primary);text-align:center;}
+.ac-price{font-size:22px;font-weight:700;color:#00B386;}
+.alacarte-note{margin-top:20px;font-size:13px;color:var(--muted);}
+.alacarte-note a{color:var(--accent);font-weight:600;}
+@media(max-width:900px){
+  .alacarte-grid{grid-template-columns:repeat(2,1fr);}
+  .ac-item:last-child{grid-column:span 2;}
+}
+@media(max-width:480px){
+  .alacarte-grid{grid-template-columns:1fr 1fr;}
+}
+
+/* ============================================
+   28. MOBILE STICKY CTA BAR
+   ============================================ */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:900;
+  display:none;align-items:center;justify-content:space-between;gap:12px;
+  background:rgba(10,10,10,.96);backdrop-filter:blur(8px);
+  padding:12px 16px;
+  padding-bottom:calc(12px + env(safe-area-inset-bottom));
+  transform:translateY(110%);transition:transform .35s ease;}
+.sticky-cta.show{transform:translateY(0);}
+.sticky-cta-text{display:flex;flex-direction:column;line-height:1.3;}
+.sticky-cta-text strong{color:#fff;font-size:15px;}
+.sticky-cta-text span{color:rgba(255,255,255,.6);font-size:11px;}
+.sticky-cta-btn{white-space:nowrap;padding:10px 18px;font-size:14px;}
+@media(max-width:768px){.sticky-cta{display:flex;}}
+@media(prefers-reduced-motion:reduce){.sticky-cta{transition:none;}}

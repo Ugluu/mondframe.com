@@ -41,7 +41,7 @@
         "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 51.5074, "longitude": -0.1278},
         "geoRadius": "48000"
       },
-      "priceRange": "£150-£450",
+      "priceRange": "£150-£750",
       "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"},
       "sameAs": ["https://www.linkedin.com/company/mondframe"]
     }
@@ -55,7 +55,7 @@
         {"@type":"Question","name":"What is your turnaround time?","acceptedAnswer":{"@type":"Answer","text":"Most edits are delivered within 24 hours of the shoot."}},
         {"@type":"Question","name":"Do you serve outside London?","acceptedAnswer":{"@type":"Answer","text":"Yes — within 30 miles of central London. Expanding across the South East in 2026."}},
         {"@type":"Question","name":"Can you handle furnished properties?","acceptedAnswer":{"@type":"Answer","text":"Yes — AI virtual staging makes furnished or occupied homes look picture-perfect."}},
-        {"@type":"Question","name":"What about EPC and floor plans?","acceptedAnswer":{"@type":"Answer","text":"A floor plan is included in all packages. EPC is available as an add-on for £80."}}
+        {"@type":"Question","name":"What about EPC and floor plans?","acceptedAnswer":{"@type":"Answer","text":"A 3D floor plan is included in Signature and Premium packages. EPC is available as an add-on for £80."}}
       ]
     }
     </script>
@@ -68,10 +68,11 @@
             <img src="images/logo.svg" alt="Mondframe" class="logo-img">
         </a>
         <ul class="nav-links">
-            <li><a href="#services">Service</a></li>
-            <li><a href="#ai-demo">AI-Staging</a></li>
-            <li><a href="#pricing">Pricing</a></li>
             <li><a href="#showcase">Samples</a></li>
+            <li><a href="#ai-demo">AI Staging</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="work.html">Work</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#faq">FAQ</a></li>
         </ul>
@@ -111,78 +112,264 @@
         </div>
     </section>
 
-    <section class="pain-point">
-    <div class="container">
-        <h2 class="section-title">The old way vs The Mondframe way</h2>
-        
-        <div class="comparison">
-            <div class="card card-light">
-                <p class="card-eyebrow card-eyebrow-bad">✗ The old way</p>
-                <h3>Coordinating 3 vendors. Wasting hours.</h3>
-                <ul class="card-list">
-                    <li>Hire a photographer. Wait 2 days.</li>
-                    <li>Schedule a drone pilot. Different date.</li>
-                    <li>Find an EPC assessor. Another visit.</li>
-                    <li>Beg the vendor to clear furniture.</li>
-                </ul>
-                <p class="card-result"><em>Result: Late listings, wrong photos, lost viewings.</em></p>
+<section class="showcase" id="showcase">
+<div class="container">
+    <h2 class="section-title">See exactly what you get</h2>
+    <p class="section-sub">Pick a package to preview the photos, footage and reels you'll receive.</p>
+
+    <!-- TABS -->
+    <div class="sc-tabs">
+        <button class="sc-tab active" data-tab="essential">
+            Essential <span class="sc-tab-price">£150</span>
+        </button>
+        <button class="sc-tab" data-tab="signature">
+            <span class="sc-tab-badge">Popular</span>
+            Signature <span class="sc-tab-price">£350</span>
+        </button>
+        <button class="sc-tab" data-tab="premium">
+            Premium <span class="sc-tab-price">£750</span>
+        </button>
+    </div>
+
+    <!-- ESSENTIAL -->
+    <div class="sc-panel active" data-panel="essential">
+        <div class="sc-grid">
+            <div class="sc-rows">
+                <!-- HDR Photography -->
+                <div class="sc-row">
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag">HDR Photo</span>
+                        <img src="images/dining.webp" alt="HDR living room" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">HDR Photography</span>
+                        <h4 class="sc-row-heading">Up to 10 professional photos</h4>
+                        <p class="sc-row-body">HDR-processed interior and exterior shots optimised for Rightmove, Zoopla, and your own channels.</p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="card card-dark">
-                <p class="card-eyebrow card-eyebrow-good">✓ The Mondframe way</p>
-                <h3>One booking. 24 hours later, ready to list.</h3>
-                <ul class="card-list">
-                    <li>Cinematic drone footage</li>
-                    <li>HDR property photography</li>
-                    <li>AI virtual staging</li>
-                    <li>Floor plans + Portal-ready files</li>
+            <div class="sc-info">
+                <p class="sc-info-tier">Essential</p>
+                <h3>The fast listing kit</h3>
+                <p class="sc-info-price"><b>£150</b> per property · 24h delivery</p>
+                <ul class="sc-list">
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 10 HDR property photos</li>
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> AI virtual decluttering</li>
+                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> 3D floor plan</li>
+                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> 360° virtual tour</li>
+                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> Aerial drone photography</li>
+                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> Property tour video</li>
                 </ul>
-                <p class="card-result"><em>Result: Faster sales. Stronger viewings. Happy clients.</em></p>
+                <button class="btn btn-accent" data-cal-link="mondframe/book-essential" data-cal-namespace="book-essential" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Essential →</button>
             </div>
         </div>
     </div>
+
+    <!-- SIGNATURE -->
+    <div class="sc-panel" data-panel="signature">
+        <div class="sc-grid">
+            <div class="sc-rows">
+                <!-- HDR Photos -->
+                <div class="sc-row rev">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">HDR Photography</span>
+                        <h4 class="sc-row-heading">Up to 20 professional photos</h4>
+                        <p class="sc-row-body">Interior and exterior shots, HDR-processed and ready to upload directly to property portals.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag">HDR Photo</span>
+                        <img src="images/home-office.webp" alt="HDR room photo" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+                <!-- AI Staged -->
+                <div class="sc-row">
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag accent">AI Staged</span>
+                        <div class="ba-slider sc-ba-slider" id="scBa1">
+                            <img src="images/dining.webp" alt="After AI staging" class="ba-img-after">
+                            <div class="ba-before-clip">
+                                <img src="images/dining-empty.webp" alt="Before AI staging" class="ba-img-before">
+                            </div>
+                            <div class="ba-after-clip"></div>
+                            <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>&#8249;</span><span>&#8250;</span></div></div>
+                        </div>
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">AI Virtual Staging</span>
+                        <h4 class="sc-row-heading">Empty to furnished — drag to compare</h4>
+                        <p class="sc-row-body">We digitally furnish empty rooms or remove clutter. Drag the slider to see the before and after.</p>
+                    </div>
+                </div>
+                <!-- 3D Floor Plan -->
+                <div class="sc-row rev">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">3D Floor Plan</span>
+                        <h4 class="sc-row-heading">Room-by-room layout</h4>
+                        <p class="sc-row-body">Detailed 3D floor plans help buyers understand the space before stepping inside.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag">3D Floor Plan</span>
+                        <img src="images/3D-floor-plan.webp" alt="3D floor plan" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+                <!-- Virtual Tour -->
+                <div class="sc-row">
+                    <div class="sc-row-media sc-media-tour" onclick="openTour()">
+                        <span class="sc-media-tag">Virtual Tour</span>
+                        <img src="images/home-office.webp" alt="360 virtual tour" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="sc-tour-overlay">
+                            <div class="sc-tour-ring">&#9711;</div>
+                            <span class="sc-tour-sub">CLICK TO EXPLORE 360&deg;</span>
+                        </div>
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">360&deg; Virtual Tour</span>
+                        <h4 class="sc-row-heading">Explore every room remotely</h4>
+                        <p class="sc-row-body">Interactive 360° walkthrough — buyers explore at their own pace from anywhere in the world.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sc-info">
+                <p class="sc-info-tier">Signature · Most popular</p>
+                <h3>The complete package</h3>
+                <p class="sc-info-price"><b>£350</b> per property · 24h delivery</p>
+                <ul class="sc-list">
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 20 HDR property photos</li>
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> AI staging &amp; decluttering</li>
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 3D floor plan</li>
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 360° virtual tour</li>
+                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> Aerial drone photography</li>
+                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> Property tour video</li>
+                </ul>
+                <button class="btn btn-accent" data-cal-link="mondframe/book-signature" data-cal-namespace="book-signature" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Signature →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="sc-panel" data-panel="premium">
+        <div class="sc-grid">
+            <div class="sc-rows">
+                <!-- Cinematic Video -->
+                <div class="sc-row">
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag accent">Cinematic Video</span>
+                        <video src="images/cinematic-video.mp4" muted loop playsinline preload="metadata"
+                               onclick="this.paused?this.play():this.pause();"
+                               style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">Cinematic Video</span>
+                        <h4 class="sc-row-heading">Full property tour film</h4>
+                        <p class="sc-row-body">Cinematic 4K walkthrough of the entire property — professionally edited, ready for portals and social media.</p>
+                    </div>
+                </div>
+                <!-- Aerial Drone -->
+                <div class="sc-row rev">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">Aerial Drone</span>
+                        <h4 class="sc-row-heading">Stunning 4K aerial footage</h4>
+                        <p class="sc-row-body">Sub-250g drone, CAA-licensed. Flies in residential areas where heavier rigs can't. Slow motion included.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag accent">Aerial Drone</span>
+                        <video src="images/areal-photo.mp4" muted loop playsinline preload="metadata"
+                               onclick="this.paused?this.play():this.pause();"
+                               style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
+                    </div>
+                </div>
+                <!-- AI Staged -->
+                <div class="sc-row rev">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">AI Virtual Staging</span>
+                        <h4 class="sc-row-heading">Empty to furnished — drag to compare</h4>
+                        <p class="sc-row-body">Digitally furnished or decluttered. Drag the slider to see the transformation.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag accent">AI Staged</span>
+                        <div class="ba-slider sc-ba-slider" id="scBa2">
+                            <img src="images/kitchen.webp" alt="After AI staging" class="ba-img-after">
+                            <div class="ba-before-clip">
+                                <img src="images/kitchen-empty.webp" alt="Before AI staging" class="ba-img-before">
+                            </div>
+                            <div class="ba-after-clip"></div>
+                            <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>&#8249;</span><span>&#8250;</span></div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- HDR Photos -->
+                <div class="sc-row">
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag">HDR Photo</span>
+                        <img src="images/kids-room.webp" alt="HDR children's room" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">HDR Photography</span>
+                        <h4 class="sc-row-heading">Up to 30 professional photos</h4>
+                        <p class="sc-row-body">Full property coverage — every room, exterior, and detail. HDR-processed and upload-ready.</p>
+                    </div>
+                </div>
+                <!-- 3D Floor Plan -->
+                <div class="sc-row rev">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">3D Floor Plan</span>
+                        <h4 class="sc-row-heading">Detailed room-by-room layout</h4>
+                        <p class="sc-row-body">3D floor plans help buyers understand the full layout before stepping inside.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag">3D Floor Plan</span>
+                        <img src="images/3D-floor-plan.webp" alt="3D floor plan" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+                <!-- Virtual Tour -->
+                <div class="sc-row">
+                    <div class="sc-row-media sc-media-tour" onclick="openTour()">
+                        <span class="sc-media-tag">Virtual Tour</span>
+                        <img src="images/home-office.webp" alt="360 virtual tour" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="sc-tour-overlay">
+                            <div class="sc-tour-ring">&#9711;</div>
+                            <span class="sc-tour-sub">CLICK TO EXPLORE 360&deg;</span>
+                        </div>
+                    </div>
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">360&deg; Virtual Tour</span>
+                        <h4 class="sc-row-heading">Explore every room remotely</h4>
+                        <p class="sc-row-body">Interactive 360° walkthrough. Let buyers explore at their own pace from anywhere in the world.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sc-info">
+                <p class="sc-info-tier">Premium</p>
+                <h3>The full marketing suite</h3>
+                <p class="sc-info-price"><b>£750</b> per property · 24h delivery</p>
+                <ul class="sc-list">
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 30 HDR property photos</li>
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> AI staging &amp; decluttering</li>
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 3D floor plan</li>
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 360° virtual tour</li>
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Aerial drone photography</li>
+                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Cinematic property tour video</li>
+                </ul>
+                <button class="btn btn-accent" data-cal-link="mondframe/book-premium" data-cal-namespace="book-premium" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Premium →</button>
+            </div>
+        </div>
+    </div>
+
+</div>
 </section>
 
-<section class="services" id="services">
-    <div class="container">
-        <h2 class="section-title">Three services. One team.</h2>
-        
-        <div class="service-grid">
-            <div class="service-card reveal">
-                <img src="images/drone.svg" alt="Drone icon" class="service-icon">
-                <h3>Aerial Videography</h3>
-                <p class="service-desc">Cinematic drone footage that elevates every listing from Mews flats to country estates.</p>
-                <ul class="service-features">
-                    <li>✓ 4K + slow motion</li>
-                    <li>✓ Reels for Instagram</li>
-                    <li>✓ Full property tour edit</li>
-                </ul>
-            </div>
-            
-            <div class="service-card service-card-featured reveal">
-                <img src="images/virtual-staging.svg" alt="Virtual staging icon" class="service-icon">
-                <h3>AI Virtual Staging</h3>
-                <p class="service-desc">Furnished property? Tenant in residence? We digitally remove clutter or restage rooms.</p>
-                <ul class="service-features">
-                    <li>✓ Empty → Furnished</li>
-                    <li>✓ Furnished → Decluttered</li>
-                    <li>✓ 24-hour delivery</li>
-                </ul>
-            </div>
-            
-            <div class="service-card reveal">
-                <img src="images/photo.svg" alt="Camera icon" class="service-icon">
-                <h3>Property Photography</h3>
-                <p class="service-desc">Professional interior and exterior shots optimised for Rightmove, Zoopla, and beyond.</p>
-                <ul class="service-features">
-                    <li>✓ HDR processing</li>
-                    <li>✓ 3D view tour edit</li>
-                    <li>✓ Floorplan</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+<script>
+    // Deliverables showcase tabs
+    document.querySelectorAll('.sc-tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            const name = tab.getAttribute('data-tab');
+            document.querySelectorAll('.sc-tab').forEach(function (t) { t.classList.remove('active'); });
+            document.querySelectorAll('.sc-panel').forEach(function (p) { p.classList.remove('active'); });
+            tab.classList.add('active');
+            document.querySelector('[data-panel="' + name + '"]').classList.add('active');
+        });
+    });
+</script>
 
 <section class="work" id="work">
     <div class="container">
@@ -438,390 +625,49 @@
 })();
 </script>
 
-<section class="pricing" id="pricing">
+<section class="services" id="services">
     <div class="container">
-        <h2 class="section-title">Transparent pricing. No surprises.</h2>
-        <p class="section-sub">One booking. Three options. All-inclusive.</p>
+        <h2 class="section-title">Three services. One team.</h2>
         
-        <div class="pricing-grid">
-            <div class="price-card reveal">
-                <p class="price-tier">Essential</p>
-                <p class="price-amount">£150</p>
-                <p class="price-unit">per property</p>
-                <ul class="price-features">
-                    <li>Up to 10 Property Photos</li>
-                    <li>Detailed Floor Plan</li>
-                    <li>Virtual Property Tour</li>
-                    <li class="muted">Aerial Drone Photography</li>
-                    <li class="muted">AI Virtual Decluttering</li>
-                    <li class="muted">Cinematic Property Video</li>
-                    <li class="muted">Instagram & TikTok Reels</li>
+        <div class="service-grid">
+            <div class="service-card reveal">
+                <img src="images/drone.svg" alt="Drone icon" class="service-icon">
+                <h3>Aerial Videography</h3>
+                <p class="service-desc">Cinematic drone footage that elevates every listing from Mews flats to country estates.</p>
+                <ul class="service-features">
+                    <li>✓ 4K + slow motion</li>
+                    <li>✓ CAA-licensed pilot</li>
+                    <li>✓ Add to any package</li>
                 </ul>
-                <button class="btn btn-outline" data-cal-link="mondframe/book-essential" data-cal-namespace="book-essential" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Essential</button>
+                <p class="service-from">Premium package or book individually · from <b>£150</b></p>
             </div>
             
-            <div class="price-card price-card-featured reveal">
-                <span class="price-badge">Most Popular</span>
-                <p class="price-tier">Signature</p>
-                <p class="price-amount">£250</p>
-                <p class="price-unit">per property</p>
-                <ul class="price-features">
-                    <li>Up to 20 Property Photos</li>
-                    <li>Detailed Floor Plan</li>
-                    <li>Virtual Property Tour</li>
-                    <li>Aerial Drone Photography</li>
-                    <li>AI Virtual Decluttering</li>
-                    <li class="muted">Cinematic Property Video</li>
-                    <li class="muted">Instagram & TikTok Reels</li>
+            <div class="service-card service-card-featured reveal">
+                <img src="images/virtual-staging.svg" alt="Virtual staging icon" class="service-icon">
+                <h3>AI Virtual Staging</h3>
+                <p class="service-desc">Furnished property? Tenant in residence? We digitally remove clutter or restage rooms.</p>
+                <ul class="service-features">
+                    <li>✓ Empty → Furnished</li>
+                    <li>✓ Furnished → Decluttered</li>
+                    <li>✓ 24-hour delivery</li>
                 </ul>
-                <button class="btn btn-accent" data-cal-link="mondframe/book-signature" data-cal-namespace="book-signature" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Signature</button>            </div>
+                <p class="service-from">Included in every package</p>
+            </div>
             
-            <div class="price-card reveal">
-                <p class="price-tier">Premium</p>
-                <p class="price-amount">£450</p>
-                <p class="price-unit">per property</p>
-                <ul class="price-features">
-                    <li>Up to 30 Property Photos</li>
-                    <li>Detailed Floor Plan</li>
-                    <li>Virtual Property Tour</li>
-                    <li>Aerial Drone Photography</li>
-                    <li>AI Virtual Decluttering</li>
-                    <li>Cinematic Property Video</li>
-                    <li>Instagram & TikTok Reels</li>
+            <div class="service-card reveal">
+                <img src="images/photo.svg" alt="Camera icon" class="service-icon">
+                <h3>Property Photography</h3>
+                <p class="service-desc">Professional interior and exterior shots optimised for Rightmove, Zoopla, and beyond.</p>
+                <ul class="service-features">
+                    <li>✓ HDR processing</li>
+                    <li>✓ Floor plans from Signature</li>
+                    <li>✓ 24-hour delivery</li>
                 </ul>
-                <button class="btn btn-outline" data-cal-link="mondframe/book-premium" data-cal-namespace="book-premium" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Premium</button>            </div>
+                <p class="service-from">Included in every package · from <b>£150</b></p>
+            </div>
         </div>
     </div>
 </section>
-
-<section class="founding" id="founding">
-    <div class="container">
-        <div class="founding-box reveal">
-            <p class="eyebrow">Founding clients</p>
-            <h2>Be one of our first five agencies.</h2>
-            <p class="founding-sub">We're launching across London right now. The first five agencies get 30% off their first three bookings, priority scheduling, and a direct line to the founder.</p>
-            <div class="founding-points">
-                <div class="fp"><span class="fp-num">30%</span><span class="fp-label">off first 3 bookings</span></div>
-                <div class="fp"><span class="fp-num">24h</span><span class="fp-label">delivery, guaranteed</span></div>
-                <div class="fp"><span class="fp-num">1:1</span><span class="fp-label">direct founder support</span></div>
-            </div>
-            <a href="#contact" class="btn btn-accent">Claim a founding spot →</a>
-        </div>
-    </div>
-</section>
-
-<section class="showcase" id="showcase">
-<div class="container">
-    <h2 class="section-title">See exactly what you get</h2>
-    <p class="section-sub">Pick a package to preview the photos, footage and reels you'll receive.</p>
-
-    <!-- TABS -->
-    <div class="sc-tabs">
-        <button class="sc-tab active" data-tab="essential">
-            Essential <span class="sc-tab-price">£150</span>
-        </button>
-        <button class="sc-tab" data-tab="signature">
-            <span class="sc-tab-badge">Popular</span>
-            Signature <span class="sc-tab-price">£250</span>
-        </button>
-        <button class="sc-tab" data-tab="premium">
-            Premium <span class="sc-tab-price">£450</span>
-        </button>
-    </div>
-
-    <!-- ESSENTIAL -->
-    <div class="sc-panel active" data-panel="essential">
-        <div class="sc-grid">
-            <div class="sc-rows">
-                <!-- HDR Photography -->
-                <div class="sc-row">
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag">HDR Photo</span>
-                        <img src="images/dining.webp" alt="HDR living room" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">HDR Photography</span>
-                        <h4 class="sc-row-heading">Up to 10 professional photos</h4>
-                        <p class="sc-row-body">HDR-processed interior and exterior shots optimised for Rightmove, Zoopla, and your own channels.</p>
-                    </div>
-                </div>
-                <!-- Floor Plan -->
-                <div class="sc-row rev">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">2D Floor Plan</span>
-                        <h4 class="sc-row-heading">Accurate to the room</h4>
-                        <p class="sc-row-body">Detailed 2D floor plans included with every booking. Delivered with all assets within 24 hours.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag">Floor Plan</span>
-                        <img src="images/floor-plan.webp" alt="2D floor plan" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                </div>
-                <!-- Virtual Tour -->
-                <div class="sc-row">
-                    <div class="sc-row-media sc-media-tour" onclick="openTour()">
-                        <span class="sc-media-tag">Virtual Tour</span>
-                        <img src="images/home-office.webp" alt="360 virtual tour" style="width:100%;height:100%;object-fit:cover;">
-                        <div class="sc-tour-overlay">
-                            <div class="sc-tour-ring">&#9711;</div>
-                            <span class="sc-tour-sub">CLICK TO EXPLORE 360&deg;</span>
-                        </div>
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">360&deg; Virtual Tour</span>
-                        <h4 class="sc-row-heading">Let buyers explore from anywhere</h4>
-                        <p class="sc-row-body">Interactive 360° walkthroughs let prospective buyers explore every room before they visit in person.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="sc-info">
-                <p class="sc-info-tier">Essential</p>
-                <h3>The fast listing kit</h3>
-                <p class="sc-info-price"><b>£150</b> per property · 24h delivery</p>
-                <ul class="sc-list">
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 10 HDR property photos</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Detailed 2D floor plan</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 360° virtual property tour</li>
-                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> Aerial drone photography</li>
-                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> AI virtual decluttering</li>
-                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> Cinematic video + reels</li>
-                </ul>
-                <button class="btn btn-accent" data-cal-link="mondframe/book-essential" data-cal-namespace="book-essential" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Essential →</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SIGNATURE -->
-    <div class="sc-panel" data-panel="signature">
-        <div class="sc-grid">
-            <div class="sc-rows">
-                <!-- Aerial Drone -->
-                <div class="sc-row">
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag accent">Aerial Drone</span>
-                        <img src="images/aerial-drone-photo.webp" alt="Aerial drone photo" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">Aerial Drone</span>
-                        <h4 class="sc-row-heading">Cinematic aerial footage</h4>
-                        <p class="sc-row-body">Sub-250g drone — flies legally in residential areas where heavier rigs can't. CAA-licensed pilot on every shoot.</p>
-                    </div>
-                </div>
-                <!-- HDR Photos -->
-                <div class="sc-row rev">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">HDR Photography</span>
-                        <h4 class="sc-row-heading">Up to 20 professional photos</h4>
-                        <p class="sc-row-body">Interior and exterior shots, HDR-processed and ready to upload directly to property portals.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag">HDR Photo</span>
-                        <img src="images/home-office.webp" alt="HDR room photo" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                </div>
-                <!-- AI Staged -->
-                <div class="sc-row">
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag accent">AI Staged</span>
-                        <div class="ba-slider sc-ba-slider" id="scBa1">
-                            <img src="images/dining.webp" alt="After AI staging" class="ba-img-after">
-                            <div class="ba-before-clip">
-                                <img src="images/dining-empty.webp" alt="Before AI staging" class="ba-img-before">
-                            </div>
-                            <div class="ba-after-clip"></div>
-                            <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>&#8249;</span><span>&#8250;</span></div></div>
-                        </div>
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">AI Virtual Staging</span>
-                        <h4 class="sc-row-heading">Empty to furnished — drag to compare</h4>
-                        <p class="sc-row-body">We digitally furnish empty rooms or remove clutter. Drag the slider to see the before and after.</p>
-                    </div>
-                </div>
-                <!-- 3D Floor Plan -->
-                <div class="sc-row rev">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">3D Floor Plan</span>
-                        <h4 class="sc-row-heading">Room-by-room layout</h4>
-                        <p class="sc-row-body">Detailed 3D floor plans help buyers understand the space before stepping inside.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag">3D Floor Plan</span>
-                        <img src="images/3D-floor-plan.webp" alt="3D floor plan" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                </div>
-                <!-- Virtual Tour -->
-                <div class="sc-row">
-                    <div class="sc-row-media sc-media-tour" onclick="openTour()">
-                        <span class="sc-media-tag">Virtual Tour</span>
-                        <img src="images/home-office.webp" alt="360 virtual tour" style="width:100%;height:100%;object-fit:cover;">
-                        <div class="sc-tour-overlay">
-                            <div class="sc-tour-ring">&#9711;</div>
-                            <span class="sc-tour-sub">CLICK TO EXPLORE 360&deg;</span>
-                        </div>
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">360&deg; Virtual Tour</span>
-                        <h4 class="sc-row-heading">Explore every room remotely</h4>
-                        <p class="sc-row-body">Interactive 360° walkthrough — buyers explore at their own pace from anywhere in the world.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="sc-info">
-                <p class="sc-info-tier">Signature · Most popular</p>
-                <h3>The complete package</h3>
-                <p class="sc-info-price"><b>£250</b> per property · 24h delivery</p>
-                <ul class="sc-list">
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 20 HDR property photos</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Detailed 3D floor plan</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 360° virtual property tour</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Aerial drone photography</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> AI virtual decluttering</li>
-                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> Cinematic video + reels</li>
-                </ul>
-                <button class="btn btn-accent" data-cal-link="mondframe/book-signature" data-cal-namespace="book-signature" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Signature →</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- PREMIUM -->
-    <div class="sc-panel" data-panel="premium">
-        <div class="sc-grid">
-            <div class="sc-rows">
-                <!-- Cinematic Video -->
-                <div class="sc-row">
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag accent">Cinematic Video</span>
-                        <video src="images/cinematic-video.mp4" muted loop playsinline preload="metadata"
-                               onclick="this.paused?this.play():this.pause();"
-                               style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">Cinematic Video</span>
-                        <h4 class="sc-row-heading">Full property tour film</h4>
-                        <p class="sc-row-body">Cinematic 4K walkthrough of the entire property — professionally edited, ready for portals and social media.</p>
-                    </div>
-                </div>
-                <!-- Aerial Drone -->
-                <div class="sc-row rev">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">Aerial Drone</span>
-                        <h4 class="sc-row-heading">Stunning 4K aerial footage</h4>
-                        <p class="sc-row-body">Sub-250g drone, CAA-licensed. Flies in residential areas where heavier rigs can't. Slow motion included.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag accent">Aerial Drone</span>
-                        <video src="images/areal-photo.mp4" muted loop playsinline preload="metadata"
-                               onclick="this.paused?this.play():this.pause();"
-                               style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
-                    </div>
-                </div>
-                <!-- IG Reel -->
-                <div class="sc-row">
-                    <div class="sc-row-media vert">
-                        <span class="sc-media-tag accent">IG / TikTok Reel</span>
-                        <video src="images/IG-reels.mp4" muted loop playsinline preload="metadata"
-                               onclick="this.paused?this.play():this.pause();"
-                               style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">IG / TikTok Reel</span>
-                        <h4 class="sc-row-heading">Social media ready</h4>
-                        <p class="sc-row-body">Vertical 9:16 reel — branded, ready to post. Instagram and TikTok optimised.</p>
-                    </div>
-                </div>
-                <!-- AI Staged -->
-                <div class="sc-row rev">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">AI Virtual Staging</span>
-                        <h4 class="sc-row-heading">Empty to furnished — drag to compare</h4>
-                        <p class="sc-row-body">Digitally furnished or decluttered. Drag the slider to see the transformation.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag accent">AI Staged</span>
-                        <div class="ba-slider sc-ba-slider" id="scBa2">
-                            <img src="images/kitchen.webp" alt="After AI staging" class="ba-img-after">
-                            <div class="ba-before-clip">
-                                <img src="images/kitchen-empty.webp" alt="Before AI staging" class="ba-img-before">
-                            </div>
-                            <div class="ba-after-clip"></div>
-                            <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>&#8249;</span><span>&#8250;</span></div></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- HDR Photos -->
-                <div class="sc-row">
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag">HDR Photo</span>
-                        <img src="images/kids-room.webp" alt="HDR children's room" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">HDR Photography</span>
-                        <h4 class="sc-row-heading">Up to 30 professional photos</h4>
-                        <p class="sc-row-body">Full property coverage — every room, exterior, and detail. HDR-processed and upload-ready.</p>
-                    </div>
-                </div>
-                <!-- 3D Floor Plan -->
-                <div class="sc-row rev">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">3D Floor Plan</span>
-                        <h4 class="sc-row-heading">Detailed room-by-room layout</h4>
-                        <p class="sc-row-body">3D floor plans help buyers understand the full layout before stepping inside.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag">3D Floor Plan</span>
-                        <img src="images/3D-floor-plan.webp" alt="3D floor plan" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                </div>
-                <!-- Virtual Tour -->
-                <div class="sc-row">
-                    <div class="sc-row-media sc-media-tour" onclick="openTour()">
-                        <span class="sc-media-tag">Virtual Tour</span>
-                        <img src="images/home-office.webp" alt="360 virtual tour" style="width:100%;height:100%;object-fit:cover;">
-                        <div class="sc-tour-overlay">
-                            <div class="sc-tour-ring">&#9711;</div>
-                            <span class="sc-tour-sub">CLICK TO EXPLORE 360&deg;</span>
-                        </div>
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">360&deg; Virtual Tour</span>
-                        <h4 class="sc-row-heading">Explore every room remotely</h4>
-                        <p class="sc-row-body">Interactive 360° walkthrough. Let buyers explore at their own pace from anywhere in the world.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="sc-info">
-                <p class="sc-info-tier">Premium</p>
-                <h3>The full marketing suite</h3>
-                <p class="sc-info-price"><b>£450</b> per property · 24h delivery</p>
-                <ul class="sc-list">
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 30 HDR property photos</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Detailed 3D floor plan</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 360° virtual property tour</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Aerial drone photography</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> AI virtual decluttering</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Cinematic video + IG/TikTok reels</li>
-                </ul>
-                <button class="btn btn-accent" data-cal-link="mondframe/book-premium" data-cal-namespace="book-premium" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Premium →</button>
-            </div>
-        </div>
-    </div>
-
-</div>
-</section>
-
-<script>
-    // Deliverables showcase tabs
-    document.querySelectorAll('.sc-tab').forEach(function (tab) {
-        tab.addEventListener('click', function () {
-            const name = tab.getAttribute('data-tab');
-            document.querySelectorAll('.sc-tab').forEach(function (t) { t.classList.remove('active'); });
-            document.querySelectorAll('.sc-panel').forEach(function (p) { p.classList.remove('active'); });
-            tab.classList.add('active');
-            document.querySelector('[data-panel="' + name + '"]').classList.add('active');
-        });
-    });
-</script>
 
 <section class="process">
     <div class="container">
@@ -855,6 +701,124 @@
                 <h3>You list</h3>
                 <p>Portal-ready files</p>
                 <p>Rightmove, Zoopla</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pricing" id="pricing">
+    <div class="container">
+        <h2 class="section-title">Transparent pricing. No surprises.</h2>
+        <p class="section-sub">One booking. Three options. All-inclusive.</p>
+        
+        <div class="pricing-grid">
+            <div class="price-card reveal">
+                <p class="price-tier">Essential</p>
+                <p class="price-amount">£150</p>
+                <p class="price-unit">per property</p>
+                <span class="price-device">1 device · Camera</span>
+                <ul class="price-features">
+                    <li>Up to 10 HDR property photos</li>
+                    <li>AI virtual decluttering</li>
+                    <li class="muted">3D floor plan</li>
+                    <li class="muted">360° virtual tour</li>
+                    <li class="muted">Aerial drone photography</li>
+                    <li class="muted">Property tour video</li>
+                </ul>
+                <button class="btn btn-outline" data-cal-link="mondframe/book-essential" data-cal-namespace="book-essential" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Essential</button>
+            </div>
+            
+            <div class="price-card price-card-featured reveal">
+                <span class="price-badge">Most Popular</span>
+                <p class="price-tier">Signature</p>
+                <p class="price-amount">£350</p>
+                <p class="price-unit">per property</p>
+                <span class="price-device price-device-dark">2 devices · Camera + 360 camera</span>
+                <ul class="price-features">
+                    <li>Up to 20 HDR property photos</li>
+                    <li>AI staging &amp; decluttering</li>
+                    <li>3D floor plan</li>
+                    <li>360° virtual tour</li>
+                    <li class="muted">Aerial drone photography</li>
+                    <li class="muted">Property tour video</li>
+                </ul>
+                <button class="btn btn-accent" data-cal-link="mondframe/book-signature" data-cal-namespace="book-signature" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Signature</button>
+            </div>
+            
+            <div class="price-card reveal">
+                <p class="price-tier">Premium</p>
+                <p class="price-amount">£750</p>
+                <p class="price-unit">per property</p>
+                <span class="price-device">3 devices · Camera + 360 camera + Drone</span>
+                <p class="price-subtitle">For larger homes, multi-room properties and private grounds</p>
+                <ul class="price-features">
+                    <li>Up to 30 HDR property photos</li>
+                    <li>AI staging &amp; decluttering</li>
+                    <li>3D floor plan</li>
+                    <li>360° virtual tour</li>
+                    <li>Aerial drone photography</li>
+                    <li>Cinematic property tour video</li>
+                </ul>
+                <button class="btn btn-outline" data-cal-link="mondframe/book-premium" data-cal-namespace="book-premium" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Premium</button>
+            </div>
+        </div>
+
+        <div class="alacarte reveal">
+            <h3>Or book services individually</h3>
+            <p class="alacarte-sub">No package needed — book exactly what you want.</p>
+            <div class="alacarte-grid">
+                <div class="ac-item"><span class="ac-name">Aerial Drone Footage</span><span class="ac-price">£150</span></div>
+                <div class="ac-item"><span class="ac-name">Property Tour Video</span><span class="ac-price">£150</span></div>
+                <div class="ac-item"><span class="ac-name">Agent on Camera Reels</span><span class="ac-price">£200</span></div>
+                <div class="ac-item"><span class="ac-name">Social Reels (no agent)</span><span class="ac-price">£150</span></div>
+                <div class="ac-item"><span class="ac-name">EPC Certificate</span><span class="ac-price">£80</span></div>
+            </div>
+            <p class="alacarte-note">To book an individual service, <a href="#contact">send us a message</a> and we'll confirm within the hour.</p>
+        </div>
+    </div>
+</section>
+
+<section class="founding" id="founding">
+    <div class="container">
+        <div class="founding-box reveal">
+            <p class="eyebrow">Founding clients</p>
+            <h2>Be one of our first five agencies.</h2>
+            <p class="founding-sub">We're launching across London right now. The first five agencies get 30% off their first three bookings, priority scheduling, and a direct line to the founder.</p>
+            <div class="founding-points">
+                <div class="fp"><span class="fp-num">30%</span><span class="fp-label">off first 3 bookings</span></div>
+                <div class="fp"><span class="fp-num">24h</span><span class="fp-label">delivery, guaranteed</span></div>
+                <div class="fp"><span class="fp-num">1:1</span><span class="fp-label">direct founder support</span></div>
+            </div>
+            <a href="#contact" class="btn btn-accent">Claim a founding spot →</a>
+        </div>
+    </div>
+</section>
+
+    <section class="pain-point">
+    <div class="container">
+        <h2 class="section-title">The old way vs The Mondframe way</h2>
+        
+        <div class="comparison">
+            <div class="card card-light">
+                <p class="card-eyebrow card-eyebrow-bad">✗ The old way</p>
+                <h3>Coordinating 3 vendors. Wasting hours.</h3>
+                <ul class="card-list">
+                    <li>Hire a photographer. Wait 2 days.</li>
+                    <li>Schedule a drone pilot. Different date.</li>
+                    <li>Beg the vendor to clear furniture.</li>
+                </ul>
+                <p class="card-result"><em>Result: Late listings, wrong photos, lost viewings.</em></p>
+            </div>
+            
+            <div class="card card-dark">
+                <p class="card-eyebrow card-eyebrow-good">✓ The Mondframe way</p>
+                <h3>One booking. 24 hours later, ready to list.</h3>
+                <ul class="card-list">
+                    <li>One booking.</li>
+                    <li>24 hours later, ready to list.</li>
+                    <li>AI staging included.</li>
+                </ul>
+                <p class="card-result"><em>Result: Faster sales. Stronger viewings. Happy clients.</em></p>
             </div>
         </div>
     </div>
@@ -900,31 +864,6 @@
 
         </div>
 
-        <!-- Coverage map -->
-        <div class="coverage reveal">
-            <div class="coverage-map" aria-hidden="true">
-                <svg viewBox="0 0 400 400">
-                    <circle cx="200" cy="200" r="170" fill="rgba(0,224,168,.06)"
-                            stroke="#00E0A8" stroke-width="1.5" stroke-dasharray="6 6"/>
-                    <circle cx="200" cy="200" r="100" fill="rgba(0,224,168,.08)"
-                            stroke="rgba(0,224,168,.4)" stroke-width="1"/>
-                    <circle cx="200" cy="200" r="7" fill="#00E0A8"/>
-                    <circle cx="200" cy="200" r="14" fill="none" stroke="#00E0A8"
-                            stroke-width="1.5" opacity=".5">
-                        <animate attributeName="r" from="10" to="26" dur="2.2s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" from=".6" to="0" dur="2.2s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="200" y="186" text-anchor="middle" fill="currentColor"
-                          font-size="13" font-weight="700">London</text>
-                    <text x="200" y="48" text-anchor="middle" fill="currentColor"
-                          font-size="11" opacity=".55">30 mile radius</text>
-                </svg>
-            </div>
-            <div class="coverage-copy">
-                <h3>Where we shoot</h3>
-                <p>Central London and everywhere within a 30 mile radius — Richmond to Romford, Watford to Croydon. If you're not sure, send us the postcode and we'll confirm within the hour.</p>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -962,7 +901,7 @@
                 
                 <details class="faq-item">
                     <summary>What about EPC/Floorplan?</summary>
-                    <p>Floorplan included in all packages. EPC add-on £80.</p>
+                    <p>A 3D floor plan is included in Signature and Premium packages. EPC is available as an add-on for £80.</p>
                 </details>
             </div>
             
