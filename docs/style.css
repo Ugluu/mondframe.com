@@ -1365,7 +1365,13 @@ img {
     border-color: var(--primary);
 }
 
-.sc-tab .sc-tab-price {
+
+/* ── Sticky nav anchor offset ──────────────────────────── */
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+.sc-tab .sc-tab-price-REMOVED {
     display: block;
     font-size: 12px;
     font-weight: 500;
@@ -1373,7 +1379,7 @@ img {
     margin-top: 2px;
 }
 
-.sc-tab.active .sc-tab-price {
+.sc-tab.active .sc-tab-price-REMOVED {
     color: var(--accent);
     opacity: 1;
 }
