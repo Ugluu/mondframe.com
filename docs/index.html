@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mondframe — Drone, Photography & Virtual Staging for London Estate Agents</title>
-    <meta name="description" content="Stop juggling photographers, drone pilots, and staging tools. One booking. 24 hours later, ready to list.">
+    <title>Mondframe — Cinematic Property Media, London</title>
+    <meta name="description" content="Premium drone footage, immersive 360° virtual tours and cinematic property films for London estate agents, developers and luxury hosts. Delivered in 24 hours.">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.mondframe.co.uk/">
-    <meta property="og:title" content="Mondframe — Property Media for London Estate Agents">
-    <meta property="og:description" content="One booking. Photos, drone footage, AI virtual staging and floor plans — delivered in 24 hours.">
+    <meta property="og:title" content="Mondframe — Cinematic Property Media, London">
+    <meta property="og:description" content="Premium drone footage, immersive virtual tours and cinematic property films that help your listings stand out.">
     <meta property="og:image" content="https://www.mondframe.co.uk/images/og-cover.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mondframe — Property Media for London Estate Agents">
-    <meta name="twitter:description" content="One booking. Photos, drone footage, AI virtual staging and floor plans — delivered in 24 hours.">
+    <meta name="twitter:title" content="Mondframe — Cinematic Property Media, London">
+    <meta name="twitter:description" content="Premium drone footage, immersive virtual tours and cinematic property films that help your listings stand out.">
     <meta name="twitter:image" content="https://www.mondframe.co.uk/images/og-cover.jpg">
 
     <!-- Structured Data -->
@@ -30,7 +30,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Mondframe",
-      "description": "Property photography, aerial drone videography and AI virtual staging for London estate agents. One booking, 24-hour delivery.",
+      "description": "Aerial drone footage, 360° virtual tours and cinematic property films for London estate agents, developers and luxury hosts. 24-hour delivery.",
       "url": "https://www.mondframe.co.uk",
       "logo": "https://www.mondframe.co.uk/images/logo.svg",
       "image": "https://www.mondframe.co.uk/images/og-cover.jpg",
@@ -41,1440 +41,645 @@
         "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 51.5074, "longitude": -0.1278},
         "geoRadius": "48000"
       },
-      "priceRange": "£150-£750",
       "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"},
-      "sameAs": ["https://www.linkedin.com/company/mondframe"]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"Are you CAA-licensed?","acceptedAnswer":{"@type":"Answer","text":"Yes — Class A2 + GVC certified. All flights are pre-notified and fully insured."}},
-        {"@type":"Question","name":"What is your turnaround time?","acceptedAnswer":{"@type":"Answer","text":"Most edits are delivered within 24 hours of the shoot."}},
-        {"@type":"Question","name":"Do you serve outside London?","acceptedAnswer":{"@type":"Answer","text":"Yes — within 30 miles of central London. Expanding across the South East in 2026."}},
-        {"@type":"Question","name":"Can you handle furnished properties?","acceptedAnswer":{"@type":"Answer","text":"Yes — AI virtual staging makes furnished or occupied homes look picture-perfect."}},
-        {"@type":"Question","name":"What about EPC and floor plans?","acceptedAnswer":{"@type":"Answer","text":"A 3D floor plan is included in Signature and Premium packages. EPC is available as an add-on for £80."}}
-      ]
+      "sameAs": ["https://www.linkedin.com/company/mondframe", "https://instagram.com/ugluunice"]
     }
     </script>
 </head>
 <body>
 
-    <nav class="nav">
-    <div class="nav-container">
-        <a href="#" class="logo">
-            <img src="images/logo.svg" alt="Mondframe" class="logo-img">
-        </a>
-        <ul class="nav-links">
-            <li><a href="#showcase">Samples</a></li>
-            <li><a href="#ai-demo">AI Staging</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#faq">FAQ</a></li>
-        </ul>
-        <a href="#contact" class="btn btn-accent nav-cta">Get a quote</a>
-        <button class="nav-toggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
+<!-- Preloader -->
+<div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader-mark" viewBox="0 0 132.49 132.49" fill="currentColor">
+        <path d="M130.49,2v128.49H2V2h128.49M132.49,0H0v132.49h132.49V0h0Z"/>
+        <polygon points="40.14 27.04 13.98 53.2 13.95 105.48 40.1 79.32 66.23 105.45 66.26 53.17"/>
+        <polygon points="92.42 27.01 66.26 53.17 66.23 105.45 92.39 79.29 118.51 105.41 118.54 53.13"/>
+    </svg>
+    <div class="loader-count">
+        <span class="loader-num">000</span>
+        <div class="loader-bar"><i></i></div>
+    </div>
+</div>
+
+<!-- Nav -->
+<header class="nav">
+    <a href="index.html" class="brand" aria-label="Mondframe home">
+        <svg viewBox="0 0 132.49 132.49" fill="currentColor" aria-hidden="true">
+            <path d="M130.49,2v128.49H2V2h128.49M132.49,0H0v132.49h132.49V0h0Z"/>
+            <polygon points="40.14 27.04 13.98 53.2 13.95 105.48 40.1 79.32 66.23 105.45 66.26 53.17"/>
+            <polygon points="92.42 27.01 66.26 53.17 66.23 105.45 92.39 79.29 118.51 105.41 118.54 53.13"/>
+        </svg>
+        Mondframe
+    </a>
+    <div class="nav-right">
+        <a href="#book" class="nav-book">Book a shoot</a>
+        <button class="menu-btn" data-menu-open aria-label="Open menu">
+            Menu
+            <span class="lines"><i></i><i></i></span>
         </button>
     </div>
-</nav>
+</header>
 
+<!-- Menu overlay -->
+<div class="menu" id="menu" aria-hidden="true">
+    <button class="menu-close" data-menu-close>Close</button>
+    <nav class="menu-links">
+        <a href="index.html"><sup>01</sup> Index</a>
+        <a href="work.html"><sup>02</sup> The Work</a>
+        <a href="#services" data-menu-close><sup>03</sup> Services</a>
+        <a href="#process" data-menu-close><sup>04</sup> Process</a>
+        <a href="#book" data-menu-close><sup>05</sup> Book a Shoot</a>
+    </nav>
+    <div class="menu-foot">
+        <a href="mailto:hello@mondframe.co.uk">hello@mondframe.co.uk</a>
+        <a href="tel:+447788189957">07788 189957</a>
+        <span>London &amp; 30 miles around</span>
+        <a href="https://instagram.com/ugluunice" target="_blank" rel="noopener">Instagram</a>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
 <section class="hero" id="hero">
-    <!-- 3 drone video backgrounds — swap src files for your actual drone clips -->
-    <div class="hero-vids">
-        <video class="hero-vid active" autoplay loop muted playsinline preload="auto">
-            <source src="images/areal-photo.mp4" type="video/mp4">
-        </video>
-        <video class="hero-vid" loop muted playsinline preload="none">
-            <source src="images/cinematic-video.mp4" type="video/mp4">
-        </video>
-        <video class="hero-vid" loop muted playsinline preload="none">
-            <source src="images/hero.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="hero-overlay"></div>
+    <div class="hero-pin">
+        <div class="hero-media">
+            <video class="v-aerial" data-auto muted loop playsinline preload="auto" poster="images/aerial-drone-photo.webp" src="images/hero.mp4"></video>
+            <video class="v-interior" data-auto muted loop playsinline preload="none" src="images/cinematic-video.mp4"></video>
+        </div>
+        <div class="hero-canvas" id="heroCanvas" aria-hidden="true"></div>
 
-    <div class="hero-content">
-        <a href="#contact" class="btn btn-accent">Book a Drone Shoot</a>
-    </div>
+        <div class="hero-content">
+            <span class="label" data-reveal>Property media studio — London</span>
+            <h1 class="display h-xl hero-title" data-split>Property media that <em>sells</em> the experience</h1>
+            <p class="lede hero-sub" data-reveal data-delay="0.15">Premium drone footage, immersive virtual tours and cinematic property films that help your listings stand out.</p>
+            <div class="hero-ctas" data-reveal data-delay="0.3">
+                <a href="#book" class="btn btn-solid" data-magnetic>Book a shoot <span class="arr">→</span></a>
+                <a href="work.html" class="btn" data-magnetic>View work <span class="arr">→</span></a>
+            </div>
+        </div>
 
-    <!-- Slide dots -->
-    <div class="hero-slide-nav" aria-label="Switch drone clip">
-        <button class="hero-dot active" data-vid="0" aria-label="Clip 1"></button>
-        <button class="hero-dot" data-vid="1" aria-label="Clip 2"></button>
-        <button class="hero-dot" data-vid="2" aria-label="Clip 3"></button>
+        <div class="hero-meta">
+            <span>51.5074° N — 0.1278° W</span>
+            <span>4K · 24h delivery</span>
+        </div>
+        <div class="hero-scroll">Scroll</div>
     </div>
 </section>
 
-<script>
-(function () {
-    var vids = document.querySelectorAll('.hero-vid');
-    var dots = document.querySelectorAll('.hero-dot');
-    var current = 0;
-    var timer;
+<!-- ============ TRUST ============ -->
+<section class="stats">
+    <div class="stats-grid">
+        <div class="stat" data-reveal>
+            <span class="stat-num"><span data-count="24">0</span><small>hrs</small></span>
+            <span class="stat-label">Average turnaround</span>
+        </div>
+        <div class="stat" data-reveal data-delay="0.1">
+            <span class="stat-num">4K<small>UHD</small></span>
+            <span class="stat-label">Every frame delivered</span>
+        </div>
+        <div class="stat" data-reveal data-delay="0.2">
+            <span class="stat-num">£<span data-count="5">0</span><small>M</small></span>
+            <span class="stat-label">Liability insured · CAA licensed</span>
+        </div>
+        <div class="stat" data-reveal data-delay="0.3">
+            <span class="stat-num"><span data-count="30">0</span><small>mi</small></span>
+            <span class="stat-label">Coverage around London</span>
+        </div>
+    </div>
+</section>
 
-    function goTo(idx) {
-        vids[current].classList.remove('active');
-        vids[current].pause();
-        dots[current].classList.remove('active');
-        current = (idx + vids.length) % vids.length;
-        vids[current].classList.add('active');
-        vids[current].play();
-        dots[current].classList.add('active');
-        clearInterval(timer);
-        timer = setInterval(function () { goTo(current + 1); }, 7000);
-    }
+<!-- ============ MANIFESTO ============ -->
+<section class="section">
+    <div class="manifesto">
+        <span class="label">The idea</span>
+        <h2 class="display h-lg" data-split>We don't photograph properties. <span class="dim">We film the way they feel —</span> so buyers fall for a home <em>before</em> the first viewing.</h2>
+    </div>
+</section>
 
-    dots.forEach(function (dot) {
-        dot.addEventListener('click', function () {
-            goTo(parseInt(this.dataset.vid, 10));
-        });
-    });
+<!-- ============ SERVICES ============ -->
+<section id="services">
+    <div class="services-head">
+        <div>
+            <span class="label">Services</span>
+            <h2 class="display h-lg" style="margin-top:22px" data-split>Three crafts. One crew.</h2>
+        </div>
+        <p class="lede" data-reveal>Every shoot is planned like a short film — scale from the air, intimacy from the inside, and a story that carries the listing.</p>
+    </div>
 
-    timer = setInterval(function () { goTo(current + 1); }, 7000);
-})();
-</script>
+    <!-- 01 Aerial -->
+    <article class="service">
+        <span class="service-topline"></span>
+        <div class="service-media">
+            <video data-auto muted loop playsinline preload="none" poster="images/aerial-drone-photo.webp" data-src="images/areal-photo.mp4"></video>
+        </div>
+        <svg class="flight-path" viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M -40 620 C 280 380, 520 700, 760 420 S 1240 180, 1500 300"/>
+            <circle cx="760" cy="420" r="4"/>
+            <circle cx="1240" cy="252" r="4"/>
+        </svg>
+        <div class="service-inner">
+            <span class="service-idx">(01)</span>
+            <h3 class="display h-md service-title">Aerial drone footage</h3>
+            <div class="service-side">
+                <p>Scale, location, context, prestige — a property seen from above stops the scroll. Sub-250g rigs fly legally where heavier drones can't.</p>
+                <ul class="service-tags">
+                    <li>4K UHD</li><li>Slow motion</li><li>CAA licensed</li><li>Residential safe</li>
+                </ul>
+                <a class="service-link" href="work.html">See it in the work <span class="arr">→</span></a>
+            </div>
+        </div>
+    </article>
 
-    <section class="trust-badges">
-        <div class="container">
+    <!-- 02 Virtual tours -->
+    <article class="service">
+        <span class="service-topline"></span>
+        <div class="service-media">
+            <img src="images/home-office.webp" alt="Interior of a staged home office" loading="lazy">
+        </div>
+        <div class="tour-spots" aria-hidden="true">
+            <button class="tour-spot" style="top:38%;left:22%" data-modal="tourModal" tabindex="-1"><i></i><span>Living room</span></button>
+            <button class="tour-spot" style="top:56%;left:58%" data-modal="tourModal" tabindex="-1"><i></i><span>Kitchen</span></button>
+            <button class="tour-spot" style="top:30%;left:74%" data-modal="tourModal" tabindex="-1"><i></i><span>Bedroom</span></button>
+        </div>
+        <div class="service-inner">
+            <span class="service-idx">(02)</span>
+            <h3 class="display h-md service-title">360° virtual tours</h3>
+            <div class="service-side">
+                <p>Buyers walk every room from anywhere in the world, at their own pace. More engagement, better-qualified viewings, fewer wasted appointments.</p>
+                <ul class="service-tags">
+                    <li>Room-to-room</li><li>Mobile &amp; VR ready</li><li>Embed anywhere</li>
+                </ul>
+                <button class="service-link" data-modal="tourModal" data-cursor="Explore">Step inside a live tour <span class="arr">→</span></button>
+            </div>
+        </div>
+    </article>
+
+    <!-- 03 Cinematic film -->
+    <article class="service">
+        <span class="service-topline"></span>
+        <div class="service-media">
+            <video data-auto muted loop playsinline preload="none" poster="images/dining.webp" data-src="images/cinematic-video.mp4"></video>
+        </div>
+        <div class="service-inner">
+            <span class="service-idx">(03)</span>
+            <h3 class="display h-md service-title">Cinematic property films</h3>
+            <div class="service-side">
+                <p>Movement, atmosphere, lifestyle, emotion. A trailer for the home — edited for portals, social and the buyers who haven't seen it yet.</p>
+                <ul class="service-tags">
+                    <li>Story-led edit</li><li>Licensed music</li><li>Portal &amp; social cuts</li>
+                </ul>
+                <button class="service-link" data-modal="filmModal" data-cursor="Play">Watch a film <span class="arr">→</span></button>
+            </div>
+        </div>
+    </article>
+</section>
+
+<!-- ============ FEATURED WORK ============ -->
+<section class="section" id="work">
+    <div style="margin-bottom:clamp(50px,6vw,90px)">
+        <span class="label">Featured work</span>
+        <h2 class="display h-lg" style="margin-top:22px" data-split>Recent <em>frames</em></h2>
+    </div>
+
+    <div class="work-feed">
+        <article class="case wide">
+            <a class="case-media" href="work.html" data-cursor="View" data-parallax>
+                <video data-auto muted loop playsinline preload="none" poster="images/aerial-drone-photo.webp" data-src="images/hero.mp4"></video>
+                <span class="case-frame"></span>
+            </a>
+            <div class="case-info">
+                <span class="case-num">Case — 01</span>
+                <h3 class="display h-md">Private residence, North&nbsp;London</h3>
+                <ul class="case-meta"><li>Drone</li><li>Film</li><li>360 tour</li></ul>
+                <p>A full production day: aerial establishing shots, a cinematic walkthrough and an interactive tour — delivered as one listing kit in 24 hours.</p>
+                <a href="work.html" class="btn" data-magnetic>Read the case <span class="arr">→</span></a>
+            </div>
+        </article>
+
+        <article class="case">
+            <a class="case-media" href="work.html" data-cursor="View" data-parallax>
+                <video data-auto muted loop playsinline preload="none" poster="images/bedroom.webp" data-src="images/IG-reels.mp4"></video>
+                <span class="case-frame"></span>
+            </a>
+            <div class="case-info">
+                <span class="case-num">Case — 02</span>
+                <h3 class="display h-md">The social cut</h3>
+                <ul class="case-meta"><li>9:16 reel</li><li>Licensed music</li><li>Agency branded</li></ul>
+                <p>Vertical edits built for Instagram and TikTok — the listing arrives where buyers actually spend their evenings.</p>
+                <a href="work.html" class="btn" data-magnetic>Read the case <span class="arr">→</span></a>
+            </div>
+        </article>
+
+        <article class="case">
+            <a class="case-media" href="work.html" data-cursor="View" data-parallax>
+                <img src="images/kitchen.webp" alt="Staged kitchen interior" loading="lazy">
+                <span class="case-frame"></span>
+            </a>
+            <div class="case-info">
+                <span class="case-num">Case — 03</span>
+                <h3 class="display h-md">Interiors, perfected</h3>
+                <ul class="case-meta"><li>Stills</li><li>Virtual staging</li><li>Floor plans</li></ul>
+                <p>Every room lit, composed and staged — the quiet craft behind a listing that photographs like a magazine spread.</p>
+                <a href="work.html" class="btn" data-magnetic>Read the case <span class="arr">→</span></a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section light process" id="process">
+    <div class="process-head">
+        <span class="label">Process</span>
+        <h2 class="display h-lg" style="margin-top:22px" data-split>From booking to <em>listing</em></h2>
+    </div>
+    <div class="process-track">
+        <div class="step">
+            <span class="step-idx">01</span>
+            <div><h3>Book</h3><p>Two minutes online. Pick the services, the property, the date.</p></div>
+        </div>
+        <div class="step">
+            <span class="step-idx">02</span>
+            <div><h3>Shoot</h3><p>One visit, one crew — drone, 360 rig and cinema camera on the same day.</p></div>
+        </div>
+        <div class="step">
+            <span class="step-idx">03</span>
+            <div><h3>Edit</h3><p>Colour, sound and story overnight. Every frame graded by hand.</p></div>
+        </div>
+        <div class="step">
+            <span class="step-idx">04</span>
+            <div><h3>Deliver</h3><p>Portal-ready files within 24 hours. Upload straight to Rightmove and Zoopla.</p></div>
+        </div>
+    </div>
+    <div class="process-line"><i></i></div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section voices" id="voices">
+    <span class="label">What clients say</span>
+    <div class="voice">
+        <div class="voice-img" data-parallax><img src="images/dining.webp" alt="Staged dining room" loading="lazy"></div>
+        <div>
+            <blockquote data-split>The aerial footage changed how the whole street perceived the listing. Enquiries doubled in the first week.</blockquote>
+            <cite>Independent estate agent — North London</cite>
+        </div>
+    </div>
+    <div class="voice">
+        <div class="voice-img" data-parallax><img src="images/bedroom.webp" alt="Staged bedroom" loading="lazy"></div>
+        <div>
+            <blockquote data-split>One booking, one visit, everything delivered the next morning. It simply removed a week from our launch.</blockquote>
+            <cite>Property developer — South East</cite>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta">
+    <div class="cta-bg" data-parallax>
+        <video data-auto muted loop playsinline preload="none" poster="images/aerial-drone-photo.webp" data-src="images/hero.mp4"></video>
+    </div>
+    <div class="cta-inner">
+        <span class="label" style="justify-content:center">Next</span>
+        <h2 class="display h-xl" data-split>Ready to elevate your next <em>listing?</em></h2>
+        <a href="#book" class="btn btn-solid" data-magnetic>Book your shoot <span class="arr">→</span></a>
+    </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="section light book" id="book">
+    <div class="book-grid">
+        <div class="book-side">
+            <span class="label">Booking</span>
+            <h2 class="display h-lg">Plan the shoot</h2>
+            <p class="lede">Three short steps — we confirm by email within the hour, usually faster.</p>
+            <ul class="book-notes">
+                <li>Productions from £150 · 24-hour delivery</li>
+                <li>CAA-licensed pilot &amp; £5M liability cover on every flight</li>
+                <li>London and 30 miles around</li>
+            </ul>
+            <p class="book-alt">Prefer to talk first? Call <a href="tel:+447788189957">07788 189957</a> or email <a href="mailto:hello@mondframe.co.uk">hello@mondframe.co.uk</a>.</p>
+        </div>
+
+        <div>
+            <div class="bform-progress" aria-hidden="true">
+                <span class="on">01 — Services<i></i></span>
+                <span>02 — Property<i></i></span>
+                <span>03 — Details<i></i></span>
+            </div>
+
+            <form class="bform" id="bform" action="https://formspree.io/f/mpqnpaww" method="POST">
+                <input type="hidden" name="_subject" value="New shoot request — mondframe.co.uk">
+
+                <!-- Step 1 -->
+                <fieldset class="bstep on">
+                    <legend class="bstep-q">What should we capture?</legend>
+                    <div class="pick-grid">
+                        <div class="pick">
+                            <input type="checkbox" id="s1" name="services[]" value="Aerial drone footage">
+                            <label for="s1"><b>Aerial drone footage</b><small>Scale &amp; location, 4K</small></label>
+                        </div>
+                        <div class="pick">
+                            <input type="checkbox" id="s2" name="services[]" value="360 virtual tour">
+                            <label for="s2"><b>360° virtual tour</b><small>Remote walkthrough</small></label>
+                        </div>
+                        <div class="pick">
+                            <input type="checkbox" id="s3" name="services[]" value="Cinematic property film">
+                            <label for="s3"><b>Cinematic film</b><small>Story-led walkthrough</small></label>
+                        </div>
+                        <div class="pick">
+                            <input type="checkbox" id="s4" name="services[]" value="Full production (all three)">
+                            <label for="s4"><b>Full production</b><small>All three, one visit</small></label>
+                        </div>
+                    </div>
+                    <div class="bform-nav">
+                        <span></span>
+                        <button type="button" class="btn btn-solid" data-next>Continue <span class="arr">→</span></button>
+                    </div>
+                </fieldset>
+
+                <!-- Step 2 -->
+                <fieldset class="bstep">
+                    <legend class="bstep-q">Tell us about the property</legend>
+                    <div class="pick-grid" style="margin-bottom:34px">
+                        <div class="pick">
+                            <input type="radio" id="p1" name="property_type" value="Apartment">
+                            <label for="p1"><b>Apartment</b><small>Flat or penthouse</small></label>
+                        </div>
+                        <div class="pick">
+                            <input type="radio" id="p2" name="property_type" value="House">
+                            <label for="p2"><b>House</b><small>Terraced to detached</small></label>
+                        </div>
+                        <div class="pick">
+                            <input type="radio" id="p3" name="property_type" value="New development">
+                            <label for="p3"><b>New development</b><small>Show home or scheme</small></label>
+                        </div>
+                        <div class="pick">
+                            <input type="radio" id="p4" name="property_type" value="Short let / Airbnb">
+                            <label for="p4"><b>Short let</b><small>Airbnb &amp; luxury rental</small></label>
+                        </div>
+                    </div>
+                    <div class="frow">
+                        <div class="field">
+                            <label for="bloc">Property location</label>
+                            <input type="text" id="bloc" name="location" placeholder="Postcode or area" autocomplete="off">
+                        </div>
+                        <div class="field">
+                            <label for="bdate">Preferred date</label>
+                            <input type="date" id="bdate" name="preferred_date">
+                        </div>
+                    </div>
+                    <div class="bform-nav">
+                        <button type="button" class="bback" data-back>← Back</button>
+                        <button type="button" class="btn btn-solid" data-next>Continue <span class="arr">→</span></button>
+                    </div>
+                </fieldset>
+
+                <!-- Step 3 -->
+                <fieldset class="bstep">
+                    <legend class="bstep-q">Where do we send the confirmation?</legend>
+                    <div class="frow">
+                        <div class="field">
+                            <label for="bname">Name</label>
+                            <input type="text" id="bname" name="name" placeholder="Jane Smith" autocomplete="name">
+                        </div>
+                        <div class="field">
+                            <label for="bmail">Email</label>
+                            <input type="email" id="bmail" name="email" placeholder="jane@agency.co.uk" autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="frow">
+                        <div class="field">
+                            <label for="bphone">Phone <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+                            <input type="tel" id="bphone" name="phone" placeholder="07700 900000" autocomplete="tel">
+                        </div>
+                        <div class="field">
+                            <label for="bnotes">Anything else?</label>
+                            <input type="text" id="bnotes" name="notes" placeholder="Access notes, deadlines…">
+                        </div>
+                    </div>
+                    <div class="bform-nav">
+                        <button type="button" class="bback" data-back>← Back</button>
+                        <button type="submit" class="btn btn-solid" data-magnetic><span>Send booking request</span> <span class="arr">→</span></button>
+                    </div>
+                </fieldset>
+
+                <p class="err" role="alert"></p>
+            </form>
+
+            <div class="bform-done">
+                <h3>Request received.</h3>
+                <p>We'll come back within the hour with availability and a confirmed quote. Check your inbox — and your spam folder, just in case.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+    <div class="footer-cta">
+        <span class="label">Start a conversation</span><br><br>
+        <a class="footer-mail" href="mailto:hello@mondframe.co.uk">hello@mondframe.co.uk</a>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>Drone — <em>Film</em> — 360 — London — </span><span>Drone — <em>Film</em> — 360 — London — </span>
+            <span>Drone — <em>Film</em> — 360 — London — </span><span>Drone — <em>Film</em> — 360 — London — </span>
+        </div>
+    </div>
+
+    <div class="footer-grid">
+        <div class="footer-col">
+            <p class="ft">Mondframe</p>
+            <p>Cinematic property media for estate agents, developers and luxury hosts. London &amp; 30 miles around.</p>
+        </div>
+        <div class="footer-col">
+            <p class="ft">Site</p>
             <ul>
-                <li>✓ CAA licensed drone operator</li>
-                <li>✓ 24 hour turnaround guaranteed</li>
-                <li>✓ DBS checked team</li>
-                <li>✓ £5M public liability insurance</li>
+                <li><a href="work.html">The Work</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#book">Book a Shoot</a></li>
             </ul>
         </div>
-    </section>
-
-<section class="reveal showcase" id="showcase">
-<div class="container">
-    <h2 class="section-title">See exactly what you get</h2>
-    <p class="section-sub">Pick a package to preview the photos, footage and reels you'll receive.</p>
-
-    <!-- TABS -->
-    <div class="sc-tabs">
-        <button class="sc-tab active" data-tab="essential">Essential</button>
-        <button class="sc-tab" data-tab="signature"><span class="sc-tab-badge">Popular</span> Signature</button>
-        <button class="sc-tab" data-tab="premium">Premium</button>
-    </div>
-
-    <!-- ESSENTIAL -->
-    <div class="sc-panel active" data-panel="essential">
-        <div class="sc-grid">
-            <div class="sc-rows-wrap">
-            <div class="sc-rows">
-                <!-- HDR Photography -->
-                <div class="sc-row">
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag">HDR Photo</span>
-                        <img src="images/dining.webp" alt="HDR living room" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">HDR Photography</span>
-                        <h4 class="sc-row-heading">Up to 10 professional photos</h4>
-                        <p class="sc-row-body">HDR processed interior and exterior shots optimised for Rightmove, Zoopla, and your own channels.</p>
-                    </div>
-                </div>
-                <!-- AI Virtual Decluttering -->
-                <div class="sc-row">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">AI Virtual Decluttering</span>
-                        <h4 class="sc-row-heading">Before and after, drag to compare</h4>
-                        <p class="sc-row-body">We digitally declutter furnished rooms or stage empty ones. Drag the slider to see the result.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag accent">AI Staged</span>
-                        <div class="ba-slider sc-ba-slider" id="scBa0">
-                            <img src="images/before.webp" alt="After AI decluttering" class="ba-img-after">
-                            <div class="ba-before-clip">
-                                <img src="images/after.webp" alt="Before AI decluttering" class="ba-img-before">
-                            </div>
-                            <div class="ba-after-clip"></div>
-                            <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>&#8249;</span><span>&#8250;</span></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="sc-slide-nav">
-                <button class="sc-slide-btn sc-prev" aria-label="Previous">&#8249;</button>
-                <div class="sc-dots"></div>
-                <button class="sc-slide-btn sc-next" aria-label="Next">&#8250;</button>
-            </div>
-            </div>
-            <div class="sc-info">
-                <p class="sc-info-tier">Essential</p>
-                <h3>The fast listing kit</h3>
-                <p class="sc-info-price"><b>£150</b> per property · 24h delivery</p>
-                <ul class="sc-list">
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 10 HDR property photos</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> AI virtual decluttering</li>
-                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> 3D floor plan</li>
-                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> 360° virtual tour</li>
-                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> Aerial drone photography</li>
-                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> Property tour video</li>
-                </ul>
-                <button class="btn btn-accent" data-cal-link="mondframe/book-essential" data-cal-namespace="book-essential" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Essential →</button>
-            </div>
+        <div class="footer-col">
+            <p class="ft">Social</p>
+            <ul>
+                <li><a href="https://instagram.com/ugluunice" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/company/mondframe" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <p class="ft">Contact</p>
+            <ul>
+                <li><a href="mailto:hello@mondframe.co.uk">hello@mondframe.co.uk</a></li>
+                <li><a href="tel:+447788189957">07788 189957</a></li>
+            </ul>
         </div>
     </div>
 
-    <!-- SIGNATURE -->
-    <div class="sc-panel" data-panel="signature">
-        <div class="sc-grid">
-            <div class="sc-rows-wrap">
-            <div class="sc-rows">
-                <!-- HDR Photos -->
-                <div class="sc-row rev">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">HDR Photography</span>
-                        <h4 class="sc-row-heading">Up to 20 professional photos</h4>
-                        <p class="sc-row-body">Interior and exterior shots, HDR processed and ready to upload directly to property portals.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag">HDR Photo</span>
-                        <img src="images/home-office.webp" alt="HDR room photo" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                </div>
-                <!-- AI Staged -->
-                <div class="sc-row">
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag accent">AI Staged</span>
-                        <div class="ba-slider sc-ba-slider" id="scBa1">
-                            <img src="images/dining.webp" alt="After AI staging" class="ba-img-after">
-                            <div class="ba-before-clip">
-                                <img src="images/dining-empty.webp" alt="Before AI staging" class="ba-img-before">
-                            </div>
-                            <div class="ba-after-clip"></div>
-                            <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>&#8249;</span><span>&#8250;</span></div></div>
-                        </div>
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">AI Virtual Staging</span>
-                        <h4 class="sc-row-heading">Empty to furnished, drag to compare</h4>
-                        <p class="sc-row-body">We digitally furnish empty rooms or remove clutter. Drag the slider to see the before and after.</p>
-                    </div>
-                </div>
-                <!-- 3D Floor Plan -->
-                <div class="sc-row rev">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">3D Floor Plan</span>
-                        <h4 class="sc-row-heading">Room-by-room layout</h4>
-                        <p class="sc-row-body">Detailed 3D floor plans help buyers understand the space before stepping inside.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag">3D Floor Plan</span>
-                        <img src="images/3D-floor-plan.webp" alt="3D floor plan" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                </div>
-                <!-- Virtual Tour -->
-                <div class="sc-row">
-                    <div class="sc-row-media sc-media-tour" onclick="openTour()">
-                        <span class="sc-media-tag">Virtual Tour</span>
-                        <img src="images/home-office.webp" alt="360 virtual tour" style="width:100%;height:100%;object-fit:cover;">
-                        <div class="sc-tour-overlay">
-                            <div class="sc-tour-ring">&#9711;</div>
-                            <span class="sc-tour-sub">CLICK TO EXPLORE 360&deg;</span>
-                        </div>
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">360&deg; Virtual Tour</span>
-                        <h4 class="sc-row-heading">Explore every room remotely</h4>
-                        <p class="sc-row-body">Interactive 360° walkthrough, buyers explore at their own pace from anywhere in the world.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="sc-slide-nav">
-                <button class="sc-slide-btn sc-prev" aria-label="Previous">&#8249;</button>
-                <div class="sc-dots"></div>
-                <button class="sc-slide-btn sc-next" aria-label="Next">&#8250;</button>
-            </div>
-            </div>
-            <div class="sc-info">
-                <p class="sc-info-tier">Signature · Most popular</p>
-                <h3>The complete package</h3>
-                <p class="sc-info-price"><b>£350</b> per property · 24h delivery</p>
-                <ul class="sc-list">
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 20 HDR property photos</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> AI staging &amp; decluttering</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 3D floor plan</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 360° virtual tour</li>
-                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> Aerial drone photography</li>
-                    <li class="off"><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#737373" fill-opacity="0.12"/><path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#737373" stroke-width="1.6" stroke-linecap="round"/></svg> Property tour video</li>
-                </ul>
-                <button class="btn btn-accent" data-cal-link="mondframe/book-signature" data-cal-namespace="book-signature" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Signature →</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- PREMIUM -->
-    <div class="sc-panel" data-panel="premium">
-        <div class="sc-grid">
-            <div class="sc-rows-wrap">
-            <div class="sc-rows">
-                <!-- Cinematic Video -->
-                <div class="sc-row">
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag accent">Cinematic Video</span>
-                        <video src="images/cinematic-video.mp4" autoplay muted loop playsinline preload="metadata"
-                               onclick="this.paused?this.play():this.pause();"
-                               style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">Cinematic Video</span>
-                        <h4 class="sc-row-heading">Full property tour film</h4>
-                        <p class="sc-row-body">Cinematic 4K walkthrough of the entire property, professionally edited, ready for portals and social media.</p>
-                    </div>
-                </div>
-                <!-- Aerial Drone -->
-                <div class="sc-row rev">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">Aerial Drone</span>
-                        <h4 class="sc-row-heading">Stunning 4K aerial footage</h4>
-                        <p class="sc-row-body">Sub-250g drone, CAA licensed. Flies in residential areas where heavier rigs can't. Slow motion included.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag accent">Aerial Drone</span>
-                        <video src="images/areal-photo.mp4" autoplay muted loop playsinline preload="metadata"
-                               onclick="this.paused?this.play():this.pause();"
-                               style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
-                    </div>
-                </div>
-                <!-- AI Staged -->
-                <div class="sc-row rev">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">AI Virtual Staging</span>
-                        <h4 class="sc-row-heading">Empty to furnished, drag to compare</h4>
-                        <p class="sc-row-body">Digitally furnished or decluttered. Drag the slider to see the transformation.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag accent">AI Staged</span>
-                        <div class="ba-slider sc-ba-slider" id="scBa2">
-                            <img src="images/kitchen.webp" alt="After AI staging" class="ba-img-after">
-                            <div class="ba-before-clip">
-                                <img src="images/kitchen-empty.webp" alt="Before AI staging" class="ba-img-before">
-                            </div>
-                            <div class="ba-after-clip"></div>
-                            <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>&#8249;</span><span>&#8250;</span></div></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- HDR Photos -->
-                <div class="sc-row">
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag">HDR Photo</span>
-                        <img src="images/kids-room.webp" alt="HDR children's room" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">HDR Photography</span>
-                        <h4 class="sc-row-heading">Up to 30 professional photos</h4>
-                        <p class="sc-row-body">Full property coverage, every room, exterior, and detail. HDR processed and upload ready.</p>
-                    </div>
-                </div>
-                <!-- 3D Floor Plan -->
-                <div class="sc-row rev">
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">3D Floor Plan</span>
-                        <h4 class="sc-row-heading">Detailed room-by-room layout</h4>
-                        <p class="sc-row-body">3D floor plans help buyers understand the full layout before stepping inside.</p>
-                    </div>
-                    <div class="sc-row-media">
-                        <span class="sc-media-tag">3D Floor Plan</span>
-                        <img src="images/3D-floor-plan.webp" alt="3D floor plan" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                </div>
-                <!-- Virtual Tour -->
-                <div class="sc-row">
-                    <div class="sc-row-media sc-media-tour" onclick="openTour()">
-                        <span class="sc-media-tag">Virtual Tour</span>
-                        <img src="images/home-office.webp" alt="360 virtual tour" style="width:100%;height:100%;object-fit:cover;">
-                        <div class="sc-tour-overlay">
-                            <div class="sc-tour-ring">&#9711;</div>
-                            <span class="sc-tour-sub">CLICK TO EXPLORE 360&deg;</span>
-                        </div>
-                    </div>
-                    <div class="sc-row-info">
-                        <span class="sc-row-label">360&deg; Virtual Tour</span>
-                        <h4 class="sc-row-heading">Explore every room remotely</h4>
-                        <p class="sc-row-body">Interactive 360° walkthrough. Let buyers explore at their own pace from anywhere in the world.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="sc-slide-nav">
-                <button class="sc-slide-btn sc-prev" aria-label="Previous">&#8249;</button>
-                <div class="sc-dots"></div>
-                <button class="sc-slide-btn sc-next" aria-label="Next">&#8250;</button>
-            </div>
-            </div>
-            <div class="sc-info">
-                <p class="sc-info-tier">Premium</p>
-                <h3>The full marketing suite</h3>
-                <p class="sc-info-price"><b>£750</b> per property · 24h delivery</p>
-                <ul class="sc-list">
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 30 HDR property photos</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> AI staging &amp; decluttering</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 3D floor plan</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 360° virtual tour</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Aerial drone photography</li>
-                    <li><svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/><path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Cinematic property tour video</li>
-                </ul>
-                <button class="btn btn-accent" data-cal-link="mondframe/book-premium" data-cal-namespace="book-premium" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Premium →</button>
-            </div>
-        </div>
-    </div>
-
-</div>
-</section>
-
-<script>
-(function () {
-    // ── Carousel ────────────────────────────────────────────
-    function initCarousel(panel) {
-        if (panel.dataset.carouselReady) return;
-        panel.dataset.carouselReady = '1';
-        var rows  = Array.from(panel.querySelectorAll('.sc-rows > .sc-row'));
-        var dotsC = panel.querySelector('.sc-dots');
-        if (!rows.length || !dotsC) return;
-        var cur = 0;
-
-        rows.forEach(function (_, i) {
-            var d = document.createElement('button');
-            d.className = 'sc-dot' + (i === 0 ? ' active' : '');
-            d.setAttribute('aria-label', 'Slide ' + (i + 1));
-            d.addEventListener('click', function () { go(i); });
-            dotsC.appendChild(d);
-        });
-
-        function go(n) {
-            rows[cur].classList.remove('sc-active');
-            dotsC.children[cur].classList.remove('active');
-            cur = (n + rows.length) % rows.length;
-            rows[cur].classList.add('sc-active');
-            dotsC.children[cur].classList.add('active');
-            var ba = rows[cur].querySelector('.sc-ba-slider');
-            if (ba && typeof initBaSlider === 'function') initBaSlider(ba);
-        }
-
-        rows[0].classList.add('sc-active');
-        panel.querySelector('.sc-prev').addEventListener('click', function () { go(cur - 1); });
-        panel.querySelector('.sc-next').addEventListener('click', function () { go(cur + 1); });
-    }
-
-    var activePanel = document.querySelector('.sc-panel.active');
-    if (activePanel) initCarousel(activePanel);
-
-    document.querySelectorAll('.sc-tab').forEach(function (tab) {
-        tab.addEventListener('click', function () {
-            var name = tab.getAttribute('data-tab');
-            document.querySelectorAll('.sc-tab').forEach(function (t) { t.classList.remove('active'); });
-            document.querySelectorAll('.sc-panel').forEach(function (p) { p.classList.remove('active'); });
-            tab.classList.add('active');
-            var panel = document.querySelector('[data-panel="' + name + '"]');
-            panel.classList.add('active');
-            initCarousel(panel);
-        });
-    });
-
-    // ── Lightbox ── bind after full DOM via delegation ────────
-    // #sc-lb lives at end of <body> so we defer to DOMContentLoaded
-    document.addEventListener('DOMContentLoaded', function () {
-        var lb    = document.getElementById('sc-lb');
-        var lbImg = lb ? lb.querySelector('img') : null;
-        if (!lb || !lbImg) return;
-
-        // Delegate: catch clicks on any .sc-row-media img (including ones added by JS)
-        document.addEventListener('click', function (e) {
-            var img = e.target.closest('.sc-row-media img, .sc-row-media .ba-img-after');
-            if (!img) return;
-            var src = img.src || img.currentSrc;
-            if (!src) return;
-            e.stopPropagation();
-            lbImg.src = src;
-            lbImg.alt = img.alt || '';
-            lb.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        });
-
-        // Cursor hint on all media images
-        document.querySelectorAll('.sc-row-media img').forEach(function (img) {
-            img.style.cursor = 'zoom-in';
-        });
-
-        lb.addEventListener('click', function () { closeLb(); });
-        lb.querySelector('.sc-lb-close').addEventListener('click', function (e) {
-            e.stopPropagation(); closeLb();
-        });
-        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
-        function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
-    });
-})();
-</script>
-
-<section class="reveal work" id="work">
-    <div class="container">
-        <h2 class="section-title">Before and after</h2>
-        <p class="section-sub">AI decluttering for occupied rooms. Drag the slider to see the transformation.</p>
-        
-<div class="ba-slider">
-    <img src="images/before.webp" alt="Before virtual staging" class="ba-img-after">
-    <div class="ba-before-clip">
-        <img src="images/after.webp" alt="After virtual staging" class="ba-img-before">
-        <span class="ba-label ba-label-before">Before</span>
-    </div>
-    <div class="ba-after-clip">
-        <span class="ba-label ba-label-after">After</span>
-    </div>
-    <div class="ba-handle">
-        <div class="ba-line"></div>
-        <div class="ba-circle">
-            <span>‹</span>
-            <span>›</span>
-        </div>
-    </div>
-</div>
-</section>
-
-<script>
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-
-    // Close menu when link clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
-    });
-
-    const baSlider = document.querySelector('#work .ba-slider');
-    const baClip = baSlider ? baSlider.querySelector('.ba-before-clip') : null;
-    const baHandle = baSlider ? baSlider.querySelector('.ba-handle') : null;
-    if (baSlider && baClip && baHandle) {
-        let baDragging = false;
-        function setBaPosition(x) {
-            const rect = baSlider.getBoundingClientRect();
-            let pct = ((x - rect.left) / rect.width) * 100;
-            pct = Math.max(0, Math.min(100, pct));
-            baClip.style.width = pct + '%';
-            baHandle.style.left = pct + '%';
-            const imgBefore = baClip.querySelector('.ba-img-before');
-            if (imgBefore) imgBefore.style.width = rect.width + 'px';
-            const afterClip = baSlider.querySelector('.ba-after-clip');
-            if (afterClip) afterClip.style.width = (100 - pct) + '%';
-        }
-        baSlider.addEventListener('mousedown', (e) => { baDragging = true; setBaPosition(e.clientX); });
-        window.addEventListener('mousemove', (e) => { if (baDragging) setBaPosition(e.clientX); });
-        window.addEventListener('mouseup', () => { baDragging = false; });
-        baSlider.addEventListener('touchstart', (e) => { baDragging = true; setBaPosition(e.touches[0].clientX); }, {passive: true});
-        window.addEventListener('touchmove', (e) => { if (baDragging) setBaPosition(e.touches[0].clientX); }, {passive: true});
-        window.addEventListener('touchend', () => { baDragging = false; });
-        window.addEventListener('resize', () => {
-            const rect = baSlider.getBoundingClientRect();
-            const imgBefore = baClip.querySelector('.ba-img-before');
-            if (imgBefore) imgBefore.style.width = rect.width + 'px';
-        });
-        window.addEventListener('load', () => {
-            const rect = baSlider.getBoundingClientRect();
-            const imgBefore = baClip.querySelector('.ba-img-before');
-            if (imgBefore) imgBefore.style.width = rect.width + 'px';
-        });
-    }
-</script>
-
-<section class="reveal demo" id="ai-demo">
-<div class="container">
-
-    <div class="demo-eyebrow">
-        <span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21.4 8 14 2 9.4h7.6z"/></svg>
-            AI Virtual Staging
-        </span>
-    </div>
-    <h2 class="section-title">Try it yourself</h2>
-    <p class="section-sub">Browse our sample rooms, then stage the one in focus. Press the button and watch the AI work.</p>
-
-    <div class="demo-carousel">
-        <button class="demo-arrow prev" id="prevBtn" aria-label="Previous room">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <button class="demo-arrow next" id="nextBtn" aria-label="Next room">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-
-        <div class="demo-track-wrap">
-            <div class="demo-track" id="track">
-                <!-- ROOM 1 -->
-                <div class="demo-slide r1">
-                    <div class="demo-stage">
-                        <img class="demo-img empty" src="images/dining-empty.webp" alt="Empty room before staging">
-                        <img class="demo-img staged" src="images/dining.webp" alt="Room after AI virtual staging">
-                        <div class="demo-box b1"></div><div class="demo-box b2"></div><div class="demo-box b3"></div>
-                        <div class="demo-scan"><div class="demo-spinner"></div><div class="demo-scan-text">Analysing the space…</div></div>
-                        <span class="demo-state">Before</span>
-                    </div>
-                </div>
-                <!-- ROOM 2 -->
-                <div class="demo-slide r2">
-                    <div class="demo-stage">
-                        <img class="demo-img empty" src="images/bedroom-empty.webp" alt="Empty room before staging">
-                        <img class="demo-img staged" src="images/bedroom.webp" alt="Room after AI virtual staging">
-                        <div class="demo-box b1"></div><div class="demo-box b2"></div><div class="demo-box b3"></div>
-                        <div class="demo-scan"><div class="demo-spinner"></div><div class="demo-scan-text">Analysing the space…</div></div>
-                        <span class="demo-state">Before</span>
-                    </div>
-                </div>
-                <!-- ROOM 3 -->
-                <div class="demo-slide r3">
-                    <div class="demo-stage">
-                        <img class="demo-img empty" src="images/kitchen-empty.webp" alt="Empty room before staging">
-                        <img class="demo-img staged" src="images/kitchen.webp" alt="Room after AI virtual staging">
-                        <div class="demo-box b1"></div><div class="demo-box b2"></div><div class="demo-box b3"></div>
-                        <div class="demo-scan"><div class="demo-spinner"></div><div class="demo-scan-text">Analysing the space…</div></div>
-                        <span class="demo-state">Before</span>
-                    </div>
-                </div>
-                <!-- ROOM 4 -->
-                <div class="demo-slide r4">
-                    <div class="demo-stage">
-                        <img class="demo-img empty" src="images/kids-room-empty.webp" alt="Empty room before staging">
-                        <img class="demo-img staged" src="images/kids-room.webp" alt="Room after AI virtual staging">
-                        <div class="demo-box b1"></div><div class="demo-box b2"></div><div class="demo-box b3"></div>
-                        <div class="demo-scan"><div class="demo-spinner"></div><div class="demo-scan-text">Analysing the space…</div></div>
-                        <span class="demo-state">Before</span>
-                    </div>
-                </div>
-                <!-- ROOM 5 -->
-                <div class="demo-slide r5">
-                    <div class="demo-stage">
-                        <img class="demo-img empty" src="images/home-office-empty.webp" alt="Empty room before staging">
-                        <img class="demo-img staged" src="images/home-office.webp" alt="Room after AI virtual staging">
-                        <div class="demo-box b1"></div><div class="demo-box b2"></div><div class="demo-box b3"></div>
-                        <div class="demo-scan"><div class="demo-spinner"></div><div class="demo-scan-text">Analysing the space…</div></div>
-                        <span class="demo-state">Before</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="demo-dots" id="dots"></div>
-
-    <div class="demo-controls">
-        <button class="btn btn-accent" id="stageBtn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21.4 8 14 2 9.4h7.6z"/></svg>
-            Stage this room with AI
-        </button>
-        <button class="btn btn-reset" id="resetBtn" disabled>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
-            Reset
-        </button>
-    </div>
-
-    <p class="demo-note">This is an interactive demo. On a real booking we stage your actual photos, delivered within 24 hours.</p>
-
-    <div class="demo-cta">
-        <p>Like what you see?</p>
-        <a href="#pricing" class="btn btn-dark nav-cta">Book your shoot →</a>
-    </div>
-</section>
-
-<script>
-(function(){
-    const track=document.getElementById('track');
-    const slides=Array.prototype.slice.call(track.children);
-    const prevBtn=document.getElementById('prevBtn');
-    const nextBtn=document.getElementById('nextBtn');
-    const stageBtn=document.getElementById('stageBtn');
-    const resetBtn=document.getElementById('resetBtn');
-    const dotsWrap=document.getElementById('dots');
-    let current=2;
-    const messages=['Analysing the space…','Detecting room layout…','Placing furniture…','Adding finishing touches…'];
-
-    slides.forEach(function(_,i){
-        const d=document.createElement('button');
-        d.className='demo-dot';
-        d.addEventListener('click',function(){goTo(i);});
-        dotsWrap.appendChild(d);
-    });
-    const dots=Array.prototype.slice.call(dotsWrap.children);
-
-    function update(){
-        track.style.transform='translateX('+(-current*100)+'%)';
-        slides.forEach(function(s,i){s.classList.toggle('is-active',i===current);});
-        dots.forEach(function(d,i){d.classList.toggle('is-active',i===current);});
-        prevBtn.disabled=(current===0);
-        nextBtn.disabled=(current===slides.length-1);
-        slides.forEach(function(s){
-            const stage=s.querySelector('.demo-stage');
-            stage.classList.remove('is-staged','is-processing');
-            const lbl=s.querySelector('.demo-state');if(lbl)lbl.textContent='Before';
-        });
-        stageBtn.disabled=false;
-        resetBtn.disabled=true;
-    }
-
-    function goTo(i){current=Math.max(0,Math.min(slides.length-1,i));update();}
-
-    function stageRoom(){
-        const stage=slides[current].querySelector('.demo-stage');
-        const lbl=slides[current].querySelector('.demo-state');
-        const scanText=slides[current].querySelector('.demo-scan-text');
-        if(stage.classList.contains('is-staged'))return;
-        stageBtn.disabled=true;resetBtn.disabled=true;prevBtn.disabled=true;nextBtn.disabled=true;
-        stage.classList.add('is-processing');
-        if(lbl)lbl.textContent='Processing';
-        let i=0;
-        const t=setInterval(function(){i=(i+1)%messages.length;if(scanText)scanText.textContent=messages[i];},650);
-        setTimeout(function(){
-            clearInterval(t);
-            stage.classList.remove('is-processing');
-            stage.classList.add('is-staged');
-            if(lbl)lbl.textContent='After';
-            if(scanText)scanText.textContent=messages[0];
-            resetBtn.disabled=false;
-            prevBtn.disabled=(current===0);nextBtn.disabled=(current===slides.length-1);
-        },2600);
-    }
-
-    function reset(){
-        const stage=slides[current].querySelector('.demo-stage');
-        const lbl=slides[current].querySelector('.demo-state');
-        stage.classList.remove('is-staged');
-        if(lbl)lbl.textContent='Before';
-        stageBtn.disabled=false;resetBtn.disabled=true;
-    }
-
-    prevBtn.addEventListener('click',function(){goTo(current-1);});
-    nextBtn.addEventListener('click',function(){goTo(current+1);});
-    stageBtn.addEventListener('click',stageRoom);
-    resetBtn.addEventListener('click',reset);
-    window.addEventListener('resize',update);
-
-    track.style.transition='none';
-    requestAnimationFrame(function(){
-        update();
-        requestAnimationFrame(function(){track.style.transition='';});
-    });
-})();
-</script>
-
-<section class="reveal services" id="services">
-    <div class="container">
-        <h2 class="section-title">Three services. One team.</h2>
-        
-        <div class="service-grid">
-            <div class="service-card reveal">
-                <img src="images/drone.svg" alt="Drone icon" class="service-icon">
-                <h3>Aerial Videography</h3>
-                <p class="service-desc">Cinematic drone footage that elevates every listing from Mews flats to country estates.</p>
-                <ul class="service-features">
-                    <li>✓ 4K + slow motion</li>
-                    <li>✓ CAA licensed pilot</li>
-                    <li>✓ Add to any package</li>
-                </ul>
-                <p class="service-from">Premium package or book individually · from <b>£150</b></p>
-            </div>
-            
-            <div class="service-card service-card-featured reveal">
-                <img src="images/virtual-staging.svg" alt="Virtual staging icon" class="service-icon">
-                <h3>AI Virtual Staging</h3>
-                <p class="service-desc">Furnished property? Tenant in residence? We digitally remove clutter or restage rooms.</p>
-                <ul class="service-features">
-                    <li>✓ Empty → Furnished</li>
-                    <li>✓ Furnished → Decluttered</li>
-                    <li>✓ 24 hour delivery</li>
-                </ul>
-                <p class="service-from">Included in every package</p>
-            </div>
-            
-            <div class="service-card reveal">
-                <img src="images/photo.svg" alt="Camera icon" class="service-icon">
-                <h3>Property Photography</h3>
-                <p class="service-desc">Professional interior and exterior shots optimised for Rightmove, Zoopla, and beyond.</p>
-                <ul class="service-features">
-                    <li>✓ HDR processing</li>
-                    <li>✓ Floor plans from Signature</li>
-                    <li>✓ 24 hour delivery</li>
-                </ul>
-                <p class="service-from">Included in every package · from <b>£150</b></p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="reveal process">
-    <div class="container">
-        <h2 class="section-title">How it works</h2>
-        <p class="section-sub">From booking to listing ready, in 4 simple steps.</p>
-        
-        <div class="process-grid">
-            <div class="process-step reveal">
-                <div class="process-number">1</div>
-                <h3>Book online</h3>
-                <p>2-minute form</p>
-                <p>Pick package + date</p>
-            </div>
-            
-            <div class="process-step reveal">
-                <div class="process-number">2</div>
-                <h3>We shoot</h3>
-                <p>Same week visit</p>
-                <p>90 minutes on-site</p>
-            </div>
-            
-            <div class="process-step reveal">
-                <div class="process-number">3</div>
-                <h3>We edit</h3>
-                <p>AI staging + edits</p>
-                <p>Overnight</p>
-            </div>
-            
-            <div class="process-step reveal">
-                <div class="process-number">4</div>
-                <h3>You list</h3>
-                <p>Portal-ready files</p>
-                <p>Rightmove, Zoopla</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="reveal pricing" id="pricing">
-    <div class="container">
-        <h2 class="section-title">Transparent pricing. No surprises.</h2>
-        <p class="section-sub">One booking. Three options. All-inclusive.</p>
-        
-        <div class="pricing-grid">
-            <div class="price-card reveal">
-                <p class="price-tier">Essential</p>
-                <p class="price-amount">£150</p>
-                <p class="price-unit">per property</p>
-                <span class="price-device">1 device · Camera</span>
-                <ul class="price-features">
-                    <li>Up to 10 HDR property photos</li>
-                    <li>AI virtual decluttering</li>
-                    <li class="muted">3D floor plan</li>
-                    <li class="muted">360° virtual tour</li>
-                    <li class="muted">Aerial drone photography</li>
-                    <li class="muted">Property tour video</li>
-                </ul>
-                <button class="btn btn-outline" data-cal-link="mondframe/book-essential" data-cal-namespace="book-essential" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Essential</button>
-            </div>
-            
-            <div class="price-card price-card-featured reveal">
-                <span class="price-badge">Most Popular</span>
-                <p class="price-tier">Signature</p>
-                <p class="price-amount">£350</p>
-                <p class="price-unit">per property</p>
-                <span class="price-device price-device-dark">2 devices · Camera + 360 camera</span>
-                <ul class="price-features">
-                    <li>Up to 20 HDR property photos</li>
-                    <li>AI staging &amp; decluttering</li>
-                    <li>3D floor plan</li>
-                    <li>360° virtual tour</li>
-                    <li class="muted">Aerial drone photography</li>
-                    <li class="muted">Property tour video</li>
-                </ul>
-                <button class="btn btn-accent" data-cal-link="mondframe/book-signature" data-cal-namespace="book-signature" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Signature</button>
-            </div>
-            
-            <div class="price-card reveal">
-                <p class="price-tier">Premium</p>
-                <p class="price-amount">£750</p>
-                <p class="price-unit">per property</p>
-                <span class="price-device">3 devices · Camera + 360 camera + Drone</span>
-                <p class="price-subtitle">For larger homes, multi-room properties and private grounds</p>
-                <ul class="price-features">
-                    <li>Up to 30 HDR property photos</li>
-                    <li>AI staging &amp; decluttering</li>
-                    <li>3D floor plan</li>
-                    <li>360° virtual tour</li>
-                    <li>Aerial drone photography</li>
-                    <li>Cinematic property tour video</li>
-                </ul>
-                <button class="btn btn-outline" data-cal-link="mondframe/book-premium" data-cal-namespace="book-premium" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book Premium</button>
-            </div>
-        </div>
-
-        <div class="alacarte reveal">
-            <h3>Or book services individually</h3>
-            <p class="alacarte-sub">No package needed, book exactly what you want.</p>
-            <div class="alacarte-grid">
-                <div class="ac-item"><span class="ac-name">Aerial Drone Footage</span><span class="ac-price">£150</span></div>
-                <div class="ac-item"><span class="ac-name">Property Tour Video</span><span class="ac-price">£150</span></div>
-                <div class="ac-item"><span class="ac-name">Agent on Camera Reels</span><span class="ac-price">£200</span></div>
-                <div class="ac-item"><span class="ac-name">Social Reels (no agent)</span><span class="ac-price">£150</span></div>
-                <div class="ac-item"><span class="ac-name">EPC Certificate</span><span class="ac-price">£80</span></div>
-            </div>
-            <p class="alacarte-note">To book an individual service, <a href="#contact">send us a message</a> and we'll confirm within the hour.</p>
-        </div>
-    </div>
-</section>
-
-<section class="founding" id="founding">
-    <div class="container">
-        <div class="founding-box reveal">
-            <p class="eyebrow">Founding clients</p>
-            <h2>Be one of our first five agencies.</h2>
-            <p class="founding-sub">We're launching across London right now. The first five agencies get 30% off their first three bookings, priority scheduling, and a direct line to the founder.</p>
-            <div class="founding-points">
-                <div class="fp"><span class="fp-num">30%</span><span class="fp-label">off first 3 bookings</span></div>
-                <div class="fp"><span class="fp-num">24h</span><span class="fp-label">delivery, guaranteed</span></div>
-                <div class="fp"><span class="fp-num">1:1</span><span class="fp-label">direct founder support</span></div>
-            </div>
-            <a href="#contact" class="btn btn-accent">Claim a founding spot →</a>
-        </div>
-    </div>
-</section>
-
-    <section class="reveal pain-point">
-    <div class="container">
-        <h2 class="section-title">The old way vs The Mondframe way</h2>
-        
-        <div class="comparison">
-            <div class="card card-light">
-                <p class="card-eyebrow card-eyebrow-bad">✗ The old way</p>
-                <h3>Coordinating 3 vendors. Wasting hours.</h3>
-                <ul class="card-list">
-                    <li>Hire a photographer. Wait 2 days.</li>
-                    <li>Schedule a drone pilot. Different date.</li>
-                    <li>Beg the vendor to clear furniture.</li>
-                </ul>
-                <p class="card-result"><em>Result: Late listings, wrong photos, lost viewings.</em></p>
-            </div>
-            
-            <div class="card card-dark">
-                <p class="card-eyebrow card-eyebrow-good">✓ The Mondframe way</p>
-                <h3>One booking. 24 hours later, ready to list.</h3>
-                <ul class="card-list">
-                    <li>One booking.</li>
-                    <li>24 hours later, ready to list.</li>
-                    <li>AI staging included.</li>
-                </ul>
-                <p class="card-result"><em>Result: Faster sales. Stronger viewings. Happy clients.</em></p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="reveal about" id="about">
-    <div class="container">
-        <div class="about-grid">
-
-            <div class="about-copy">
-                <div class="about-logo" id="aboutLogo">
-                    <svg viewBox="0 0 132.49 132.49">
-                        <path class="frame" d="M130.49,2v128.49H2V2h128.49M132.49,0H0v132.49h132.49V0h0Z"/>
-                        <polygon class="chevL" points="40.14 27.04 13.98 53.2 13.95 105.48 40.1 79.32 66.23 105.45 66.26 53.17"/>
-                        <polygon class="chevR" points="92.42 27.01 66.26 53.17 66.23 105.45 92.39 79.29 118.51 105.41 118.54 53.13"/>
-                    </svg>
-                </div>
-                <p class="eyebrow about-eyebrow">Our story</p>
-                <h2 class="about-heading">Built for London's independent agents.</h2>
-                <p>Mondframe started from a single observation. Getting a property listing ready was taking agents far too long. Coordinating a photographer, a drone pilot, and a staging service, often across separate visits and inboxes, was costing hours that nobody had.</p>
-                <p>We're a founder led London team. Our sub 250g drones fly legally in residential areas where heavier rigs can't, and when a job needs a CAA licensed pilot, we bring one in.</p>
-                <p>We work almost exclusively with independent estate agents. We understand the margins, the pace, and what a delayed listing costs. Everything we do, including 24 hour delivery, single booking workflow, and Portal-ready files, is designed to give you your time back.</p>
-            </div>
-
-            <div class="about-stats">
-                <div class="about-stat">
-                    <span class="about-stat-value"><span class="stat-num" data-count="24">0</span> hrs</span>
-                    <span class="about-stat-label">Delivery guarantee</span>
-                </div>
-                <div class="about-stat">
-                    <span class="about-stat-value"><span class="stat-num" data-count="30">0</span> mi</span>
-                    <span class="about-stat-label">London coverage radius</span>
-                </div>
-                <div class="about-stat">
-                    <span class="about-stat-value">&lt;<span class="stat-num" data-count="250">0</span>g</span>
-                    <span class="about-stat-label">Residential friendly drone</span>
-                </div>
-                <div class="about-stat">
-                    <span class="about-stat-value">£<span class="stat-num" data-count="5" data-suffix="M">0</span></span>
-                    <span class="about-stat-label">Public liability cover</span>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<section class="reveal faq" id="faq">
-    <div class="container">
-        <h2 class="section-title">Frequently asked questions</h2>
-        <p class="section-sub">Everything you need to know before booking.</p>
-        
-        <div class="faq-layout">
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary>Are you CAA licensed?</summary>
-                    <p>Yes, Class A2 + GVC certified. All flights are pre-notified and fully insured.</p>
-                </details>
-                
-                <details class="faq-item">
-                    <summary>What about insurance?</summary>
-                    <p>£5M public liability insurance included on every shoot.</p>
-                </details>
-                
-                <details class="faq-item">
-                    <summary>Can you handle furnished properties?</summary>
-                    <p>That's our specialty, AI virtual staging makes furnished or occupied homes look picture-perfect.</p>
-                </details>
-                
-                <details class="faq-item">
-                    <summary>What's your turnaround?</summary>
-                    <p>Most edits delivered within 24 hours of the shoot.</p>
-                </details>
-                
-                <details class="faq-item">
-                    <summary>Do you serve outside London?</summary>
-                    <p>Yes, within 30 miles of central London. Expanding across South East in 2026.</p>
-                </details>
-                
-                <details class="faq-item">
-                    <summary>What about EPC/Floorplan?</summary>
-                    <p>A 3D floor plan is included in Signature and Premium packages. EPC is available as an add-on for £80.</p>
-                </details>
-            </div>
-            
-            <div class="faq-cta">
-                <h3>Ready to win more instructions?</h3>
-                <p>Book a free 15-minute consultation today.</p>
-                <a href="#contact" class="btn btn-accent">Book a call →</a>
-                <p class="faq-cta-divider">or call us:</p>
-                <p class="faq-cta-phone">07788 189957</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="reveal contact" id="contact">
-    <div class="container">
-        <div class="contact-split">
-
-            <!-- Left column: form -->
-            <div class="contact-left">
-                <form class="contact-form" action="https://formspree.io/f/mpqnpaww" method="POST">
-                    <input type="hidden" name="_next" value="https://mondframe.co.uk/#contact">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="jane@agency.co.uk" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="07700 900000">
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Property address</label>
-                            <input type="text" id="address" name="address" placeholder="12 Example Street, London">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5"
-                            placeholder="Tell us about the property and what you need…"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-accent contact-submit">
-                        Send quote request →
-                    </button>
-                </form>
-            </div>
-
-            <!-- Right column: white value panel -->
-<div class="contact-right">
-    <h2 class="contact-cta-label">Contact us.</h2>
-    <a href="mailto:hello@mondframe.co.uk" class="contact-cta-email">hello@mondframe.co.uk</a>
-    <p class="contact-cta-sub">Send us a message to get started<br>We're excited to start shooting with you.</p>
-
-    <ul class="contact-value-list">
-        <li class="contact-value-item">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/>
-                <path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            One booking covers photos, video, and AI-staging
-        </li>
-        <li class="contact-value-item">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/>
-                <path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            24 hour delivery, every time
-        </li>
-        <li class="contact-value-item">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="11" cy="11" r="11" fill="#00E0A8" fill-opacity="0.15"/>
-                <path d="M7 11.5l3 3 5-6.5" stroke="#00E0A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Portal-ready files, download and upload straight to Rightmove and Zoopla
-        </li>
-    </ul>
-</div>
-
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <p class="footer-logo">Mondframe</p>
-                <p>Drone, photo, virtual staging.</p>
-                <p>London + 30 mile radius.</p>
-            </div>
-            
-            <div class="footer-col">
-                <p class="footer-title">Quick Links</p>
-                <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="work.html">Work</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <p class="footer-title">Contact</p>
-                <ul>
-                    <li><a href="mailto:hello@mondframe.co.uk">hello@mondframe.co.uk</a></li>
-                </ul>
-                <div class="footer-social">
-    <a href="https://instagram.com/ugluunice" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-    </a>
-    <a href="https://www.linkedin.com/company/mondframe" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>© 2026 Mondframe Ltd</p>
-            <p><a href="legal.html#privacy">Privacy</a> · <a href="legal.html#terms">Terms</a> · <a href="legal.html#cookies">Cookies</a> · <a href="legal.html#refund">Refund</a></p>
-        </div>
+    <div class="footer-bottom">
+        <p>© 2026 Mondframe Ltd — CAA licensed · £5M insured</p>
+        <p><a href="legal.html#privacy">Privacy</a> · <a href="legal.html#terms">Terms</a> · <a href="legal.html#cookies">Cookies</a></p>
     </div>
 </footer>
 
-<script>
-    // Pricing buttons pre-fill the Message field before submit
-    document.querySelectorAll('[data-package]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            const msg = document.getElementById('message');
-            if (msg) {
-                msg.value = btn.getAttribute('data-package') + '\n';
-            }
-        });
-    });
-
-    // Clear contact form fields after submission and on back/forward cache restore.
-    // setTimeout ensures the browser captures form data before we wipe the fields,
-    // and also leaves a clean snapshot in the bfcache so Back shows an empty form.
-    (function () {
-        const form = document.querySelector('.contact-form');
-        if (!form) return;
-
-        form.addEventListener('submit', function () {
-            const f = this;
-            setTimeout(function () { f.reset(); }, 0);
-        });
-
-        // Handles the case where the user presses Back and the browser
-        // restores the page from the bfcache with the old values still visible.
-        window.addEventListener('pageshow', function (e) {
-            if (e.persisted) { form.reset(); }
-        });
-    }());
-</script>
-
-<!-- Cal.com pop-up embed for 3 packages -->
-<script type="text/javascript">
-(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-
-Cal("init", "book-essential", {origin:"https://app.cal.com"});
-Cal.ns["book-essential"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-
-Cal("init", "book-signature", {origin:"https://app.cal.com"});
-Cal.ns["book-signature"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-
-Cal("init", "book-premium", {origin:"https://app.cal.com"});
-Cal.ns["book-premium"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-</script>
-
-<!-- Lightbox -->
-<div class="sc-lightbox" id="scLightbox" onclick="if(event.target===this)closeLightbox()">
-    <button class="sc-lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
-    <img class="sc-lightbox-img" id="scLightboxImg" src="" alt="">
+<!-- ============ MODALS ============ -->
+<div class="modal" id="tourModal" role="dialog" aria-modal="true" aria-label="360 degree virtual tour">
+    <div class="modal-box">
+        <button class="modal-close">Close ✕</button>
+        <div data-iframe="https://HomeJab.vr-360-tour.com/e/CQIBgI7rlGE/e" style="position:absolute;inset:0"></div>
+    </div>
 </div>
-
-<!-- Virtual Tour Modal -->
-<div class="sc-tour-modal" id="tourModal" onclick="if(event.target===this)closeTour()">
-    <div class="sc-tour-box">
-        <div class="sc-tour-head">
-            <h3>360&deg; Virtual Tour</h3>
-            <button class="sc-tour-close" onclick="closeTour()" aria-label="Close">&times;</button>
-        </div>
-        <div class="sc-tour-frame" id="tourFrame"></div>
+<div class="modal" id="filmModal" role="dialog" aria-modal="true" aria-label="Cinematic property film">
+    <div class="modal-box">
+        <button class="modal-close">Close ✕</button>
+        <video src="images/cinematic-video.mp4" controls playsinline preload="none" poster="images/dining.webp"></video>
     </div>
 </div>
 
+<!-- ============ SCRIPTS ============ -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="site.js"></script>
+
+<!-- Hero: floating cinematic frame (Three.js) -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
 <script>
-/* ===== LIGHTBOX ===== */
-function openLightbox(src,alt){
-    const lb=document.getElementById('scLightbox');
-    const im=document.getElementById('scLightboxImg');
-    im.src=src;im.alt=alt||'';
-    lb.classList.add('open');
-    document.body.style.overflow='hidden';
-}
-function closeLightbox(){
-    document.getElementById('scLightbox').classList.remove('open');
-    document.body.style.overflow='';
-}
-document.querySelectorAll('#showcase .sc-media > img').forEach(function(img){
-    img.addEventListener('click',function(){openLightbox(img.src,img.alt);});
-});
+(function () {
+    'use strict';
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var wide = window.matchMedia('(min-width: 900px) and (pointer: fine)').matches;
+    var holder = document.getElementById('heroCanvas');
+    var hero = document.getElementById('hero');
+    var heroVids = {
+        aerial: document.querySelector('.hero-media .v-aerial'),
+        interior: document.querySelector('.hero-media .v-interior')
+    };
 
-/* ===== VIRTUAL TOUR ===== */
-const TOUR_EMBED_URL='https://HomeJab.vr-360-tour.com/e/CQIBgI7rlGE/e';
-function openTour(){
-    const m=document.getElementById('tourModal');
-    const f=document.getElementById('tourFrame');
-    if(!f.querySelector('iframe')){
-        f.innerHTML='<iframe src="'+TOUR_EMBED_URL+'" allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen" allowfullscreen scrolling="no"></iframe>';
-    }
-    m.classList.add('open');
-    document.body.style.overflow='hidden';
-}
-function closeTour(){
-    document.getElementById('tourModal').classList.remove('open');
-    document.body.style.overflow='';
-}
-
-/* ===== ESCAPE KEY ===== */
-document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'){closeLightbox();closeTour();}
-});
-
-/* ===== SHOWCASE BA SLIDERS ===== */
-function initBaSlider(sliderEl){
-    const clip=sliderEl.querySelector('.ba-before-clip');
-    const handle=sliderEl.querySelector('.ba-handle');
-    if(!clip||!handle)return;
-    let dragging=false;
-    function setPos(x){
-        const rect=sliderEl.getBoundingClientRect();
-        let pct=Math.max(0,Math.min(100,((x-rect.left)/rect.width)*100));
-        clip.style.width=pct+'%';
-        handle.style.left=pct+'%';
-        const imgB=clip.querySelector('.ba-img-before');
-        if(imgB)imgB.style.width=rect.width+'px';
-        const ac=sliderEl.querySelector('.ba-after-clip');
-        if(ac)ac.style.width=(100-pct)+'%';
-    }
-    sliderEl.addEventListener('mousedown',function(e){dragging=true;setPos(e.clientX);});
-    window.addEventListener('mousemove',function(e){if(dragging)setPos(e.clientX);});
-    window.addEventListener('mouseup',function(){dragging=false;});
-    sliderEl.addEventListener('touchstart',function(e){dragging=true;setPos(e.touches[0].clientX);},{passive:true});
-    window.addEventListener('touchmove',function(e){if(dragging)setPos(e.touches[0].clientX);},{passive:true});
-    window.addEventListener('touchend',function(){dragging=false;});
-    window.addEventListener('resize',function(){
-        const rect=sliderEl.getBoundingClientRect();
-        const imgB=clip.querySelector('.ba-img-before');
-        if(imgB)imgB.style.width=rect.width+'px';
-    });
-    requestAnimationFrame(function(){
-        const rect=sliderEl.getBoundingClientRect();
-        const imgB=clip.querySelector('.ba-img-before');
-        if(imgB)imgB.style.width=rect.width+'px';
-    });
-}
-['scBa0','scBa1','scBa2'].forEach(function(id){
-    const el=document.getElementById(id);
-    if(el)initBaSlider(el);
-});
-</script>
-
-<script>
-/* FAQ smooth animation */
-(function(){
-    document.querySelectorAll('.faq-item').forEach(function(det){
-        const summary=det.querySelector('summary');
-        const content=det.querySelector('p');
-        if(!summary||!content)return;
-        summary.addEventListener('click',function(e){
-            e.preventDefault();
-            if(det.open){
-                content.style.maxHeight=content.scrollHeight+'px';
-                content.style.opacity='1';
-                requestAnimationFrame(function(){
-                    content.style.maxHeight='0';
-                    content.style.opacity='0';
-                    content.style.marginTop='0';
-                });
-                setTimeout(function(){det.removeAttribute('open');},360);
-            } else {
-                det.setAttribute('open','');
-                content.style.maxHeight='0';
-                content.style.opacity='0';
-                content.style.marginTop='0';
-                requestAnimationFrame(function(){
-                    requestAnimationFrame(function(){
-                        content.style.maxHeight=content.scrollHeight+'px';
-                        content.style.opacity='1';
-                        content.style.marginTop='16px';
-                    });
-                });
+    /* Scroll-linked aerial→interior crossfade + settle (DOM fallback and GL share this) */
+    if (typeof gsap !== 'undefined' && !reduced) {
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.create({
+            trigger: hero, start: 'top top', end: 'bottom top', scrub: true,
+            onUpdate: function (st) {
+                var p = st.progress;
+                if (window.__mfGL) { window.__mfGL.scroll(p); }
+                else if (heroVids.interior) {
+                    if (p > 0.25 && !heroVids.interior.src) {
+                        heroVids.interior.src = heroVids.interior.getAttribute('src') || 'images/cinematic-video.mp4';
+                        heroVids.interior.play().catch(function () {});
+                    }
+                    heroVids.interior.style.opacity = Math.min(1, Math.max(0, (p - 0.3) * 2.2));
+                }
             }
         });
-    });
-})();
-</script>
-
-<script>
-/* ===== SCROLL REVEAL ===== */
-(function(){
-    const els=document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){
-        els.forEach(function(e){e.classList.add('in');});return;
-    }
-    const obs=new IntersectionObserver(function(entries){
-        entries.forEach(function(en){
-            if(en.isIntersecting){en.target.classList.add('in');obs.unobserve(en.target);}
+        gsap.to('.hero-content', {
+            yPercent: -16, opacity: 0.15, ease: 'none',
+            scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true }
         });
-    },{threshold:0.15});
-    els.forEach(function(e){obs.observe(e);});
-})();
-
-/* ===== COUNT UP STATS ===== */
-(function(){
-    const nums=Array.prototype.slice.call(document.querySelectorAll('.stat-num[data-count]'));
-    if(!nums.length)return;
-    const reduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-
-    function setFinal(el){
-        el.textContent=(el.dataset.prefix||'')+el.dataset.count+(el.dataset.suffix||'');
-        el._counted=true;
     }
 
-    function countUp(el){
-        if(el._counted)return;
-        el._counted=true;
-        if(reduced){setFinal(el);return;}
-        const target=parseInt(el.dataset.count,10);
-        const dur=1200;
-        let start=null;
-        function step(ts){
-            if(!start)start=ts;
-            const p=Math.min((ts-start)/dur,1);
-            const eased=1-Math.pow(1-p,3);
-            el.textContent=(el.dataset.prefix||'')+Math.round(target*eased)+(el.dataset.suffix||'');
-            if(p<1)requestAnimationFrame(step);
+    if (!wide || reduced || typeof THREE === 'undefined' || !holder) return;
+
+    var renderer;
+    try {
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'low-power' });
+    } catch (e) { return; }
+
+    hero.classList.add('gl');
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(holder.clientWidth, holder.clientHeight);
+    holder.appendChild(renderer.domElement);
+
+    var scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0B0A08);
+    var camera = new THREE.PerspectiveCamera(32, holder.clientWidth / holder.clientHeight, 0.1, 50);
+    camera.position.z = 6;
+
+    function makeVideo(src) {
+        var v = document.createElement('video');
+        v.src = src; v.muted = true; v.loop = true; v.playsInline = true;
+        v.crossOrigin = 'anonymous'; v.play().catch(function () {});
+        var t = new THREE.VideoTexture(v);
+        t.minFilter = THREE.LinearFilter;
+        return t;
+    }
+
+    /* Floating cinematic frame: 16:9 video plane + thin gold border, second plane crossfades on scroll */
+    var group = new THREE.Group();
+    var W = 4.6, H = W * 9 / 16;
+
+    var aerialTex = makeVideo('images/hero.mp4');
+    var interiorTex = makeVideo('images/cinematic-video.mp4');
+
+    var plane = new THREE.Mesh(
+        new THREE.PlaneGeometry(W, H),
+        new THREE.MeshBasicMaterial({ map: aerialTex })
+    );
+    var plane2 = new THREE.Mesh(
+        new THREE.PlaneGeometry(W, H),
+        new THREE.MeshBasicMaterial({ map: interiorTex, transparent: true, opacity: 0 })
+    );
+    plane2.position.z = 0.012;
+    group.add(plane, plane2);
+
+    var frameGeo = new THREE.EdgesGeometry(new THREE.PlaneGeometry(W + 0.14, H + 0.14));
+    var frame = new THREE.LineSegments(frameGeo, new THREE.LineBasicMaterial({ color: 0xC2A878 }));
+    frame.position.z = 0.02;
+    group.add(frame);
+
+    /* faint echo frames for depth */
+    [0.55, 1.1].forEach(function (d, i) {
+        var echo = new THREE.LineSegments(
+            new THREE.EdgesGeometry(new THREE.PlaneGeometry(W + 0.14 + d * 0.5, H + 0.14 + d * 0.28)),
+            new THREE.LineBasicMaterial({ color: 0xC2A878, transparent: true, opacity: 0.16 - i * 0.07 })
+        );
+        echo.position.z = -d;
+        group.add(echo);
+    });
+
+    group.position.y = 0.45;
+    scene.add(group);
+
+    var mouse = { x: 0, y: 0 }, scrollP = 0;
+    window.addEventListener('mousemove', function (e) {
+        mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
+        mouse.y = (e.clientY / window.innerHeight - 0.5) * 2;
+    }, { passive: true });
+
+    window.__mfGL = {
+        scroll: function (p) {
+            scrollP = p;
+            plane2.material.opacity = Math.min(1, Math.max(0, (p - 0.3) * 2.2));
         }
-        requestAnimationFrame(step);
-    }
+    };
 
-    /* Observe the PARENT .about-stats container (block element), more reliable than spans */
-    const statsSection=document.querySelector('.about-stats');
-    if(!statsSection){nums.forEach(setFinal);return;}
+    var clock = new THREE.Clock();
+    var running = true;
+    new IntersectionObserver(function (en) { running = en[0].isIntersecting; })
+        .observe(hero);
 
-    function triggerAll(){nums.forEach(countUp);}
+    (function tick() {
+        requestAnimationFrame(tick);
+        if (!running) return;
+        var t = clock.getElapsedTime();
+        group.rotation.y += ((mouse.x * 0.09 + scrollP * 0.22) - group.rotation.y) * 0.05;
+        group.rotation.x += ((-mouse.y * 0.055) - group.rotation.x) * 0.05;
+        group.position.y = 0.45 + Math.sin(t * 0.7) * 0.045;
+        camera.position.z = 6 - scrollP * 1.6;
+        renderer.render(scene, camera);
+    })();
 
-    /* 1. Intersection: fires when the stats block scrolls into view */
-    if('IntersectionObserver' in window){
-        const obs=new IntersectionObserver(function(entries){
-            entries.forEach(function(en){if(en.isIntersecting){triggerAll();obs.disconnect();}});
-        },{threshold:0.2});
-        obs.observe(statsSection);
-    } else {
-        triggerAll();
-    }
-
-    /* 2. Hover / touch fallback, works on desktop cursor AND mobile tap */
-    statsSection.addEventListener('mouseenter',triggerAll);
-    statsSection.addEventListener('touchstart',triggerAll,{passive:true});
-
-    /* 3. Page-load fallback: if section already visible when page loads */
-    window.addEventListener('load',function(){
-        const r=statsSection.getBoundingClientRect();
-        if(r.top<window.innerHeight&&r.bottom>0)triggerAll();
+    window.addEventListener('resize', function () {
+        camera.aspect = holder.clientWidth / holder.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(holder.clientWidth, holder.clientHeight);
     });
 })();
 </script>
-
-<script>
-(function(){
-    const el=document.getElementById('aboutLogo');
-    if(!el)return;
-    if(!('IntersectionObserver' in window)){ el.classList.add('play'); return; }
-    const obs=new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-            if(e.isIntersecting){
-                el.classList.add('play');
-                obs.unobserve(e.target);
-            }
-        });
-    }, {threshold:0.5});
-    obs.observe(el);
-})();
-</script>
-<!-- Mobile sticky CTA bar -->
-<div class="sticky-cta" id="stickyCta">
-    <div class="sticky-cta-text">
-        <strong>From £150</strong>
-        <span>24h delivery · London</span>
-    </div>
-    <a href="#pricing" class="btn btn-accent sticky-cta-btn">Book your shoot →</a>
-</div>
-
-<script>
-/* ===== MOBILE STICKY CTA ===== */
-(function(){
-    const bar=document.getElementById('stickyCta');
-    if(!bar)return;
-    const pricing=document.getElementById('pricing');
-    const contact=document.getElementById('contact');
-    function onScroll(){
-        const y=window.scrollY||window.pageYOffset;
-        let hide=false;
-        [pricing,contact].forEach(function(sec){
-            if(!sec)return;
-            const r=sec.getBoundingClientRect();
-            if(r.top<window.innerHeight&&r.bottom>0)hide=true;
-        });
-        if(y>600&&!hide)bar.classList.add('show');
-        else bar.classList.remove('show');
-    }
-    window.addEventListener('scroll',onScroll,{passive:true});
-    onScroll();
-})();
-</script>
-<div id="sc-lb" role="dialog" aria-modal="true">
-    <button class="sc-lb-close" aria-label="Close">&times;</button>
-    <img src="" alt="" class="sc-lb-img">
-</div>
 </body>
 </html>
