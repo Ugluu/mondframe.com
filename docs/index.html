@@ -91,9 +91,9 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-            <p class="eyebrow">London · CAA-licensed · 24-hour delivery</p>
+            <p class="eyebrow">London · CAA licensed · 24 hour delivery</p>
             <h1>Stop juggling photographers, drone pilots, and staging tools.</h1>
-            <p class="hero-sub">Drone footage, professional photography, and AI virtual staging — all from a single team in London.</p>
+            <p class="hero-sub">Drone footage, professional photography, and AI virtual staging, all from a single team in London.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-accent">Get a free quote</a>
                 <a href="work.html" class="btn btn-outline-light">See our work →</a>
@@ -104,15 +104,15 @@
     <section class="trust-badges">
         <div class="container">
             <ul>
-                <li>✓ CAA-licensed drone operator</li>
-                <li>✓ 24-hour turnaround guaranteed</li>
-                <li>✓ DBS-checked team</li>
+                <li>✓ CAA licensed drone operator</li>
+                <li>✓ 24 hour turnaround guaranteed</li>
+                <li>✓ DBS checked team</li>
                 <li>✓ £5M public liability insurance</li>
             </ul>
         </div>
     </section>
 
-<section class="showcase" id="showcase">
+<section class="reveal showcase" id="showcase">
 <div class="container">
     <h2 class="section-title">See exactly what you get</h2>
     <p class="section-sub">Pick a package to preview the photos, footage and reels you'll receive.</p>
@@ -134,6 +134,7 @@
     <!-- ESSENTIAL -->
     <div class="sc-panel active" data-panel="essential">
         <div class="sc-grid">
+            <div class="sc-rows-wrap">
             <div class="sc-rows">
                 <!-- HDR Photography -->
                 <div class="sc-row">
@@ -144,9 +145,34 @@
                     <div class="sc-row-info">
                         <span class="sc-row-label">HDR Photography</span>
                         <h4 class="sc-row-heading">Up to 10 professional photos</h4>
-                        <p class="sc-row-body">HDR-processed interior and exterior shots optimised for Rightmove, Zoopla, and your own channels.</p>
+                        <p class="sc-row-body">HDR processed interior and exterior shots optimised for Rightmove, Zoopla, and your own channels.</p>
                     </div>
                 </div>
+                <!-- AI Virtual Decluttering -->
+                <div class="sc-row">
+                    <div class="sc-row-info">
+                        <span class="sc-row-label">AI Virtual Decluttering</span>
+                        <h4 class="sc-row-heading">Before and after, drag to compare</h4>
+                        <p class="sc-row-body">We digitally declutter furnished rooms or stage empty ones. Drag the slider to see the result.</p>
+                    </div>
+                    <div class="sc-row-media">
+                        <span class="sc-media-tag accent">AI Staged</span>
+                        <div class="ba-slider sc-ba-slider" id="scBa0">
+                            <img src="images/before.webp" alt="After AI decluttering" class="ba-img-after">
+                            <div class="ba-before-clip">
+                                <img src="images/after.webp" alt="Before AI decluttering" class="ba-img-before">
+                            </div>
+                            <div class="ba-after-clip"></div>
+                            <div class="ba-handle"><div class="ba-line"></div><div class="ba-circle"><span>&#8249;</span><span>&#8250;</span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sc-slide-nav">
+                <button class="sc-slide-btn sc-prev" aria-label="Previous">&#8249;</button>
+                <div class="sc-dots"></div>
+                <button class="sc-slide-btn sc-next" aria-label="Next">&#8250;</button>
+            </div>
             </div>
             <div class="sc-info">
                 <p class="sc-info-tier">Essential</p>
@@ -168,13 +194,14 @@
     <!-- SIGNATURE -->
     <div class="sc-panel" data-panel="signature">
         <div class="sc-grid">
+            <div class="sc-rows-wrap">
             <div class="sc-rows">
                 <!-- HDR Photos -->
                 <div class="sc-row rev">
                     <div class="sc-row-info">
                         <span class="sc-row-label">HDR Photography</span>
                         <h4 class="sc-row-heading">Up to 20 professional photos</h4>
-                        <p class="sc-row-body">Interior and exterior shots, HDR-processed and ready to upload directly to property portals.</p>
+                        <p class="sc-row-body">Interior and exterior shots, HDR processed and ready to upload directly to property portals.</p>
                     </div>
                     <div class="sc-row-media">
                         <span class="sc-media-tag">HDR Photo</span>
@@ -196,7 +223,7 @@
                     </div>
                     <div class="sc-row-info">
                         <span class="sc-row-label">AI Virtual Staging</span>
-                        <h4 class="sc-row-heading">Empty to furnished — drag to compare</h4>
+                        <h4 class="sc-row-heading">Empty to furnished, drag to compare</h4>
                         <p class="sc-row-body">We digitally furnish empty rooms or remove clutter. Drag the slider to see the before and after.</p>
                     </div>
                 </div>
@@ -225,9 +252,15 @@
                     <div class="sc-row-info">
                         <span class="sc-row-label">360&deg; Virtual Tour</span>
                         <h4 class="sc-row-heading">Explore every room remotely</h4>
-                        <p class="sc-row-body">Interactive 360° walkthrough — buyers explore at their own pace from anywhere in the world.</p>
+                        <p class="sc-row-body">Interactive 360° walkthrough, buyers explore at their own pace from anywhere in the world.</p>
                     </div>
                 </div>
+            </div>
+            <div class="sc-slide-nav">
+                <button class="sc-slide-btn sc-prev" aria-label="Previous">&#8249;</button>
+                <div class="sc-dots"></div>
+                <button class="sc-slide-btn sc-next" aria-label="Next">&#8250;</button>
+            </div>
             </div>
             <div class="sc-info">
                 <p class="sc-info-tier">Signature · Most popular</p>
@@ -249,19 +282,20 @@
     <!-- PREMIUM -->
     <div class="sc-panel" data-panel="premium">
         <div class="sc-grid">
+            <div class="sc-rows-wrap">
             <div class="sc-rows">
                 <!-- Cinematic Video -->
                 <div class="sc-row">
                     <div class="sc-row-media">
                         <span class="sc-media-tag accent">Cinematic Video</span>
-                        <video src="images/cinematic-video.mp4" muted loop playsinline preload="metadata"
+                        <video src="images/cinematic-video.mp4" autoplay muted loop playsinline preload="metadata"
                                onclick="this.paused?this.play():this.pause();"
                                style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
                     </div>
                     <div class="sc-row-info">
                         <span class="sc-row-label">Cinematic Video</span>
                         <h4 class="sc-row-heading">Full property tour film</h4>
-                        <p class="sc-row-body">Cinematic 4K walkthrough of the entire property — professionally edited, ready for portals and social media.</p>
+                        <p class="sc-row-body">Cinematic 4K walkthrough of the entire property, professionally edited, ready for portals and social media.</p>
                     </div>
                 </div>
                 <!-- Aerial Drone -->
@@ -269,11 +303,11 @@
                     <div class="sc-row-info">
                         <span class="sc-row-label">Aerial Drone</span>
                         <h4 class="sc-row-heading">Stunning 4K aerial footage</h4>
-                        <p class="sc-row-body">Sub-250g drone, CAA-licensed. Flies in residential areas where heavier rigs can't. Slow motion included.</p>
+                        <p class="sc-row-body">Sub-250g drone, CAA licensed. Flies in residential areas where heavier rigs can't. Slow motion included.</p>
                     </div>
                     <div class="sc-row-media">
                         <span class="sc-media-tag accent">Aerial Drone</span>
-                        <video src="images/areal-photo.mp4" muted loop playsinline preload="metadata"
+                        <video src="images/areal-photo.mp4" autoplay muted loop playsinline preload="metadata"
                                onclick="this.paused?this.play():this.pause();"
                                style="width:100%;height:100%;object-fit:cover;cursor:pointer;display:block;"></video>
                     </div>
@@ -282,7 +316,7 @@
                 <div class="sc-row rev">
                     <div class="sc-row-info">
                         <span class="sc-row-label">AI Virtual Staging</span>
-                        <h4 class="sc-row-heading">Empty to furnished — drag to compare</h4>
+                        <h4 class="sc-row-heading">Empty to furnished, drag to compare</h4>
                         <p class="sc-row-body">Digitally furnished or decluttered. Drag the slider to see the transformation.</p>
                     </div>
                     <div class="sc-row-media">
@@ -306,7 +340,7 @@
                     <div class="sc-row-info">
                         <span class="sc-row-label">HDR Photography</span>
                         <h4 class="sc-row-heading">Up to 30 professional photos</h4>
-                        <p class="sc-row-body">Full property coverage — every room, exterior, and detail. HDR-processed and upload-ready.</p>
+                        <p class="sc-row-body">Full property coverage, every room, exterior, and detail. HDR processed and upload ready.</p>
                     </div>
                 </div>
                 <!-- 3D Floor Plan -->
@@ -338,6 +372,12 @@
                     </div>
                 </div>
             </div>
+            <div class="sc-slide-nav">
+                <button class="sc-slide-btn sc-prev" aria-label="Previous">&#8249;</button>
+                <div class="sc-dots"></div>
+                <button class="sc-slide-btn sc-next" aria-label="Next">&#8250;</button>
+            </div>
+            </div>
             <div class="sc-info">
                 <p class="sc-info-tier">Premium</p>
                 <h3>The full marketing suite</h3>
@@ -359,19 +399,90 @@
 </section>
 
 <script>
-    // Deliverables showcase tabs
+(function () {
+    // ── Carousel ────────────────────────────────────────────
+    function initCarousel(panel) {
+        if (panel.dataset.carouselReady) return;
+        panel.dataset.carouselReady = '1';
+        var rows  = Array.from(panel.querySelectorAll('.sc-rows > .sc-row'));
+        var dotsC = panel.querySelector('.sc-dots');
+        if (!rows.length || !dotsC) return;
+        var cur = 0;
+
+        rows.forEach(function (_, i) {
+            var d = document.createElement('button');
+            d.className = 'sc-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Slide ' + (i + 1));
+            d.addEventListener('click', function () { go(i); });
+            dotsC.appendChild(d);
+        });
+
+        function go(n) {
+            rows[cur].classList.remove('sc-active');
+            dotsC.children[cur].classList.remove('active');
+            cur = (n + rows.length) % rows.length;
+            rows[cur].classList.add('sc-active');
+            dotsC.children[cur].classList.add('active');
+            var ba = rows[cur].querySelector('.sc-ba-slider');
+            if (ba && typeof initBaSlider === 'function') initBaSlider(ba);
+        }
+
+        rows[0].classList.add('sc-active');
+        panel.querySelector('.sc-prev').addEventListener('click', function () { go(cur - 1); });
+        panel.querySelector('.sc-next').addEventListener('click', function () { go(cur + 1); });
+    }
+
+    var activePanel = document.querySelector('.sc-panel.active');
+    if (activePanel) initCarousel(activePanel);
+
     document.querySelectorAll('.sc-tab').forEach(function (tab) {
         tab.addEventListener('click', function () {
-            const name = tab.getAttribute('data-tab');
+            var name = tab.getAttribute('data-tab');
             document.querySelectorAll('.sc-tab').forEach(function (t) { t.classList.remove('active'); });
             document.querySelectorAll('.sc-panel').forEach(function (p) { p.classList.remove('active'); });
             tab.classList.add('active');
-            document.querySelector('[data-panel="' + name + '"]').classList.add('active');
+            var panel = document.querySelector('[data-panel="' + name + '"]');
+            panel.classList.add('active');
+            initCarousel(panel);
         });
     });
+
+    // ── Lightbox ── bind after full DOM via delegation ────────
+    // #sc-lb lives at end of <body> so we defer to DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function () {
+        var lb    = document.getElementById('sc-lb');
+        var lbImg = lb ? lb.querySelector('img') : null;
+        if (!lb || !lbImg) return;
+
+        // Delegate: catch clicks on any .sc-row-media img (including ones added by JS)
+        document.addEventListener('click', function (e) {
+            var img = e.target.closest('.sc-row-media img, .sc-row-media .ba-img-after');
+            if (!img) return;
+            var src = img.src || img.currentSrc;
+            if (!src) return;
+            e.stopPropagation();
+            lbImg.src = src;
+            lbImg.alt = img.alt || '';
+            lb.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Cursor hint on all media images
+        document.querySelectorAll('.sc-row-media img').forEach(function (img) {
+            img.style.cursor = 'zoom-in';
+        });
+
+        lb.addEventListener('click', function () { closeLb(); });
+        lb.querySelector('.sc-lb-close').addEventListener('click', function (e) {
+            e.stopPropagation(); closeLb();
+        });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+        function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+    });
+})();
 </script>
 
-<section class="work" id="work">
+<section class="reveal work" id="work">
     <div class="container">
         <h2 class="section-title">See the difference</h2>
         <p class="section-sub">Drag the slider to compare before and after virtual staging.</p>
@@ -413,9 +524,9 @@
         });
     });
 
-    const baSlider = document.querySelector('.ba-slider');
-    const baClip = document.querySelector('.ba-before-clip');
-    const baHandle = document.querySelector('.ba-handle');
+    const baSlider = document.querySelector('#work .ba-slider');
+    const baClip = baSlider ? baSlider.querySelector('.ba-before-clip') : null;
+    const baHandle = baSlider ? baSlider.querySelector('.ba-handle') : null;
     if (baSlider && baClip && baHandle) {
         let baDragging = false;
         function setBaPosition(x) {
@@ -448,7 +559,7 @@
     }
 </script>
 
-<section class="demo" id="ai-demo">
+<section class="reveal demo" id="ai-demo">
 <div class="container">
 
     <div class="demo-eyebrow">
@@ -625,7 +736,7 @@
 })();
 </script>
 
-<section class="services" id="services">
+<section class="reveal services" id="services">
     <div class="container">
         <h2 class="section-title">Three services. One team.</h2>
         
@@ -636,7 +747,7 @@
                 <p class="service-desc">Cinematic drone footage that elevates every listing from Mews flats to country estates.</p>
                 <ul class="service-features">
                     <li>✓ 4K + slow motion</li>
-                    <li>✓ CAA-licensed pilot</li>
+                    <li>✓ CAA licensed pilot</li>
                     <li>✓ Add to any package</li>
                 </ul>
                 <p class="service-from">Premium package or book individually · from <b>£150</b></p>
@@ -649,7 +760,7 @@
                 <ul class="service-features">
                     <li>✓ Empty → Furnished</li>
                     <li>✓ Furnished → Decluttered</li>
-                    <li>✓ 24-hour delivery</li>
+                    <li>✓ 24 hour delivery</li>
                 </ul>
                 <p class="service-from">Included in every package</p>
             </div>
@@ -661,7 +772,7 @@
                 <ul class="service-features">
                     <li>✓ HDR processing</li>
                     <li>✓ Floor plans from Signature</li>
-                    <li>✓ 24-hour delivery</li>
+                    <li>✓ 24 hour delivery</li>
                 </ul>
                 <p class="service-from">Included in every package · from <b>£150</b></p>
             </div>
@@ -669,10 +780,10 @@
     </div>
 </section>
 
-<section class="process">
+<section class="reveal process">
     <div class="container">
         <h2 class="section-title">How it works</h2>
-        <p class="section-sub">From booking to listing-ready — in 4 simple steps.</p>
+        <p class="section-sub">From booking to listing ready, in 4 simple steps.</p>
         
         <div class="process-grid">
             <div class="process-step reveal">
@@ -706,7 +817,7 @@
     </div>
 </section>
 
-<section class="pricing" id="pricing">
+<section class="reveal pricing" id="pricing">
     <div class="container">
         <h2 class="section-title">Transparent pricing. No surprises.</h2>
         <p class="section-sub">One booking. Three options. All-inclusive.</p>
@@ -765,7 +876,7 @@
 
         <div class="alacarte reveal">
             <h3>Or book services individually</h3>
-            <p class="alacarte-sub">No package needed — book exactly what you want.</p>
+            <p class="alacarte-sub">No package needed, book exactly what you want.</p>
             <div class="alacarte-grid">
                 <div class="ac-item"><span class="ac-name">Aerial Drone Footage</span><span class="ac-price">£150</span></div>
                 <div class="ac-item"><span class="ac-name">Property Tour Video</span><span class="ac-price">£150</span></div>
@@ -794,7 +905,7 @@
     </div>
 </section>
 
-    <section class="pain-point">
+    <section class="reveal pain-point">
     <div class="container">
         <h2 class="section-title">The old way vs The Mondframe way</h2>
         
@@ -824,7 +935,7 @@
     </div>
 </section>
 
-<section class="about" id="about">
+<section class="reveal about" id="about">
     <div class="container">
         <div class="about-grid">
 
@@ -867,7 +978,7 @@
     </div>
 </section>
 
-<section class="faq" id="faq">
+<section class="reveal faq" id="faq">
     <div class="container">
         <h2 class="section-title">Frequently asked questions</h2>
         <p class="section-sub">Everything you need to know before booking.</p>
@@ -875,8 +986,8 @@
         <div class="faq-layout">
             <div class="faq-list">
                 <details class="faq-item">
-                    <summary>Are you CAA-licensed?</summary>
-                    <p>Yes — Class A2 + GVC certified. All flights are pre-notified and fully insured.</p>
+                    <summary>Are you CAA licensed?</summary>
+                    <p>Yes, Class A2 + GVC certified. All flights are pre-notified and fully insured.</p>
                 </details>
                 
                 <details class="faq-item">
@@ -886,7 +997,7 @@
                 
                 <details class="faq-item">
                     <summary>Can you handle furnished properties?</summary>
-                    <p>That's our specialty — AI virtual staging makes furnished or occupied homes look picture-perfect.</p>
+                    <p>That's our specialty, AI virtual staging makes furnished or occupied homes look picture-perfect.</p>
                 </details>
                 
                 <details class="faq-item">
@@ -896,7 +1007,7 @@
                 
                 <details class="faq-item">
                     <summary>Do you serve outside London?</summary>
-                    <p>Yes — within 30 miles of central London. Expanding across South East in 2026.</p>
+                    <p>Yes, within 30 miles of central London. Expanding across South East in 2026.</p>
                 </details>
                 
                 <details class="faq-item">
@@ -916,7 +1027,7 @@
     </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="reveal contact" id="contact">
     <div class="container">
         <div class="contact-split">
 
@@ -1021,7 +1132,7 @@
     <a href="https://instagram.com/ugluunice" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
     </a>
-    <a href="https://www.linkedin.com/in/ugluusaikhan" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.linkedin.com/company/mondframe" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </a>
                 </div>
@@ -1168,7 +1279,7 @@ function initBaSlider(sliderEl){
         if(imgB)imgB.style.width=rect.width+'px';
     });
 }
-['scBa1','scBa2'].forEach(function(id){
+['scBa0','scBa1','scBa2'].forEach(function(id){
     const el=document.getElementById(id);
     if(el)initBaSlider(el);
 });
@@ -1253,7 +1364,7 @@ function initBaSlider(sliderEl){
         requestAnimationFrame(step);
     }
 
-    /* Observe the PARENT .about-stats container (block element) — more reliable than spans */
+    /* Observe the PARENT .about-stats container (block element), more reliable than spans */
     const statsSection=document.querySelector('.about-stats');
     if(!statsSection){nums.forEach(setFinal);return;}
 
@@ -1269,7 +1380,7 @@ function initBaSlider(sliderEl){
         triggerAll();
     }
 
-    /* 2. Hover / touch fallback — works on desktop cursor AND mobile tap */
+    /* 2. Hover / touch fallback, works on desktop cursor AND mobile tap */
     statsSection.addEventListener('mouseenter',triggerAll);
     statsSection.addEventListener('touchstart',triggerAll,{passive:true});
 
@@ -1328,5 +1439,9 @@ function initBaSlider(sliderEl){
     onScroll();
 })();
 </script>
+<div id="sc-lb" role="dialog" aria-modal="true">
+    <button class="sc-lb-close" aria-label="Close">&times;</button>
+    <img src="" alt="" class="sc-lb-img">
+</div>
 </body>
 </html>

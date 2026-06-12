@@ -23,7 +23,7 @@
 
     /* Spacing */
     --container-max: 1280px;
-    --section-padding: 96px;
+    --section-padding: 64px;
 }
 
 body {
@@ -178,7 +178,7 @@ img {
 
 .hero {
     position: relative;
-    min-height: 640px;
+    min-height: 600px;
     background: var(--primary);
     color: var(--white);
     display: flex;
@@ -1408,7 +1408,7 @@ img {
 
 .sc-grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 40px;
     align-items: start;
 }
@@ -1859,8 +1859,10 @@ img {
 /* ============================================
    24. 480px BREAKPOINT (жижиг утас)
    ============================================ */
+
 @media(max-width:480px){
     /* Hero */
+    .hero{min-height:500px;}
     .hero-content h1{font-size:28px;}
     .hero-sub{font-size:14px;}
     .hero-buttons{flex-direction:column;gap:10px;}
@@ -1960,7 +1962,7 @@ img {
 .ac-price{font-size:22px;font-weight:700;color:#00B386;}
 .alacarte-note{margin-top:20px;font-size:13px;color:var(--muted);}
 .alacarte-note a{color:var(--accent);font-weight:600;}
-@media(max-width:900px){
+@media(max-width:640px){
   .alacarte-grid{grid-template-columns:repeat(2,1fr);}
   .ac-item:last-child{grid-column:span 2;}
 }
@@ -1969,7 +1971,88 @@ img {
 }
 
 /* ============================================
-   28. MOBILE STICKY CTA BAR
+   28. SHOWCASE CAROUSEL + LIGHTBOX
+   ============================================ */
+
+/* ── Carousel: full-fill layout ───────────────────────────────── */
+.sc-rows-wrap { display: flex; flex-direction: column; }
+
+/* All sc-rows inside wrap hidden; JS shows .sc-active */
+.sc-rows-wrap .sc-row { display: none; }
+.sc-rows-wrap .sc-row.sc-active {
+    display: grid;
+    grid-template-columns: 3fr 2fr;  /* image 60% | text 40% */
+    gap: 0;
+    min-height: 460px;
+    align-items: stretch;            /* both columns same height */
+    animation: scFadeIn .28s ease;
+}
+@keyframes scFadeIn { from{opacity:0;transform:translateX(14px)} to{opacity:1;transform:none} }
+
+/* Unify column order: image always on left, text always on right */
+.sc-rows-wrap .sc-row.sc-active,
+.sc-rows-wrap .sc-row.sc-active.rev { grid-template-columns: 3fr 2fr; }
+.sc-rows-wrap .sc-row.sc-active .sc-row-media { order: 1; }
+.sc-rows-wrap .sc-row.sc-active .sc-row-info  { order: 2; }
+
+/* Image fills its column completely */
+.sc-rows-wrap .sc-row-media {
+    aspect-ratio: unset !important;
+    height: 100%;
+    min-height: 420px;
+    border-radius: 12px 0 0 12px;
+}
+/* Text column: vertically centred, padded */
+.sc-rows-wrap .sc-row-info {
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    box-shadow: inset 0 0 0 1px var(--border);
+}
+
+/* Navigation */
+.sc-slide-nav { display: flex; align-items: center; justify-content: center;
+  gap: 14px; padding: 18px 0 0; }
+.sc-slide-btn { background: none; border: 1.5px solid var(--border); border-radius: 50%;
+  width: 38px; height: 38px; cursor: pointer; font-size: 22px; line-height: 1;
+  color: var(--primary); display: flex; align-items: center; justify-content: center;
+  transition: border-color .2s, color .2s; }
+.sc-slide-btn:hover { border-color: var(--accent); color: var(--accent); }
+.sc-dots { display: flex; gap: 8px; align-items: center; }
+.sc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border);
+  border: none; cursor: pointer; padding: 0;
+  transition: background .25s, transform .25s; }
+.sc-dot.active { background: var(--accent); transform: scale(1.35); }
+
+/* Lightbox */
+#sc-lb { display: none; position: fixed; inset: 0; z-index: 9000;
+  background: rgba(0,0,0,.92); place-items: center; cursor: zoom-out; }
+#sc-lb.open { display: grid; }
+#sc-lb .sc-lb-img { max-width: 90vw; max-height: 85vh; object-fit: contain;
+  border-radius: 10px; box-shadow: 0 24px 64px rgba(0,0,0,.6); cursor: default; }
+.sc-lb-close { position: fixed; top: 18px; right: 22px; color: #fff; font-size: 34px;
+  cursor: pointer; background: none; border: none; line-height: 1; opacity: .75; z-index: 9001; }
+.sc-lb-close:hover { opacity: 1; }
+.sc-row-media img { transition: opacity .15s; }
+.sc-row-media img:hover { opacity: .85; }
+
+/* Mobile: stack image above text */
+@media(max-width:640px){
+  .sc-rows-wrap .sc-row.sc-active { grid-template-columns: 1fr; min-height: unset; }
+  .sc-rows-wrap .sc-row.sc-active .sc-row-media,
+  .sc-rows-wrap .sc-row.sc-active.rev .sc-row-media { order: 1; min-height: 260px; }
+  .sc-rows-wrap .sc-row.sc-active .sc-row-info,
+  .sc-rows-wrap .sc-row.sc-active.rev .sc-row-info  { order: 2; border-radius: 0 0 12px 12px; padding: 20px 20px; }
+  .sc-rows-wrap .sc-row-media { border-radius: 12px 12px 0 0; }
+  .sc-slide-btn { width: 34px; height: 34px; font-size: 18px; }
+}
+
+/* ============================================
+   29. MOBILE STICKY CTA BAR
    ============================================ */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:900;
   display:none;align-items:center;justify-content:space-between;gap:12px;
@@ -1983,4 +2066,5 @@ img {
 .sticky-cta-text span{color:rgba(255,255,255,.6);font-size:11px;}
 .sticky-cta-btn{white-space:nowrap;padding:10px 18px;font-size:14px;}
 @media(max-width:768px){.sticky-cta{display:flex;}}
+/* renumber legacy reference — section 28 is now Carousel/Lightbox, 29 is Sticky CTA */
 @media(prefers-reduced-motion:reduce){.sticky-cta{transition:none;}}
