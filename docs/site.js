@@ -14,13 +14,10 @@
     var lenis = null;
     if (!reduced && typeof Lenis !== 'undefined') {
         lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 1 });
-        if (hasGsap) {
-            lenis.on('scroll', ScrollTrigger.update);
-            gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
-            gsap.ticker.lagSmoothing(0);
-        } else {
-            (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0);
-        }
+        if (hasGsap) lenis.on('scroll', ScrollTrigger.update);
+        // Lenis drives its own RAF so the scroll loop can never stall on
+        // another GSAP tween (e.g. the preloader) sharing gsap.ticker.
+        requestAnimationFrame(function raf(t) { lenis.raf(t); requestAnimationFrame(raf); });
     }
     window.__lenis = lenis;
 
