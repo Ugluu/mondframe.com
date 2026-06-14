@@ -24,17 +24,87 @@
     }
     window.__lenis = lenis;
 
-    /* Anchor links work with Lenis */
+    /* ---------- In-page routing (clean URLs + Lenis) ----------
+       Homepage sections are reachable at /services /process /book.
+       On the homepage those links smooth-scroll without a reload and
+       keep the short URL in the address bar; from any other page they
+       navigate to the matching stub which redirects back to /#section. */
+    var SECTIONS = { 'services': 1, 'process': 1, 'book': 1 };
+
+    function onHome() {
+        var p = location.pathname.replace(/\/+$/, '');
+        return p === '' || p === '/index.html';
+    }
+
+    function scrollToEl(el, immediate) {
+        if (lenis) lenis.scrollTo(targetY(el), { offset: 0, duration: immediate ? 0 : 1.2, immediate: !!immediate });
+        else window.scrollTo(0, targetY(el));
+    }
+
     document.addEventListener('click', function (e) {
-        var a = e.target.closest('a[href^="#"]');
+        var a = e.target.closest('a[href]');
         if (!a) return;
-        var target = document.querySelector(a.getAttribute('href'));
-        if (!target) return;
-        e.preventDefault();
-        closeMenu();
-        if (lenis) lenis.scrollTo(target, { offset: 0, duration: 1.4 });
-        else target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+        var raw = a.getAttribute('href');
+        var url;
+        try { url = new URL(a.href, location.href); } catch (err) { return; }
+        if (url.origin !== location.origin) return;
+
+        // Same-page fragment (e.g. #book)
+        if (raw.charAt(0) === '#') {
+            var t = document.querySelector(raw);
+            if (!t) return;
+            e.preventDefault(); closeMenu();
+            scrollToEl(t);
+            history.replaceState(null, '', '/' + raw.slice(1));
+            return;
+        }
+
+        // Clean section route on the homepage -> smooth scroll, no reload
+        var name = url.pathname.replace(/^\/|\/$/g, '');
+        if (onHome() && SECTIONS[name]) {
+            var el = document.getElementById(name);
+            if (!el) return;
+            e.preventDefault(); closeMenu();
+            scrollToEl(el);
+            history.replaceState(null, '', '/' + name);
+        }
     });
+
+    /* Scroll to the right section when landing with a hash or section route.
+       Re-corrects a couple of times because pinned ScrollTriggers, fonts and
+       video metadata can shift layout just after load. */
+    /* Absolute scroll position for a target. Pinned sections (the process
+       timeline) are unreliable via getBoundingClientRect because the pin
+       spacer shifts their box, so use the ScrollTrigger start instead. */
+    function targetY(el) {
+        if (hasGsap) {
+            var sts = ScrollTrigger.getAll();
+            for (var i = 0; i < sts.length; i++) {
+                var st = sts[i];
+                if (st.pin && st.trigger && (st.trigger === el || el.contains(st.trigger) || st.trigger.contains(el))) {
+                    return st.start;
+                }
+            }
+        }
+        return el.getBoundingClientRect().top + (lenis ? lenis.scroll : window.scrollY);
+    }
+    function jumpTo(el) {
+        if (hasGsap) ScrollTrigger.refresh();
+        var y = targetY(el);
+        if (lenis) lenis.scrollTo(y, { immediate: true, force: true });
+        else window.scrollTo(0, y);
+    }
+    function gotoInitial() {
+        var hash = location.hash ? location.hash.slice(1) : '';
+        if (!hash) return;
+        var el = document.getElementById(hash);
+        if (!el) return;
+        if (SECTIONS[hash]) history.replaceState(null, '', '/' + hash);
+        jumpTo(el);
+        setTimeout(function () { jumpTo(el); }, 300);
+        setTimeout(function () { jumpTo(el); }, 700);
+    }
+    window.addEventListener('load', function () { setTimeout(gotoInitial, 60); });
 
     /* ---------- Preloader ---------- */
     var loader = document.getElementById('loader');
