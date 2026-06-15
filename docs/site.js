@@ -91,17 +91,30 @@
         if (lenis) lenis.scrollTo(y, { immediate: true, force: true });
         else window.scrollTo(0, y);
     }
+    // Section routes arrive as /?goto=section (a query, not a #hash) so the
+    // browser never performs a native anchor jump — that jump moves the window
+    // without telling Lenis and leaves the two scroll models permanently
+    // desynced (scrolling up then appears stuck). Captured once so re-runs
+    // still work after the URL is cleaned to /section.
+    var pendingGoto = new URLSearchParams(location.search).get('goto') ||
+        (location.hash ? location.hash.slice(1) : '');
+
     function gotoInitial() {
-        var hash = location.hash ? location.hash.slice(1) : '';
-        if (!hash) return;
-        var el = document.getElementById(hash);
+        if (!pendingGoto) return;
+        var el = document.getElementById(pendingGoto);
         if (!el) return;
-        if (SECTIONS[hash]) history.replaceState(null, '', '/' + hash);
+        if (SECTIONS[pendingGoto]) history.replaceState(null, '', '/' + pendingGoto);
+        // Force both scroll models back to the top and in sync first.
+        window.scrollTo(0, 0);
+        if (lenis) lenis.scrollTo(0, { immediate: true, force: true });
         jumpTo(el);
         setTimeout(function () { jumpTo(el); }, 300);
         setTimeout(function () { jumpTo(el); }, 700);
     }
-    window.addEventListener('load', function () { setTimeout(gotoInitial, 60); });
+    // Run as soon as layout is ready rather than waiting for `load`, which on
+    // this media-heavy page can be seconds out; re-run on load as a safety net.
+    requestAnimationFrame(function () { requestAnimationFrame(gotoInitial); });
+    window.addEventListener('load', function () { setTimeout(gotoInitial, 80); });
 
     /* ---------- Preloader ---------- */
     var loader = document.getElementById('loader');
