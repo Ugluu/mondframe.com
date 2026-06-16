@@ -30,7 +30,10 @@
 
     function onHome() {
         var p = location.pathname.replace(/\/+$/, '');
-        return p === '' || p === '/index.html';
+        // Section clicks rewrite the URL to /services /process /book, so treat
+        // those as the homepage too — otherwise the next in-page section link
+        // would fall through to a full reload via the redirect stub.
+        return p === '' || p === '/index.html' || !!SECTIONS[p.replace(/^\//, '')];
     }
 
     function scrollToEl(el, immediate) {
@@ -129,6 +132,12 @@
         if (seen || reduced) {
             finish();
         } else {
+            // Hard safety net: if the rAF-driven tween ever stalls (backgrounded
+            // tab, throttling, gsap.ticker hiccup) force the loader to dismiss so
+            // the page can never be locked behind a black screen.
+            var done = false;
+            var safeFinish = function () { if (done) return; done = true; finish(); };
+            setTimeout(safeFinish, 3000);
             var bar = loader.querySelector('.loader-bar i');
             var num = loader.querySelector('.loader-num');
             var p = { v: 0 };
@@ -139,9 +148,9 @@
                         if (num) num.textContent = String(Math.round(p.v)).padStart(3, '0');
                         if (bar) bar.style.transform = 'scaleX(' + p.v / 100 + ')';
                     },
-                    onComplete: finish
+                    onComplete: safeFinish
                 });
-            } else { finish(); }
+            } else { safeFinish(); }
         }
     } else {
         document.body.classList.add('ready');
