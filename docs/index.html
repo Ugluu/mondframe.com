@@ -583,6 +583,9 @@
         });
     }
 
+    /* The WebGL hero is deferred (see startGL() invocation below) so its init
+       and first frames never block the cold-load scroll window. */
+    function startGL() {
     if (!wide || reduced || typeof THREE === 'undefined' || !holder) return;
 
     var renderer;
@@ -591,7 +594,7 @@
     } catch (e) { return; }
 
     hero.classList.add('gl');
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setSize(holder.clientWidth, holder.clientHeight);
     holder.appendChild(renderer.domElement);
 
@@ -679,6 +682,16 @@
         camera.updateProjectionMatrix();
         renderer.setSize(holder.clientWidth, holder.clientHeight);
     });
+    }
+    // Defer the heavy WebGL hero off the cold-load critical path. On a cold
+    // visit its init + first renders otherwise contend with layout and the
+    // scroll setup, freezing the main thread so the page can't be scrolled
+    // (the reported "stuck scroll on entering"). Start it once the main thread
+    // goes idle after the initial burst — with a hard cap so it still starts on
+    // busy pages, and never waiting on `load` which is seconds out here. The
+    // DOM video fallback shows the hero until GL is ready.
+    if ('requestIdleCallback' in window) requestIdleCallback(startGL, { timeout: 2500 });
+    else window.addEventListener('load', function () { setTimeout(startGL, 600); });
 })();
 </script>
 </body>
