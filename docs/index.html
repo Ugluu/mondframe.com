@@ -546,8 +546,7 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="site.js?v=3"></script>
 
-<!-- Hero: floating cinematic frame (Three.js) -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+<!-- Hero: aerial→interior video crossfade (lightweight DOM, no WebGL) -->
 <script>
 (function () {
     'use strict';
@@ -583,115 +582,10 @@
         });
     }
 
-    /* The WebGL hero is deferred (see startGL() invocation below) so its init
-       and first frames never block the cold-load scroll window. */
-    function startGL() {
-    if (!wide || reduced || typeof THREE === 'undefined' || !holder) return;
-
-    var renderer;
-    try {
-        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'low-power' });
-    } catch (e) { return; }
-
-    hero.classList.add('gl');
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-    renderer.setSize(holder.clientWidth, holder.clientHeight);
-    holder.appendChild(renderer.domElement);
-
-    var scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x0B0A08);
-    var camera = new THREE.PerspectiveCamera(32, holder.clientWidth / holder.clientHeight, 0.1, 50);
-    camera.position.z = 6;
-
-    function makeVideo(src) {
-        var v = document.createElement('video');
-        v.src = src; v.muted = true; v.loop = true; v.playsInline = true;
-        v.crossOrigin = 'anonymous'; v.play().catch(function () {});
-        var t = new THREE.VideoTexture(v);
-        t.minFilter = THREE.LinearFilter;
-        return t;
-    }
-
-    /* Floating cinematic frame: 16:9 video plane + thin gold border, second plane crossfades on scroll */
-    var group = new THREE.Group();
-    var W = 4.6, H = W * 9 / 16;
-
-    var aerialTex = makeVideo('images/hero.mp4');
-    var interiorTex = makeVideo('images/cinematic-video.mp4');
-
-    var plane = new THREE.Mesh(
-        new THREE.PlaneGeometry(W, H),
-        new THREE.MeshBasicMaterial({ map: aerialTex })
-    );
-    var plane2 = new THREE.Mesh(
-        new THREE.PlaneGeometry(W, H),
-        new THREE.MeshBasicMaterial({ map: interiorTex, transparent: true, opacity: 0 })
-    );
-    plane2.position.z = 0.012;
-    group.add(plane, plane2);
-
-    var frameGeo = new THREE.EdgesGeometry(new THREE.PlaneGeometry(W + 0.14, H + 0.14));
-    var frame = new THREE.LineSegments(frameGeo, new THREE.LineBasicMaterial({ color: 0xC2A878 }));
-    frame.position.z = 0.02;
-    group.add(frame);
-
-    /* faint echo frames for depth */
-    [0.55, 1.1].forEach(function (d, i) {
-        var echo = new THREE.LineSegments(
-            new THREE.EdgesGeometry(new THREE.PlaneGeometry(W + 0.14 + d * 0.5, H + 0.14 + d * 0.28)),
-            new THREE.LineBasicMaterial({ color: 0xC2A878, transparent: true, opacity: 0.16 - i * 0.07 })
-        );
-        echo.position.z = -d;
-        group.add(echo);
-    });
-
-    group.position.y = 0.45;
-    scene.add(group);
-
-    var mouse = { x: 0, y: 0 }, scrollP = 0;
-    window.addEventListener('mousemove', function (e) {
-        mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
-        mouse.y = (e.clientY / window.innerHeight - 0.5) * 2;
-    }, { passive: true });
-
-    window.__mfGL = {
-        scroll: function (p) {
-            scrollP = p;
-            plane2.material.opacity = Math.min(1, Math.max(0, (p - 0.3) * 2.2));
-        }
-    };
-
-    var clock = new THREE.Clock();
-    var running = true;
-    new IntersectionObserver(function (en) { running = en[0].isIntersecting; })
-        .observe(hero);
-
-    (function tick() {
-        requestAnimationFrame(tick);
-        if (!running) return;
-        var t = clock.getElapsedTime();
-        group.rotation.y += ((mouse.x * 0.09 + scrollP * 0.22) - group.rotation.y) * 0.05;
-        group.rotation.x += ((-mouse.y * 0.055) - group.rotation.x) * 0.05;
-        group.position.y = 0.45 + Math.sin(t * 0.7) * 0.045;
-        camera.position.z = 6 - scrollP * 1.6;
-        renderer.render(scene, camera);
-    })();
-
-    window.addEventListener('resize', function () {
-        camera.aspect = holder.clientWidth / holder.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(holder.clientWidth, holder.clientHeight);
-    });
-    }
-    // Defer the heavy WebGL hero off the cold-load critical path. On a cold
-    // visit its init + first renders otherwise contend with layout and the
-    // scroll setup, freezing the main thread so the page can't be scrolled
-    // (the reported "stuck scroll on entering"). Start it once the main thread
-    // goes idle after the initial burst — with a hard cap so it still starts on
-    // busy pages, and never waiting on `load` which is seconds out here. The
-    // DOM video fallback shows the hero until GL is ready.
-    if ('requestIdleCallback' in window) requestIdleCallback(startGL, { timeout: 2500 });
-    else window.addEventListener('load', function () { setTimeout(startGL, 600); });
+    /* The hero now runs purely on the DOM video crossfade above (the GL path
+       was removed): on desktop the WebGL frame froze the main thread on cold
+       load, stalling scroll. window.__mfGL is never set, so the crossfade
+       branch always drives the aerial→interior transition. */
 })();
 </script>
 </body>
