@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <base href="/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reels &amp; Clips · Video Editing for Creators — Mondframe</title>
-<meta name="description" content="You record, I edit, you post. Scroll-stopping short-form video editing for creators, brands, influencers and podcasters. Packages from £150. UK based, 48-hour delivery.">
+<title>Reels &amp; Clips · Video Editing — Mondframe</title>
+<meta name="description" content="You record, I edit, you post. Vertical short-form edits for creators, brands and podcasters. Packages from £150.">
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,80 +13,59 @@
 <link rel="stylesheet" href="main.css?v=2">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mondframe.com/reels">
-<meta property="og:title" content="Reels & Clips · Video Editing for Creators — Mondframe">
-<meta property="og:description" content="You record, I edit, you post. Short-form video editing for creators, brands and podcasters. From £150.">
+<meta property="og:title" content="Reels & Clips · Video Editing — Mondframe">
+<meta property="og:description" content="You record, I edit, you post. Vertical short-form edits. From £150.">
 <meta property="og:image" content="https://mondframe.com/images/og-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <style>
-/* ---------- Reels & Clips page ---------- */
-.rl-badge{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);border:1px solid var(--line);border-radius:999px;padding:9px 16px;}
-.rl-hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;}
-.rl-hero-bg{position:absolute;inset:0;}
-.rl-hero-bg video{width:100%;height:118%;object-fit:cover;}
-.rl-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,8,.6),rgba(11,10,8,.35) 40%,rgba(11,10,8,.9));}
-.rl-hero-inner{position:relative;z-index:3;padding:0 var(--pad) 11vh;width:100%;}
-.rl-hero-inner .rl-badge{margin-bottom:28px;}
-.rl-hero-title{max-width:16ch;margin-bottom:30px;}
-.rl-hero-title .ln{display:block;}
-.rl-hero-sub{margin-bottom:40px;}
-.rl-ctas{display:flex;gap:18px;flex-wrap:wrap;}
+/* ---------- Reels & Clips (minimal, work-first) ---------- */
+.rl-head{padding:calc(var(--pad) + 46px) var(--pad) clamp(30px,4vw,54px);display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;}
+.rl-head .label{margin-bottom:18px;}
+.rl-head h1{max-width:14ch;}
+.rl-head-right{max-width:340px;display:flex;flex-direction:column;gap:20px;}
+.rl-head-right p{font-size:14px;color:var(--grey);}
+.rl-tags{display:flex;gap:8px;flex-wrap:wrap;}
+.rl-tags li{font-size:10px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:7px 13px;color:var(--grey);}
 
-/* audience */
-.aud-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:clamp(40px,5vw,70px);}
-.aud{background:var(--ink);padding:clamp(30px,3vw,50px) clamp(20px,2.4vw,36px);display:flex;flex-direction:column;gap:14px;}
-.aud b{font-family:var(--font-display);font-weight:360;font-size:clamp(20px,2vw,28px);}
-.aud span{font-size:13px;color:var(--grey);}
-.aud i{font-style:normal;font-size:22px;}
+/* vertical reels grid */
+.reels-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,18px);padding:0 var(--pad);}
+.reel{position:relative;aspect-ratio:9/16;overflow:hidden;border-radius:14px;background:var(--ink-2);cursor:pointer;border:1px solid var(--line);}
+.reel video,.reel img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--ease);}
+.reel:hover video,.reel:hover img{transform:scale(1.05);}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,10,8,.6));opacity:.85;transition:opacity .4s;}
+.reel:hover::after{opacity:1;}
+.reel .idx{position:absolute;top:12px;left:14px;z-index:2;font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--paper);text-shadow:0 1px 6px rgba(0,0,0,.5);}
+.reel .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9);z-index:2;width:46px;height:46px;border-radius:50%;border:1px solid rgba(242,237,228,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:.4s var(--ease);backdrop-filter:blur(4px);}
+.reel:hover .play{opacity:1;transform:translate(-50%,-50%) scale(1);}
+.reel .play svg{width:15px;height:15px;fill:var(--paper);margin-left:2px;}
 
-/* steps */
-.rec-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,3vw,56px);margin-top:clamp(40px,5vw,70px);}
-.rec-step{border-top:1px solid var(--line-dark);padding-top:24px;}
-.rec-step .n{font-family:var(--font-display);font-style:italic;color:var(--gold);font-size:20px;display:block;margin-bottom:26px;}
-.rec-step h3{font-family:var(--font-display);font-weight:380;font-size:clamp(24px,2.4vw,36px);margin-bottom:12px;}
-.rec-step p{font-size:14px;color:var(--grey-dark);max-width:32ch;}
-
-/* reel showcase */
-.reel-row{display:flex;gap:clamp(16px,2vw,28px);overflow-x:auto;padding:0 var(--pad);scrollbar-width:none;}
-.reel-row::-webkit-scrollbar{display:none;}
-.reel-card{flex:0 0 auto;width:clamp(210px,22vw,280px);aspect-ratio:9/16;border-radius:20px;overflow:hidden;position:relative;border:1px solid var(--line);background:var(--ink-2);}
-.reel-card video{width:100%;height:100%;object-fit:cover;}
-.reel-card span{position:absolute;left:14px;bottom:14px;z-index:2;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);background:rgba(11,10,8,.5);padding:6px 12px;border-radius:999px;backdrop-filter:blur(6px);}
+/* vertical modal */
+.modal-box-v{aspect-ratio:9/16;width:auto;height:min(86vh,860px);max-width:94vw;background:#000;border-radius:16px;overflow:hidden;}
+.modal-box-v video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 
 /* pricing */
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);margin-top:clamp(44px,5vw,70px);}
-.price-card{border:1px solid var(--line-dark);padding:clamp(30px,3vw,44px) clamp(26px,2.4vw,38px);display:flex;flex-direction:column;position:relative;background:var(--paper);transition:transform .5s var(--ease),box-shadow .5s var(--ease);}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);margin-top:clamp(40px,4vw,64px);}
+.price-card{border:1px solid var(--line-dark);padding:clamp(28px,3vw,42px) clamp(24px,2.4vw,36px);display:flex;flex-direction:column;position:relative;background:var(--paper);transition:transform .5s var(--ease),box-shadow .5s var(--ease);}
 .price-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(11,10,8,.4);}
 .price-card.feat{background:var(--ink);color:var(--paper);border-color:var(--ink);}
-.price-tag{position:absolute;top:-1px;right:26px;transform:translateY(-50%);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:7px 14px;border-radius:999px;}
-.price-name{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;}
-.price-amt{font-family:var(--font-display);font-weight:340;font-size:clamp(44px,4.6vw,64px);line-height:1;}
-.price-amt small{font-size:.35em;color:var(--grey);font-style:italic;margin-left:6px;}
-.feat .price-amt small{color:var(--grey);}
-.price-per{font-size:13px;color:var(--grey-dark);margin:12px 0 26px;}
+.price-tag{position:absolute;top:-1px;right:24px;transform:translateY(-50%);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:7px 14px;border-radius:999px;}
+.price-name{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.price-amt{font-family:var(--font-display);font-weight:340;font-size:clamp(42px,4.4vw,60px);line-height:1;}
+.price-per{font-size:13px;color:var(--grey-dark);margin:12px 0 24px;}
 .feat .price-per{color:var(--grey);}
-.price-list{display:flex;flex-direction:column;gap:13px;margin-bottom:32px;flex:1;}
+.price-list{display:flex;flex-direction:column;gap:12px;margin-bottom:30px;flex:1;}
 .price-list li{font-size:14px;display:flex;gap:12px;align-items:flex-start;line-height:1.5;}
 .price-list li::before{content:"";flex:0 0 18px;height:18px;margin-top:2px;border-radius:50%;background:var(--gold);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M6 11.5l3 3 6-7' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M6 11.5l3 3 6-7' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;}
 .price-note{text-align:center;font-size:13px;color:var(--grey-dark);margin-top:26px;}
-.price-note b{color:var(--ink);}
+.price-note a{border-bottom:1px solid var(--gold);}
 
-/* faq */
-.rl-faq{max-width:820px;margin:0 auto;}
-.rl-faq details{border-top:1px solid var(--line);padding:22px 0;}
-.rl-faq details[open] summary{color:var(--gold);}
-.rl-faq summary{list-style:none;cursor:pointer;font-family:var(--font-display);font-weight:360;font-size:clamp(18px,1.8vw,24px);display:flex;justify-content:space-between;gap:20px;}
-.rl-faq summary::-webkit-details-marker{display:none;}
-.rl-faq summary::after{content:"+";color:var(--gold);}
-.rl-faq details[open] summary::after{content:"–";}
-.rl-faq p{font-size:14px;color:var(--grey);margin-top:16px;max-width:64ch;}
-
-@media (max-width:900px){
-    .aud-grid{grid-template-columns:1fr 1fr;}
-    .rec-steps{grid-template-columns:1fr;gap:8px;}
-    .rec-step{padding-top:20px;}
+@media (max-width:1024px){ .reels-grid{grid-template-columns:repeat(3,1fr);} }
+@media (max-width:640px){
+    .reels-grid{grid-template-columns:repeat(2,1fr);}
     .price-grid{grid-template-columns:1fr;}
     .price-card.feat{order:-1;}
+    .rl-head{align-items:flex-start;}
 }
 </style>
 </head>
@@ -131,79 +110,40 @@
 
 <main>
 
-<!-- HERO -->
-<section class="rl-hero">
-    <div class="rl-hero-bg" data-parallax>
-        <video data-auto muted loop playsinline preload="auto" poster="images/bedroom.webp" src="images/IG-reels.mp4"></video>
+<!-- Compact header (no hero) -->
+<header class="rl-head">
+    <div>
+        <span class="label" data-reveal>Reels &amp; Clips · Video editing</span>
+        <h1 class="display h-lg" data-split>You record. I <em>edit.</em> You post.</h1>
     </div>
-    <div class="rl-hero-inner">
-        <span class="rl-badge" data-reveal>📦 Video editing &nbsp;·&nbsp; 🇬🇧 United Kingdom</span>
-        <h1 class="display h-xl rl-hero-title" data-split><span class="ln">You record.</span> <span class="ln">I <em>edit.</em></span> <span class="ln">You post.</span></h1>
-        <p class="lede rl-hero-sub" data-reveal data-delay="0.15">Scroll-stopping short-form edits for creators, brands, influencers and interview podcasts. Stop wasting hours editing. Just record and create.</p>
-        <div class="rl-ctas" data-reveal data-delay="0.3">
-            <a href="#pricing" class="btn btn-solid" data-magnetic>See packages <span class="arr">→</span></a>
-            <a href="#reels" class="btn" data-magnetic>Watch reels <span class="arr">→</span></a>
-        </div>
+    <div class="rl-head-right" data-reveal data-delay="0.1">
+        <p>Vertical short-form edits for creators, brands and podcasters. Just record — I handle the rest.</p>
+        <ul class="rl-tags"><li>🇬🇧 UK</li><li>9:16 vertical</li><li>48h delivery</li></ul>
     </div>
-</section>
+</header>
 
-<!-- Marquee -->
-<div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-        <span>Record · <em>Edit</em> · Post · Reels · <em>Shorts</em> · TikTok · </span><span>Record · <em>Edit</em> · Post · Reels · <em>Shorts</em> · TikTok · </span>
-        <span>Record · <em>Edit</em> · Post · Reels · <em>Shorts</em> · TikTok · </span><span>Record · <em>Edit</em> · Post · Reels · <em>Shorts</em> · TikTok · </span>
-    </div>
-</div>
-
-<!-- MANIFESTO -->
-<section class="section">
-    <div class="manifesto">
-        <span class="label">The offer</span>
-        <h2 class="display h-lg" data-split>Don't waste your time editing. <span class="dim">Send me the raw clips —</span> get back reels that <em>stop the scroll.</em></h2>
-    </div>
-</section>
-
-<!-- AUDIENCE -->
-<section class="section" style="padding-top:0">
-    <span class="label">Made for</span>
-    <h2 class="display h-md" style="margin-top:20px" data-split>People who create a lot, and edit too little</h2>
-    <div class="aud-grid" data-reveal>
-        <div class="aud"><i>🎥</i><b>Creators</b><span>Post consistently without living in the timeline.</span></div>
-        <div class="aud"><i>🏷️</i><b>Brands</b><span>On-brand social cuts that actually convert.</span></div>
-        <div class="aud"><i>⭐</i><b>Influencers</b><span>More reels, more reach, none of the editing grind.</span></div>
-        <div class="aud"><i>🎙️</i><b>Podcasters</b><span>Turn long interviews into shareable clips.</span></div>
-    </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section light">
-    <span class="label">How it works</span>
-    <h2 class="display h-lg" style="margin-top:20px" data-split>Three steps. <em>Zero</em> editing for you.</h2>
-    <div class="rec-steps">
-        <div class="rec-step" data-reveal><span class="n">(01)</span><h3>You record</h3><p>Film on your phone or camera. Send the raw footage — no prep, no format worries.</p></div>
-        <div class="rec-step" data-reveal data-delay="0.1"><span class="n">(02)</span><h3>I edit</h3><p>Cuts, captions, sound design, colour and hooks — built for reach. Delivered in 48 hours.</p></div>
-        <div class="rec-step" data-reveal data-delay="0.2"><span class="n">(03)</span><h3>You post</h3><p>Ready-to-upload vertical files for Reels, Shorts and TikTok. Just hit publish.</p></div>
-    </div>
-</section>
-
-<!-- REEL SHOWCASE -->
-<section class="section" id="reels" style="padding-left:0;padding-right:0">
-    <div style="padding:0 var(--pad) clamp(36px,4vw,60px)">
-        <span class="label">Recent edits</span>
-        <h2 class="display h-lg" style="margin-top:20px" data-split>Made to be <em>watched</em></h2>
-    </div>
-    <div class="reel-row">
-        <div class="reel-card" data-cursor="Play"><video data-auto muted loop playsinline preload="none" poster="images/bedroom.webp" data-src="images/IG-reels.mp4"></video><span>Creator reel</span></div>
-        <div class="reel-card" data-cursor="Play"><video data-auto muted loop playsinline preload="none" poster="images/dining.webp" data-src="images/cinematic-video.mp4"></video><span>Brand cut</span></div>
-        <div class="reel-card" data-cursor="Play"><video data-auto muted loop playsinline preload="none" poster="images/kitchen.webp" data-src="images/IG-reels.mp4"></video><span>Podcast clip</span></div>
-        <div class="reel-card" data-cursor="Play"><video data-auto muted loop playsinline preload="none" poster="images/home-office.webp" data-src="images/cinematic-video.mp4"></video><span>Short</span></div>
+<!-- WORK FIRST: 12 vertical reels -->
+<section style="padding-bottom:clamp(70px,8vw,120px)">
+    <div class="reels-grid" id="reelsGrid">
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">01</span><video data-auto muted loop playsinline preload="none" poster="images/bedroom.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">02</span><video data-auto muted loop playsinline preload="none" poster="images/kitchen.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">03</span><video data-auto muted loop playsinline preload="none" poster="images/dining.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">04</span><video data-auto muted loop playsinline preload="none" poster="images/home-office.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">05</span><video data-auto muted loop playsinline preload="none" poster="images/kids-room.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">06</span><video data-auto muted loop playsinline preload="none" poster="images/bedroom.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">07</span><video data-auto muted loop playsinline preload="none" poster="images/dining.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">08</span><video data-auto muted loop playsinline preload="none" poster="images/kitchen.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">09</span><video data-auto muted loop playsinline preload="none" poster="images/home-office.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">10</span><video data-auto muted loop playsinline preload="none" poster="images/kids-room.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">11</span><video data-auto muted loop playsinline preload="none" poster="images/bedroom.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="reel" data-reveal data-full="images/IG-reels.mp4"><span class="idx">12</span><video data-auto muted loop playsinline preload="none" poster="images/dining.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
     </div>
 </section>
 
 <!-- PRICING -->
 <section class="section light" id="pricing">
     <span class="label">Packages</span>
-    <h2 class="display h-lg" style="margin-top:20px;max-width:16ch" data-split>Pick your batch. The more you post, the less <em>per reel.</em></h2>
+    <h2 class="display h-lg" style="margin-top:18px;max-width:15ch" data-split>Pick your batch. The more you post, the less <em>per reel.</em></h2>
 
     <div class="price-grid">
         <div class="price-card" data-reveal>
@@ -213,7 +153,6 @@
             <ul class="price-list">
                 <li>3 edited vertical reels</li>
                 <li>Captions &amp; sound design</li>
-                <li>Hook-first cutting</li>
                 <li>48-hour delivery</li>
                 <li>1 round of revisions</li>
             </ul>
@@ -228,7 +167,6 @@
             <ul class="price-list">
                 <li>6 edited vertical reels</li>
                 <li>Captions &amp; sound design</li>
-                <li>Hook-first cutting</li>
                 <li>48-hour delivery</li>
                 <li>2 rounds of revisions</li>
                 <li>Priority editing</li>
@@ -243,7 +181,6 @@
             <ul class="price-list">
                 <li>10 edited vertical reels</li>
                 <li>Captions &amp; sound design</li>
-                <li>Hook-first cutting</li>
                 <li>48-hour delivery</li>
                 <li>Unlimited revisions</li>
                 <li>Priority editing</li>
@@ -251,32 +188,7 @@
             <a href="mailto:hello@mondframe.co.uk?subject=Reels%20%26%20Clips%20—%20Pro%20(10%20reels,%20£400)" class="btn btn-solid" data-plan="pro" data-magnetic>Start with 10 <span class="arr">→</span></a>
         </div>
     </div>
-    <p class="price-note">One-off, no subscription. <b>Not sure how many you need?</b> <a href="mailto:hello@mondframe.co.uk" style="border-bottom:1px solid var(--gold)">Message me first</a>.</p>
-</section>
-
-<!-- FAQ -->
-<section class="section">
-    <span class="label" style="display:block;text-align:center;justify-content:center">FAQ</span>
-    <h2 class="display h-md" style="text-align:center;margin:20px 0 clamp(40px,5vw,64px)" data-split>Good to know</h2>
-    <div class="rl-faq">
-        <details><summary>What do I send you?</summary><p>Your raw clips — phone or camera footage, screen recordings, voice notes, whatever you filmed. No editing or formatting needed on your end.</p></details>
-        <details><summary>How fast is delivery?</summary><p>48 hours from receiving your footage on every package. Creator and Pro get priority editing if you're on a deadline.</p></details>
-        <details><summary>What format do I get back?</summary><p>Ready-to-upload vertical 9:16 files for Instagram Reels, YouTube Shorts and TikTok — captions burned in, sound mixed.</p></details>
-        <details><summary>Can I mix content types?</summary><p>Yes. Talking-head, b-roll, product, podcast clips — one batch can cover different formats.</p></details>
-        <details><summary>What if I need a change?</summary><p>Every package includes revisions. Just send timestamps and I'll adjust.</p></details>
-    </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="cta">
-    <div class="cta-bg" data-parallax>
-        <video data-auto muted loop playsinline preload="none" poster="images/bedroom.webp" data-src="images/IG-reels.mp4"></video>
-    </div>
-    <div class="cta-inner">
-        <span class="label" style="justify-content:center">Start now</span>
-        <h2 class="display h-xl" data-split>Just record. <em>I'll handle the rest.</em></h2>
-        <a href="#pricing" class="btn btn-solid" data-magnetic>See packages <span class="arr">→</span></a>
-    </div>
+    <p class="price-note">One-off, no subscription. Not sure how many? <a href="mailto:hello@mondframe.co.uk">Message me first</a>.</p>
 </section>
 
 </main>
@@ -286,12 +198,6 @@
     <div class="footer-cta">
         <span class="label">Start a conversation</span><br><br>
         <a class="footer-mail" href="mailto:hello@mondframe.co.uk">hello@mondframe.co.uk</a>
-    </div>
-    <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-            <span>Record · <em>Edit</em> · Post · UK · </span><span>Record · <em>Edit</em> · Post · UK · </span>
-            <span>Record · <em>Edit</em> · Post · UK · </span><span>Record · <em>Edit</em> · Post · UK · </span>
-        </div>
     </div>
     <div class="footer-grid">
         <div class="footer-col">
@@ -328,9 +234,36 @@
     </div>
 </footer>
 
+<!-- Reel lightbox (vertical) -->
+<div class="modal" id="reelModal" role="dialog" aria-modal="true" aria-label="Reel">
+    <div class="modal-box modal-box-v">
+        <button class="modal-close">Close ✕</button>
+        <video controls playsinline preload="none"></video>
+    </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="site.js?v=3"></script>
+<script>
+/* Click a reel -> open vertical lightbox with sound */
+(function () {
+    var modal = document.getElementById('reelModal');
+    if (!modal) return;
+    var video = modal.querySelector('video');
+    document.querySelectorAll('.reel').forEach(function (card) {
+        card.addEventListener('click', function () {
+            var src = card.getAttribute('data-full');
+            if (!src) return;
+            video.src = src;
+            video.currentTime = 0;
+            modal.classList.add('open');
+            video.play().catch(function () {});
+            if (window.__lenis) window.__lenis.stop();
+        });
+    });
+}());
+</script>
 </body>
 </html>
