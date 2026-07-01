@@ -20,7 +20,7 @@
 
 <style>
 /* ---------- Reels & Clips (minimal, work-first) ---------- */
-.rl-head{padding:calc(var(--pad) + 46px) var(--pad) clamp(28px,3.4vw,48px);display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;}
+.rl-head{padding:calc(var(--pad) + 46px) var(--pad) clamp(20px,2.6vw,36px);display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;}
 .rl-head .label{margin-bottom:18px;}
 .rl-head h1{max-width:14ch;}
 .rl-head-right{max-width:340px;display:flex;flex-direction:column;gap:20px;}
@@ -28,21 +28,39 @@
 .rl-tags{display:flex;gap:8px;flex-wrap:wrap;}
 .rl-tags li{font-size:10px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:7px 13px;color:var(--grey);}
 
-/* infinite drag carousel */
-.carousel{overflow:hidden;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y;}
-.carousel.dragging{cursor:grabbing;}
-.carousel-track{display:flex;gap:clamp(10px,1.1vw,16px);width:max-content;will-change:transform;}
-.reel{position:relative;flex:0 0 clamp(200px,18vw,280px);aspect-ratio:9/16;overflow:hidden;border-radius:14px;background:var(--ink-2);border:1px solid var(--line);}
-.reel video,.reel img{width:100%;height:100%;object-fit:cover;display:block;}
-.reel *{pointer-events:none;}
-.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,10,8,.6));opacity:.9;transition:opacity .4s;}
-.carousel:not(.dragging) .reel:hover::after{opacity:1;}
-.reel .idx{position:absolute;top:12px;left:14px;z-index:2;font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--paper);text-shadow:0 1px 6px rgba(0,0,0,.5);}
-.reel .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9);z-index:2;width:46px;height:46px;border-radius:50%;border:1px solid rgba(242,237,228,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:.4s var(--ease);backdrop-filter:blur(4px);}
-.carousel:not(.dragging) .reel:hover .play{opacity:1;transform:translate(-50%,-50%) scale(1);}
-.reel .play svg{width:15px;height:15px;fill:var(--paper);margin-left:2px;}
-.carousel-hint{display:flex;align-items:center;gap:10px;padding:22px var(--pad) 0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-dark);}
-.carousel-hint svg{width:26px;height:12px;stroke:var(--gold);fill:none;}
+/* ---------- 3D coverflow carousel ---------- */
+.cf{position:relative;height:clamp(440px,62vh,660px);perspective:1700px;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;}
+.cf.dragging{cursor:grabbing;}
+.cf-stage{position:absolute;inset:0;transform-style:preserve-3d;}
+.cf-card{
+    position:absolute;top:50%;left:50%;
+    width:clamp(228px,23vw,300px);aspect-ratio:9/16;
+    border-radius:16px;overflow:hidden;background:var(--ink-2);border:1px solid var(--line);
+    transform:translate(-50%,-50%);transform-origin:center center;
+    transition:transform .85s cubic-bezier(.66,0,.2,1),opacity .85s cubic-bezier(.66,0,.2,1);
+    backface-visibility:hidden;will-change:transform;box-shadow:0 40px 80px -40px rgba(0,0,0,.7);
+}
+.cf-card video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+.cf-card::after{content:"";position:absolute;inset:0;background:rgba(11,10,8,1);opacity:var(--dim,0);transition:opacity .85s;pointer-events:none;}
+.cf-card .cf-idx{position:absolute;top:12px;left:14px;z-index:3;font-family:var(--font-display);font-style:italic;font-size:14px;color:var(--paper);text-shadow:0 1px 6px rgba(0,0,0,.6);opacity:.85;}
+.cf-card .cf-cap{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:20px 18px;background:linear-gradient(transparent,rgba(11,10,8,.85));opacity:0;transform:translateY(8px);transition:.6s var(--ease);pointer-events:none;}
+.cf-card.is-active .cf-cap{opacity:1;transform:none;}
+.cf-cap b{display:block;font-family:var(--font-display);font-weight:380;font-size:19px;}
+.cf-cap span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);}
+.cf-card .cf-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:52px;height:52px;border-radius:50%;border:1px solid rgba(242,237,228,.7);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);opacity:0;transition:.5s var(--ease);}
+.cf-card.is-active .cf-play{opacity:1;}
+.cf-card .cf-play svg{width:16px;height:16px;fill:var(--paper);margin-left:2px;}
+
+.cf-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:20;width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:rgba(11,10,8,.4);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:var(--paper);transition:.4s var(--ease);}
+.cf-nav:hover{background:var(--gold);color:var(--ink);border-color:var(--gold);}
+.cf-nav svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;}
+.cf-nav.prev{left:clamp(12px,3vw,44px);}
+.cf-nav.next{right:clamp(12px,3vw,44px);}
+
+.cf-dots{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:clamp(26px,3vw,42px);}
+.cf-dot{width:8px;height:8px;border-radius:999px;background:var(--line);border:0;transition:.45s var(--ease);}
+.cf-dot.on{width:30px;background:var(--gold);}
+.cf-hint{text-align:center;margin-top:18px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-dark);}
 
 /* vertical modal */
 .modal-box-v{aspect-ratio:9/16;width:auto;height:min(86vh,860px);max-width:94vw;background:#000;border-radius:16px;overflow:hidden;}
@@ -65,11 +83,12 @@
 .price-note a{border-bottom:1px solid var(--gold);}
 
 @media (max-width:640px){
-    .reel{flex-basis:clamp(160px,46vw,210px);}
+    .cf-card{width:clamp(180px,64vw,240px);}
     .price-grid{grid-template-columns:1fr;}
     .price-card.feat{order:-1;}
     .rl-head{align-items:flex-start;}
 }
+@media (prefers-reduced-motion:reduce){ .cf-card{transition:none;} }
 </style>
 </head>
 <body>
@@ -125,18 +144,21 @@
     </div>
 </header>
 
-<!-- WORK FIRST: infinite drag carousel of 12 vertical reels -->
-<section style="padding-bottom:clamp(60px,7vw,110px)">
-    <div class="carousel" id="carousel">
-        <div class="carousel-track" id="track">
-            <div class="reel" data-full="images/IG-reels.mp4"><span class="idx">01</span><video data-auto muted loop playsinline preload="none" poster="images/bedroom.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
-            <div class="reel" data-full="images/IG-reels.mp4"><span class="idx">02</span><video data-auto muted loop playsinline preload="none" poster="images/kitchen.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
-            <div class="reel" data-full="images/IG-reels.mp4"><span class="idx">03</span><video data-auto muted loop playsinline preload="none" poster="images/dining.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
-            <div class="reel" data-full="images/IG-reels.mp4"><span class="idx">04</span><video data-auto muted loop playsinline preload="none" poster="images/home-office.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
-            <div class="reel" data-full="images/IG-reels.mp4"><span class="idx">05</span><video data-auto muted loop playsinline preload="none" poster="images/kids-room.webp" data-src="images/IG-reels.mp4"></video><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+<!-- WORK FIRST: 3D coverflow of 5 vertical reels -->
+<section style="padding-bottom:clamp(50px,6vw,90px)">
+    <div class="cf" id="cf">
+        <div class="cf-stage" id="cfStage">
+            <article class="cf-card" data-full="images/IG-reels.mp4"><span class="cf-idx">01</span><video muted loop playsinline preload="none" poster="images/bedroom.webp" data-src="images/IG-reels.mp4"></video><span class="cf-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><div class="cf-cap"><b>Creator reel</b><span>Talking head</span></div></article>
+            <article class="cf-card" data-full="images/IG-reels.mp4"><span class="cf-idx">02</span><video muted loop playsinline preload="none" poster="images/kitchen.webp" data-src="images/IG-reels.mp4"></video><span class="cf-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><div class="cf-cap"><b>Brand cut</b><span>Product</span></div></article>
+            <article class="cf-card" data-full="images/IG-reels.mp4"><span class="cf-idx">03</span><video muted loop playsinline preload="none" poster="images/dining.webp" data-src="images/IG-reels.mp4"></video><span class="cf-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><div class="cf-cap"><b>Podcast clip</b><span>Interview</span></div></article>
+            <article class="cf-card" data-full="images/IG-reels.mp4"><span class="cf-idx">04</span><video muted loop playsinline preload="none" poster="images/home-office.webp" data-src="images/IG-reels.mp4"></video><span class="cf-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><div class="cf-cap"><b>Short</b><span>B-roll</span></div></article>
+            <article class="cf-card" data-full="images/IG-reels.mp4"><span class="cf-idx">05</span><video muted loop playsinline preload="none" poster="images/kids-room.webp" data-src="images/IG-reels.mp4"></video><span class="cf-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><div class="cf-cap"><b>Promo</b><span>Launch</span></div></article>
         </div>
+        <button class="cf-nav prev" id="cfPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="cf-nav next" id="cfNext" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
-    <div class="carousel-hint"><svg viewBox="0 0 26 12"><path d="M1 6h24M20 1l5 5-5 5" stroke-width="1.4"/></svg> Drag · or hover to pause · tap to play</div>
+    <div class="cf-dots" id="cfDots"></div>
+    <p class="cf-hint">Drag · click a card · or tap the centre to play</p>
 </section>
 
 <!-- PRICING -->
@@ -246,106 +268,112 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="site.js?v=3"></script>
 <script>
-/* Infinite, draggable media carousel + vertical lightbox */
+/* 3D coverflow carousel */
 (function () {
-    var carousel = document.getElementById('carousel');
-    var track = document.getElementById('track');
+    var cf = document.getElementById('cf');
+    var stage = document.getElementById('cfStage');
+    var dotsWrap = document.getElementById('cfDots');
     var modal = document.getElementById('reelModal');
-    if (!carousel || !track || !modal) return;
+    if (!cf || !stage || !modal) return;
     var mvideo = modal.querySelector('video');
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    var offset = 0, setW = 0, speed = 0.45, auto = speed, vel = 0;
-    var originals = Array.prototype.slice.call(track.children);
+    var cards = Array.prototype.slice.call(stage.children);
+    var n = cards.length;
+    var active = 2 % n;   /* start on the middle card for a clean 01→05 order */
+    var cardW = 260;
 
-    var vio = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-            var v = en.target;
-            if (en.isIntersecting) {
-                if (v.dataset.src && !v.src) v.src = v.dataset.src;
-                v.play().catch(function () {});
-            } else { v.pause(); }
+    /* dots */
+    cards.forEach(function (_, i) {
+        var d = document.createElement('button');
+        d.className = 'cf-dot';
+        d.setAttribute('aria-label', 'Reel ' + (i + 1));
+        d.addEventListener('click', function () { toIndex(i); });
+        dotsWrap.appendChild(d);
+    });
+    var dots = Array.prototype.slice.call(dotsWrap.children);
+
+    function rel(i) {
+        var o = ((i - active) % n + n) % n;
+        if (o > n / 2) o -= n;
+        return o;
+    }
+    function layout() {
+        cardW = cards[active].offsetWidth || cardW;
+        cards.forEach(function (card, i) {
+            var o = rel(i), a = Math.abs(o), cap = Math.min(a, 2);
+            var tx = o * 0.82 * cardW;
+            var tz = -cap * 150;
+            var ry = Math.max(-50, Math.min(50, -o * 36));
+            var sc = 1 - cap * 0.15;
+            card.style.transform = 'translate(-50%,-50%) translateX(' + tx + 'px) translateZ(' + tz + 'px) rotateY(' + ry + 'deg) scale(' + sc + ')';
+            card.style.zIndex = String(50 - Math.round(a * 10));
+            card.style.setProperty('--dim', Math.min(a * 0.32, 0.62));
+            card.classList.toggle('is-active', o === 0);
+            card.style.visibility = a > 2 ? 'hidden' : 'visible';
+            var v = card.querySelector('video');
+            if (a <= 2) { if (v.dataset.src && !v.src) v.src = v.dataset.src; v.play().catch(function () {}); }
+            else v.pause();
         });
-    }, { root: carousel, rootMargin: '150px' });
-
-    /* Clone the set enough times to always fill the viewport, then measure
-       the exact repeat period (handles a small number of reels cleanly). */
-    function build() {
-        while (track.children.length > originals.length) track.removeChild(track.lastChild);
-        var guard = 0;
-        do {
-            originals.forEach(function (n) { track.appendChild(n.cloneNode(true)); });
-            guard++;
-        } while (track.scrollWidth < window.innerWidth * 2 + 400 && guard < 16);
-        setW = track.children[originals.length].offsetLeft - track.children[0].offsetLeft;
-        track.querySelectorAll('video').forEach(function (v) { vio.observe(v); });
+        dots.forEach(function (d, i) { d.classList.toggle('on', i === ((active % n) + n) % n); });
     }
-    build();
-    var rt;
-    window.addEventListener('resize', function () {
-        clearTimeout(rt);
-        rt = setTimeout(function () { offset = 0; build(); }, 200);
+    function go(dir) { active = ((active + dir) % n + n) % n; layout(); kick(); }
+    function toIndex(i) { active = ((i % n) + n) % n; layout(); kick(); }
+
+    document.getElementById('cfPrev').addEventListener('click', function () { go(-1); });
+    document.getElementById('cfNext').addEventListener('click', function () { go(1); });
+
+    /* drag + tap */
+    var dragging = false, downX = 0, moved = 0;
+    cf.addEventListener('pointerdown', function (e) {
+        dragging = true; downX = e.clientX; moved = 0; cf.classList.add('dragging');
+        stopAuto();
+        try { cf.setPointerCapture(e.pointerId); } catch (err) {}
     });
-
-    function wrap() {
-        if (offset <= -setW) offset += setW;
-        if (offset > 0) offset -= setW;
-    }
-    function render() { track.style.transform = 'translateX(' + offset + 'px)'; }
-
-    var dragging = false, startX = 0, startOff = 0, moved = 0, lastX = 0;
-
-    (function loop() {
-        if (!dragging) {
-            offset -= auto;
-            offset += vel;
-            vel *= 0.9;
-            if (Math.abs(vel) < 0.03) vel = 0;
-            wrap(); render();
-        }
-        requestAnimationFrame(loop);
-    })();
-
-    if (!('ontouchstart' in window)) {
-        carousel.addEventListener('mouseenter', function () { auto = 0; });
-        carousel.addEventListener('mouseleave', function () { if (!reduced) auto = speed; });
-    }
-
-    carousel.addEventListener('pointerdown', function (e) {
-        dragging = true; moved = 0; startX = lastX = e.clientX; startOff = offset;
-        carousel.classList.add('dragging');
-        try { carousel.setPointerCapture(e.pointerId); } catch (err) {}
-    });
-    carousel.addEventListener('pointermove', function (e) {
+    cf.addEventListener('pointermove', function (e) {
         if (!dragging) return;
-        var dx = e.clientX - startX;
-        moved = Math.max(moved, Math.abs(dx));
-        offset = startOff + dx;
-        vel = e.clientX - lastX; lastX = e.clientX;
-        wrap(); render();
+        moved = e.clientX - downX;
     });
-    function end(e) {
+    cf.addEventListener('pointerup', function (e) {
         if (!dragging) return;
-        dragging = false;
-        carousel.classList.remove('dragging');
-        auto = reduced ? 0 : speed;
-        if (moved < 8) {
-            var card = e.target.closest ? e.target.closest('.reel') : null;
-            if (card) openReel(card.getAttribute('data-full'));
-        }
-    }
-    carousel.addEventListener('pointerup', end);
-    carousel.addEventListener('pointercancel', function () { dragging = false; carousel.classList.remove('dragging'); auto = reduced ? 0 : speed; });
+        dragging = false; cf.classList.remove('dragging'); kick();
+        if (Math.abs(moved) > 45) { go(moved < 0 ? 1 : -1); return; }
+        /* tap */
+        var card = e.target.closest ? e.target.closest('.cf-card') : null;
+        if (!card) return;
+        var i = cards.indexOf(card);
+        if (rel(i) === 0) openReel(card.getAttribute('data-full'));
+        else toIndex(i);
+    });
+    cf.addEventListener('pointercancel', function () { dragging = false; cf.classList.remove('dragging'); kick(); });
 
     function openReel(src) {
         if (!src) return;
         mvideo.src = src; mvideo.currentTime = 0;
         modal.classList.add('open');
         mvideo.play().catch(function () {});
+        stopAuto();
         if (window.__lenis) window.__lenis.stop();
     }
-    if (reduced) auto = 0;
-})();
+
+    /* autoplay */
+    var timer = null;
+    function startAuto() { if (reduced || timer) return; timer = setInterval(function () { go(1); }, 4500); }
+    function stopAuto() { clearInterval(timer); timer = null; }
+    function kick() { stopAuto(); startAuto(); }
+    if (!('ontouchstart' in window)) {
+        cf.addEventListener('mouseenter', stopAuto);
+        cf.addEventListener('mouseleave', startAuto);
+    }
+
+    /* init after layout is ready */
+    function init() { layout(); startAuto(); }
+    if (document.readyState === 'complete') init();
+    else window.addEventListener('load', init);
+    requestAnimationFrame(function () { requestAnimationFrame(layout); });
+    var rt;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(layout, 150); });
+}());
 </script>
 </body>
 </html>
